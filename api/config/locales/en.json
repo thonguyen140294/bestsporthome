@@ -1,0 +1,184 @@
+{
+    "COMMON": {
+        "DATA_CREATION_SUCCESS": "Data creation success",
+        "DATA_CREATION_FAIL": "Data creation fail",
+        "DATA_UPDATE_SUCCESS": "Data update success",
+        "DATA_UPDATE_FAIL": "Data update fail",
+        "DATA_DELETE_SUCCESS": "Data delete success",
+        "DATA_DELETE_FAIL": "Data delete fail"
+    },
+	"USER": {
+        "LOGIN": {
+            "USER_DOES_NOT_EXIST": "User does not exist",
+            "ACCOUNT_BLOCKED": "Account blocked",
+            "ACCOUNT_NOT_ACTIVED": "The account has not been activated",
+            "PASSWORD_IS_NOT_VALID": "Password is not valid",
+            "ACCOUNT_LOGIN_OVER_SESSION" : "Your account has logged in too many sessions. Please log out another session to log in",
+            "FAIL": "Login fail",
+            "CONNECT_TO_FACEBOOK_FAILED": "Connect to Facebook failed"
+        },
+        "REGISTER": {
+            "EMAIL_IS_EXIST": "Email is already exist",
+            "EMAIL_ALREADY_REGISTER": "The email is used for this social network has been registered for another account",
+            "ACCOUNT_TYPE_INVALID": "This account type invalid",
+            "ACCOUNT_SIDE_INVALID": "This account side invalid",
+            "CREATE_ACCOUNT_FAILED": "Account creation failed, please try again later",
+            "CREATE_ACCOUNT_SUCCESS": "Account creation successfully"
+        },
+        "VERIFY": {
+            "VERIFY_LINK_DOES_NOT_EXIST": "Verify link does not exist",
+            "VERIFIED": "Account is already verified",
+            "VERIFY_MAIL_SUCCESS": "Verify email is successfully",
+            "LINK_HAS_EXPIRED": "Verification link has expired",
+            "CODE_HAS_EXPIRED": "Verification code has expired",
+            "VERIFY_CODE_INCORRECT" : "Verification code is incorrect",
+            "CODE_SENT": "Verification code sent to your email",
+            "LINK_SENT": "Verification link sent to your email",
+            "CONFIRM_GG_AUTH": "Please confirm google authentiocation",
+            "CONTACT_SENT": "Contact mail has sent successfully",
+            "INVALID_PHONE": "Invalid phone number",
+            "PHONE_NOT_CONFIRM": "Please confirm your phone number",
+            "PHONE_HAS_CONFIRMED": "This phone number has been confirmed",
+            "REQUEST_PHONE_FAIL": "Register phone number fail. Please try again.",
+            "CONFIRM_PHONE_SUCCESS": "Confirm phone number is successfully",
+            "CONFIRM_CODE_SUCCESS": "Confirm code is successfully",
+            "INVALID_EMAIL": "Invalid email address",
+            "TYPE_NOT_FOUND": "Verify type is not found",
+            "RESEND_CODE_INVALID": "Resend code is invalid until previous code expired",
+            "RESEND_MAIL_SUCCESS": "Resend mail is successfully"
+        },
+        "UPDATE": {
+            "EMAIL_IN_USE": "This email address is in use",
+            "AUTN_FAIL": "Update authentication fail",
+            "PASSWORD_IN_USE": "This password is in use"
+        },
+        "RESET_PASSWORD": {
+            "CHECK_MAIL": "Please check your email to reset password",
+            "RESET_CODE_DOES_NOT_EXIST": "Reset code does not exist. Please request resend code and check your email",
+            "LINK_RESET_PASSWORD_HAS_BEEN_EXPIRED": "Link reset password has been expired",
+            "RESET_PASSWORD_IS_SUCCESSFULLY": "Reset password is successfully"
+        },
+        "AUTH": {
+            "REFERRAL_ID_INVALID": "Referral id invalid",
+            "REFERRAL_ID_DOES_NOT_EXIST": "Referral id does not exist",
+            "INVALID_ACCESS_TOKEN": "Invalid access token",
+            "INVALID_REFRESH_TOKEN": "Invalid refresh token",
+            "INVALID_OTP": "Invalid OTP",
+            "AUTHENTICATION_TOKEN_NOT_FOUND": "Authentication token not found",
+            "ACCESS_TOKEN_NOT_FOUND": "Access token not found",
+            "PERMISSION_DENIED": "Permission denied",
+            "UNABLE_CONNECT_TO": "Unable connect to ",
+            "MAIL_TYPE_NOT_FOUND": "Mail type does not found",
+            "BAD_REQUEST": "Bad request",
+            "PASSWORD_INCORRECT": "Password incorrect",
+            "CAN_NOT_GET_SETTING": "Can't get your setting",
+            "ACCOUNT_EXIST": "Account is already exist"
+        },
+        "LOGOUT": {
+            "LOG_OUT_SUCCESSFULLY": "Log out successfully"
+        },
+        "CONTACT": {
+            "EMAIL_DOES_NOT_EXIST": "This email address does not exist",
+            "CONTACT_DOES_NOT_EXIST": "Contact does not exist",
+            "SEND_SUCCESS": "This contact has sent successfully"
+        },
+        "SEND_EMAIL": {
+            "SENT_EMAIL_SUCCESSFULLY": "Mail has sent successfully"
+        },
+        "ADMIN": {
+            "ADMIN_NAME_ALREADY_EXIST": "Name has already been used",
+            "CREATE_NAME_SUCCESS": "Admin name has been created successfully",
+            "REMOVE_NAME_SUCCESS": "Admin name has been removed successfully",
+            "REASON_TYPE_NOT_FOUND": "Reason type is not found"
+        },
+        "API_KEY": {
+            "API_KEY_DOES_NOT_EXIST": "API Key does not exist",
+            "API_KEY_NAME_DOES_NOT_DEFINED": "API Key name does not defined",
+            "API_KEY_NAME_EXIST": "API Key name is already exist",
+            "THIS_API_KEY_VERIFICATION_TIME_HAS_EXPIRED": "This API Key verification time has expired",
+            "CONFIRM_API_KEY_IS_SUCCESSFULLY": "Confirm new API Key is successfully",
+            "CREATE_NEW_API_KEY_SUCCESSFULLY": "New API Key is created successfully. Please check your email for confirmation",
+            "REMOVE_API_KEY_SUCCESSFULLY": "This API Key is removed successfully",
+            "REMOVE_ALL_API_KEY_SUCCESSFULLY": "All API Keys are removed successfully",
+            "THIS_VERIFICATION_CODE_IS_INCORRECT": "This verification code is incorrect",
+            "IP_ADDRESS_INVALID": "This IP address is not authorized to access",
+            "UPDATE_VALUE_INVALID": "Updated value is not valid",
+            "UPDATE_API_KEY_SUCCESSFULLY": "API Key is updated successfully",
+            "THIS_API_KEY_ALREADY_CONFIRMED": "This api key already confirmed"
+        },
+        "FAVORITE": {
+            "SUCCESS": "Successfully",
+            "NOT_FOUND": "Favorite is not found"
+        }
+    },
+    "MAIL": {
+        "TITLE": {
+            "ACCOUNT_ACTIVATION": "Account Activation",
+            "VERIFY_CODE": "Verify code",
+            "RESET_PASSWORD": "Please Reset Your Password",
+            "LOGIN_NOTIF": "You have just signed in",
+            "REPLY_CONTACT": "Reply contact",
+            "CHANGE_EMAIL": "Change email notification",
+            "CHANGE_PASSWORD": "Your password changed",
+            "VERIFY_API_KEY": "Verify Api Key",
+            "REJECT_USER": "I was unable to authenticate himself"
+        },
+        "CONTENT": {
+            "CHANGE_MAIL_1": "Please click on the link below and change your email on HARSEQ.",
+            "CHANGE_PASSWORD_1": "Your password has been changed successfully. If it's not you, please contact us with",
+            "CONFIRM_API_1": "Create New API Key",
+            "CONFIRM_API_2": "There has been a request to add a new API key to your account.If you can confirm that this was your own action, please click the button below:",
+            "CONFIRM_API_3": "For your own security, this link will expire after 30 minutes.",
+            "FORGOT_PASSWORD_1": "Please follow this link to reset your password within 30 minutes:",
+            "LOGIN_NOTIF_1": "Welcome customer",
+            "LOGIN_NOTIF_2": "Thank you for using HARSEQ all the time.",
+            "LOGIN_NOTIF_3": "You just logged in to HARSEQ.",
+            "REGISTER_1": "Thank you for registering for HARSEQ.",
+            "REGISTER_2": "It is information of your account registered with us.",
+            "REGISTER_3": "Email address:",
+            "REGISTER_4": "Password:",
+            "REGISTER_5": "Please click on the link below and active account to HARSEQ.",
+            "VERIFY_CODE_1": "Code:",
+            "REJECT_1": "Always thank you for using HARSEQ.",
+            "REJECT_2": "I am sorry very much, but because of «document inadequacy», it was impossible to conduct customer identity verification.",
+            "REJECT_3": "[Common examples that can not be approved]",
+            "REJECT_4": "① The back side of the license is not uploaded",
+            "REJECT_5": "② Documents other than acceptable documents (※) are uploaded",
+            "REJECT_6": "③ A part of the document is missing (Please put a little margin and shoot so that it will not be missing.)",
+            "REJECT_7": "* Receiptable document:",
+            "REJECT_8": "· Passport (Passport cover · Passport personal page · Selphie)",
+            "REJECT_9": "· License (front · back · Serfi)",
+            "REJECT_10": "· Various official documents (front / back · Selphy) ※ It is within 6 months from issue.",
+            "REJECT_11": "Please click on the link below and active account to HARSEQ.",
+            "REJECT_12": "I am sorry for troubling you trouble, but again thank you for shooting your identity confirmation documents and submitting it.",
+            "REJECT_13": "Please click here for procedures. \"Account confirmation\"",
+            "REJECT_14": "Click here for registration method, you can check the registration procedure.",
+            "REJECT_15": "We will take care of you, but since it is a procedure necessary for dealings with security and safety, we would like you to respond as soon as this mail arrives. HARSEQ in the future, thank you.",
+            "REJECT_16": "I am sorry very much, but because of «entered incompleteness», it was impossible to perform customer identity verification.",
+            "REJECT_17": "1 The address you entered does not match the address stated on the identity confirmation document.",
+            "REJECT_18": "2 Address entry field: Input for \"apartment name / number room\" is missing.",
+            "REJECT_19": "3 Address entry field: Hyphen \"-\" is \"~\".",
+            "REJECT_20": "When the address and the current address are different from the address stated on the identity confirmation document due to the move, it is possible to confirm the address with other identification documents and supplementary documents. Please contact us for more information.",
+            "REJECT_21": "I am sorry very much, but because of «image blurring», it was impossible to perform customer identity verification.",
+            "REJECT_22": "① The image is blurred and characters can not be readable · Face can not be discriminated",
+            "REJECT_23": "② Light is reflected and characters can not be read ▪ Her face picture can not be seen",
+            "REJECT_24": "③ Part of the document is missing",
+            "REJECT_25": "Regarding account, only one account per person.",
+            "REJECT_26": "We will freeze accounts that will not be used, so please fill out the following information from 【HARSEQ inquiries】 and contact us.",
+            "REJECT_27": "【Entry matter】",
+            "REJECT_28": "Name:",
+            "REJECT_29": "Birthday:",
+            "REJECT_30": "Your e-mail address:",
+            "REJECT_31": "Frozen email address:",
+            "REJECT_32": "Also, after freezing, you will not be able to log in from the customer so please check in advance that there is no funds in Wallet, please contact us.",
+            "REJECT_33": "We are sorry for troubling you, but since it is a procedure necessary for dealings with safety and security, we would like to receive your response as soon as this mail arrives.HARSEQ in the future, thank you.",
+            "REJECT_34": "1 Update your phone number.",
+            "REJECT_35": "2 Confirm the message sent to the phone number.",
+            "REJECT_36": "3 Enter the 6 numbers you receive to confirm your phone number.",
+            "SIGNATURE_1": "Thank you for your continued support of HARSEQ.",
+            "SIGNATURE_2": "※ This mail can not be replied because it is dedicated for sending.",
+            "SIGNATURE_3": "※ For those who do not recognize this email, please contact us for any questions or comments:",
+            "SIGNATURE_4": "HARSEQ Systems Inc."
+        }
+    }
+}
