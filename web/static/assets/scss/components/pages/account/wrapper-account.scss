@@ -1,0 +1,96 @@
+$wrapper-account: 'wrapper-account';
+
+.#{$wrapper-account} {
+  @media screen and (min-width: 768px) {
+    background: rgba(32, 32, 35, 0.5);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s linear;
+    &:not(:first-child) {
+      margin-top: 1.5rem;
+    }
+    &__title {
+      font-size: 20px;
+      line-height: 29px;
+      letter-spacing: 0.01em;
+      padding: 2rem;
+      border-bottom: 1px solid #0C0A0A;
+      background: #202023;
+      span {
+        display: block;
+        color: #838A92;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        margin-top: 0.5rem;
+      }
+    }
+    &__content {
+      padding: 2rem;
+      background: #202023;
+    }
+    &__tabs {
+      margin: 0;
+      &::v-deep {
+        .col-auto {
+          width: 22%;
+          padding: 0;
+        }
+        .tab-content {
+          width: 78%;
+          padding: 2rem;
+          border-left: 1px solid #0C0A0A;
+          background: #202023;
+        }
+        .nav-tabs {
+          border-bottom: none;
+        }
+        .nav-item {
+          width: 100%;
+          border-bottom: 1px solid #0C0A0A;
+          .nav-link {
+            font-size: 12px;
+            line-height: 18px;
+            letter-spacing: 0.01em;
+            color: #838A92;
+            padding: 1.5rem 0 1.5rem 2rem;
+            background: transparent;
+            border: none;
+            &.active {
+              background: #202023;
+              box-shadow: 0 10px 20px rgba(4, 4, 4, 0.5);
+              position: relative;
+              &::before {
+                content: "";
+                border-left: 3px solid #B50000;
+                border-top: 3px solid transparent;
+                border-bottom: 3px solid transparent;
+                height: 31px;
+                width: 0;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+              & > b {
+                color: #F7F8FA;
+              }
+            }
+            b {
+              display: block;
+              font-size: 14px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+      &--nowrap {
+        &::v-deep {
+          .tab-content {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}

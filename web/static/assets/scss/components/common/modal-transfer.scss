@@ -1,0 +1,48 @@
+$modal-transfer : 'modal-transfer';
+
+/deep/ .#{$modal-transfer} {
+
+  @include mq($until: mobile) {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20.425vw;
+    @include mq($from : smallMobile-480) {
+      padding-bottom: 69px;
+    }
+  }
+
+  @include mq($from: mobile) {
+    display: none;
+  }
+  .modal-dialog {
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    max-width: none;
+    height: 100%;
+    @include mq($from: mobile) {
+      display: none;
+    }
+  }
+  .modal-content {
+    background-color: #222733;
+    opacity: 0;
+    border-radius: 0;
+    border: none;
+  }
+  &__close {
+    position: absolute;
+    right: -32px;
+    top: -85px;
+  }
+  &.show {
+    .modal-content {
+      opacity: 1;
+      padding: 2.4rem 2.5rem 2rem;
+    }
+    .modal-body {
+      padding: 0;
+    }
+  }
+}

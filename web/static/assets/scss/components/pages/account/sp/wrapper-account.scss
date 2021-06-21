@@ -1,0 +1,82 @@
+$wrapper-account: 'wrapper-account';
+
+.#{$wrapper-account} {
+    padding: 0 1rem;
+    background: #202023;
+    min-height: calc(100vh - 20.425vw);
+    &__title {
+        padding: 1.25rem 0;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        &:after {
+            content: "";
+            height: 1px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            background: linear-gradient(90deg, #161618 0%, #757580 49.69%, #161618 100%);
+        }
+    }
+    &__content {
+        padding-top: 1.5rem;
+        padding-bottom: 2rem;
+    }
+    &__cta-back {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &__hdg {
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+    }
+    &__cta {
+        width: 100%;
+        text-align: center;
+        margin-top: 3rem;
+        .btn--type1 {
+            width: 100%;
+        }
+    }
+    &__cta-filter {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__cta-close {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 32px;
+        width: 32px;
+    }
+    .form-account {
+        display: block;
+        border-bottom: 0;
+        h4 {
+            margin-bottom: 1rem;
+        }
+    }
+    .form__note-money {
+        margin-top: .5rem;
+    }
+    .form__note-popover {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+    }
+
+    @media screen and (min-width: 981px) {
+        display: none;
+    }
+}

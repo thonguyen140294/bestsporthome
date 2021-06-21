@@ -1,0 +1,149 @@
+$bank-card-list: 'bank-card-list';
+$bank-card-item: 'bank-card-item';
+
+.#{$bank-card-list} {
+    &__wrap {
+        display: flex;
+    }
+    .#{$bank-card-item} {
+        flex: 0 0 80%;
+        margin-right: .5rem;
+        max-width: 300px;
+        height: auto;
+        &:last-child {
+            margin-right: 0;
+        }
+        label {
+            border-radius: 10px;
+            background: #323439;
+            border: 1px solid #3B3E43;
+            width: 100%;
+            height: 100%;
+        }
+        &__content {
+            cursor: pointer;
+            letter-spacing: 0.01em;
+            padding: .5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            height: 100%;
+            img {
+                width: 40%;
+                filter: grayscale(1);
+            }
+        }
+        &__wrap {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            b {
+                display: block;
+                font-size: 12px;
+                line-height: 18px;
+                color: $body-color;
+                text-transform: uppercase;
+            }
+            span {
+                display: block;
+                font-size: 12px;
+                line-height: 18px;
+                text-transform: capitalize;
+                color: $fifth-color;
+            }
+            &:last-child {
+                margin-bottom: 0;
+                margin-top: auto;
+            }
+        }
+        input[type="radio"] {
+            margin:0;
+            padding:0;
+            -webkit-appearance:none;
+            -moz-appearance:none;
+            appearance:none;
+            position: absolute;
+            display: none;
+            &:checked + label{
+                background: linear-gradient(73.93deg, #FFFFFF 16.71%, #FFFFFF 59.03%, rgba(242, 242, 242, 0) 72.25%), #F0F0F0;
+                .#{bank-card-item}__wrap {
+                    b {
+                        color: #202023;
+                    }
+                }
+                .#{bank-card-item}__content {
+                  img {
+                      filter: grayscale(0);
+                  }
+              }
+            }
+
+            &:disabled::before {
+                cursor: not-allowed;
+                background-color: #bfbfbf;
+                border-color: #bfbfbf;
+            }
+        }
+        @media screen and (min-width: 768px) {
+            flex: 0 0 45%;
+            &__content {
+                padding: 1rem 1.5rem;
+                img {
+                    width: auto;
+                }
+            }
+            &__wrap {
+                b {
+                    font-size: 15px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex;
+    width: 26px;
+    height: 26px;
+    margin: auto;
+    background: #161618;
+    border-radius: 50%;
+    &.swiper-button-disabled {
+      display: none;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      background: url("#{$image-path}icons/right-slide.svg") no-repeat 50%;
+      background-size: 80%;
+    }
+  }
+  .swiper-button-prev {
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    right: auto;
+    transform: scaleX(-1);
+    &::after {
+      content: "";
+      position: absolute;
+      right: -3px;
+    }
+  }
+
+  .swiper-button-next {
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    left: auto;
+    &::after {
+      content: "";
+      position: absolute;
+      left: -3px;
+    }
+  }
+    @import "../common/base/base-error";
+}
+

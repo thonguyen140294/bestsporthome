@@ -1,0 +1,25 @@
+$partner-item: 'partner-item';
+.#{$partner-item} {
+  margin-bottom: 1rem;
+  padding: 0 .5rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  p {
+    text-align: center;
+  }
+
+  img {
+    mix-blend-mode: luminosity;
+    height: 32px;
+    width: 103px;
+  }
+
+  @include mq($from: smallMobile-768) {
+    margin-bottom: 0;
+    img {
+      width: 200px;
+      height: 64px;
+    }
+  }
+}

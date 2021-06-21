@@ -1,0 +1,38 @@
+$modal-close : 'modal-close';
+
+.#{$modal-close} {
+  display     : none;
+  align-items : center;
+  position    : fixed;
+  top         : 3rem;
+  left        : 2rem;
+  cursor      : pointer;
+  font-style  : normal;
+  font-weight : normal;
+  font-size   : 18px;
+  line-height : 32px;
+  text-align  : center;
+  z-index     : 9999;
+  color       : #aaafb7;
+  transition  : all 0.5s ease;
+  img {
+    display      : block;
+    width        : 32px;
+    transition   : all 0.5s ease;
+    margin-right : 5px;
+    margin-top   : 2px;
+  }
+  @include mq($from : mobile) {
+    &.show {
+      display : flex;
+    }
+  }
+  &:hover, &:focus {
+    color      : $second-color;
+    transition : all 0.5s ease;
+    img {
+      opacity    : 0.8;
+      transition : all 0.5s ease;
+    }
+  }
+}

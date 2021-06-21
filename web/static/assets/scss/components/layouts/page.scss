@@ -1,0 +1,91 @@
+$page : 'page';
+$header : 'header';
+
+/deep/ .#{$page} {
+  padding-bottom : 20.425vw;
+  @include mq($from : smallMobile-480) {
+    padding-bottom : 69px;
+  }
+  @include mq($from : mobile) {
+    padding-bottom : 0;
+  }
+  &.adaptive {
+    &.mobile {
+      width  : $page-width-mobile;
+      margin : 0 auto;
+    }
+  }
+  &--simple, &--scroll {
+    .#{$header}__bg {
+      background : #161618;
+      transition : all .5s linear;
+    }
+    @include mq($from : mobile) {
+      .#{$header} {
+        height     : 90px;
+        transition : all .5s linear;
+        .logo {
+          width  : 76px;
+          height : 66px;
+        }
+        .menu {
+          padding-left : 1rem;
+        }
+      }
+    }
+  }
+  &--simple {
+    .#{$header} {
+      position : sticky;
+    }
+    .content-body {
+      background : #0c0a0a;
+    }
+  }
+  &--account {
+    header {
+      display : none;
+    }
+    footer {
+      display : none;
+    }
+    @include mq($from : mobile) {
+      header {
+        display : block;
+      }
+      footer {
+        display : block;
+      }
+    }
+  }
+}
+
+@keyframes showBtn {
+  0%   {bottom: 0px}
+  100% {bottom: 120px}
+}
+
+.scroll-top {
+  opacity: 0;
+  position: fixed;
+  width: 36px;
+  right: 20px;
+  z-index: 3;
+  cursor: pointer;
+  display: none;
+
+  @include mq($from : mobile) {
+    width: 60px;
+    height: 60px;
+    bottom: 120px;
+    right: 8px;
+  }
+}
+
+.show-scroll-btn {
+  opacity: 1;
+  visibility: visible;
+  animation-name: showBtn;
+  animation-duration: 1s;
+  bottom: 120px;
+}

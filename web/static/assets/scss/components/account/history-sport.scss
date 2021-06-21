@@ -1,0 +1,19 @@
+$history-sport : 'history-sport';
+
+.#{$history-sport} {
+  min-height : 290px;
+  background : transparent;
+  &.loading {
+    position : relative;
+    opacity  : 0.6;
+    &:before {
+      content  : '';
+      position : absolute;
+      left     : 0;
+      top      : 0;
+      right    : 0;
+      bottom   : 0;
+      z-index  : 2;
+    }
+  }
+}

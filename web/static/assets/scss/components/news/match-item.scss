@@ -1,0 +1,213 @@
+$match-item : 'match-item';
+
+.#{$match-item} {
+  position : relative;
+  &__slide {
+    background     : #e5e6e9;
+    color          : #323439;
+    letter-spacing : 0.01em;
+    &::v-deep {
+      &:hover,
+      &:focus {
+        .base-button {
+          background-color : #b50000;
+        }
+      }
+      @include mq($until : smallMobile-768) {
+        .base-button {
+          background-color : #b50000;
+        }
+      }
+    }
+  }
+  &__top {
+    padding : 1rem;
+  }
+  &__bot {
+    background      : #d7d8dd;
+    border-top      : 1px solid #ffffff;
+    padding-left    : 0.8rem;
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+  }
+  &__team {
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+    margin-bottom   : .5rem;
+    &:last-child {
+      margin-bottom : 0;
+    }
+    p {
+      display     : flex;
+      align-items : center;
+			min-height	: 36px;
+    }
+  }
+	&__info {
+		&:first-child {
+			flex-basis: 70%
+		}
+	}
+  &__link {
+    @extend %typo-link;
+  }
+  &__odd {
+		flex-basis: 30%;
+		justify-content: space-around;
+    span {
+      display : inline-block;
+      padding : 0 .5rem;
+    }
+    .odd-up {
+      color : #febc1f;
+    }
+    .odd-down {
+      color : #16dc89;
+    }
+  }
+  .champion {
+    span {
+      display : none;
+    }
+    img {
+      width : 30px;
+    }
+  }
+  .team {
+    color          : #323439;
+    font-size      : 12px;
+    line-height    : 18px;
+    text-transform : uppercase;
+    font-weight    : bold;
+    margin-left    : .5rem;
+  }
+  .img-match {
+    display  : inline-block;
+    height   : 28px;
+    width    : 28px;
+    position : relative;
+    img {
+      @extend %typo-img;
+      object-fit : contain;
+    }
+  }
+  .hour {
+    @include mq($until : smallMobile-768) {
+      color         : $primary-color;
+      font-weight   : bold;
+      font-size     : 12px;
+      line-height   : 18px;
+      position      : relative;
+      display       : inline-block;
+      padding-right : 10px;
+      margin-right  : 5px;
+      &:after {
+        content          : '';
+        position         : absolute;
+        right            : 0;
+        height           : 12px;
+        width            : 1px;
+        background-color : #838a92;
+        top              : 56%;
+        transform        : translateY(-50%);
+      }
+    }
+  }
+  .time {
+    @include mq($until : smallMobile-768) {
+      padding-right : 1rem;
+    }
+    @include mq($until : smallMobile-320) {
+      text-align : center;
+      .hour, .date {
+        display : block;
+        padding : 0 5px;
+        margin  : 0;
+        &:after {
+          display : none;
+        }
+      }
+    }
+  }
+
+  @include mq($from : smallMobile-768) {
+    &__slide {
+      display         : flex;
+      justify-content : space-between;
+    }
+    &__top {
+      display   : flex;
+      flex-wrap : wrap;
+      flex      : 1;
+    }
+    &__bot {
+      width                 : 185px;
+      display               : block;
+      padding               : 1rem;
+      text-align            : center;
+      background            : #d7d8dd url("#{$image-path}/components/news/bg-match.svg") no-repeat center;
+      background-size       : cover;
+      background-blend-mode : soft-light;
+      border-top            : 0;
+      position              : relative;
+      &:before {
+        content       : '';
+        display       : block;
+        position      : absolute;
+        left          : -12px;
+        top           : 50%;
+        width         : 0;
+        height        : 0;
+        border-top    : 20px solid transparent;
+        border-right  : 26px solid #d7d8dd;
+        border-bottom : 20px solid transparent;
+        transform     : translateY(-50%);
+      }
+    }
+    &__team {
+      width : 100%;
+    }
+    &__odd {
+      font-size   : 16px;
+      font-weight : 600;
+    }
+    .hour {
+      font-size   : 26px;
+      line-height : 38px;
+      color       : $primary-color;
+      font-weight : bold;
+    }
+    .date {
+      font-size     : 12px;
+      line-height   : 18px;
+      margin-bottom : 1rem;
+    }
+    .champion {
+      margin-bottom : 1rem;
+			max-height: 20px;
+      img {
+        display : none;
+      }
+      span {
+        display     : inline-block;
+        font-size   : 12px;
+        line-height : 18px;
+      }
+    }
+    .img-match {
+      width  : 57px;
+      height : 57px;
+    }
+    .team {
+      font-size   : 16px;
+      line-height : 26px;
+    }
+    .time {
+      span {
+        display : block;
+      }
+    }
+  }
+}

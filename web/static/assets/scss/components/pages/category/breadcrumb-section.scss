@@ -1,0 +1,43 @@
+$breadcrumb : 'breadcrumb';
+
+.#{$breadcrumb} {
+  font-size     : 10px;
+  line-height   : 15px;
+  padding       : 1rem 0;
+  background    : transparent;
+  position      : relative;
+  margin-bottom : 0;
+  &-item {
+    &:before {
+      color : #202023;
+    }
+    a {
+      color      : #202023;
+      transition : all 0.5s ease;
+      text-transform: uppercase;
+      &:hover, &:focus {
+        color      : $primary-color;
+        transition : all 0.5s ease;
+      }
+    }
+    &.active {
+      color       : $primary-color;
+      font-weight : bold;
+    }
+  }
+  &__back {
+    margin-right : .5rem;
+    line-height  : 12px;
+  }
+  @include mq($from : smallMobile-768) {
+    padding     : 2rem 0 0;
+    font-size   : 16px;
+    line-height : 23px;
+    &__back {
+      line-height : 20px;
+      img {
+        width : 10px;
+      }
+    }
+  }
+}

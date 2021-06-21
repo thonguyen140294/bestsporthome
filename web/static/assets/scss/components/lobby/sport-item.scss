@@ -1,0 +1,98 @@
+$sport-item: 'sport-item';
+
+.#{$sport-item} {
+  position: relative;
+  transition: all .3s linear;
+  &:hover {
+    transform: scale(.95);
+    filter: brightness(1.1);
+  }
+  &__link {
+    @extend %typo-link;
+  }
+  &__container {
+    position: relative;
+    transition: .4s cubic-bezier(.5,0,.1,1);
+    color: #fff;
+    @include mq($from: smallMobile-768) {
+      &:after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: linear-gradient(180deg, rgba(27, 22, 23, 0) 0.54%, rgba(27, 22, 23, 0.85) 88.38%);
+        top: 0;
+        left: 0;
+      }
+    }
+
+  }
+  &__img {
+    /deep/ img {
+      width: 450px;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 1 / 1.2;
+      @include mq($from: mobile) {
+        aspect-ratio: 1;
+      }
+    }
+  }
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    @include mq($until: smallMobile-768) {
+      height: 60%;
+      background: linear-gradient(180deg, rgba(27, 22, 23, 0) 0.54%, rgba(27, 22, 23, 0.85) 88.38%);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding: .5rem;
+      text-align: center;
+    }
+
+    &__btn {
+      background-color: $third-color;
+      text-align: right;
+      position: relative;
+      padding: 1rem 1.5rem;
+      font-size: 16px;
+      line-height: 23px;
+
+      img {
+        width: 20px;
+        margin-left: .25rem;
+      }
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 47px;
+      padding: 0 1.5rem;
+      @include mq($until: smallMobile-768) {
+        font-size: 14px;
+        line-height: 18px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        padding: 0;
+      }
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 23px;
+      padding: 0 1rem 0 1.5rem;
+      margin-bottom: 1rem;
+      @include mq($from: smallMobile-768) {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+  }
+}

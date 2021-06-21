@@ -1,0 +1,37 @@
+$casino-section: 'casino-section';
+
+.#{$casino-section} {
+  background: url("#{$image-path}components/pages/home/casino-section/bg-2.jpg") no-repeat center;
+  background-size: cover;
+  @include mq($from: smallMobile-768) {
+    padding-bottom: 0;
+    background: url("#{$image-path}components/pages/home/casino-section/bg-pc.jpg") no-repeat center;
+    background-position: bottom;
+    background-size: cover;
+    &__container {
+      display: flex;
+    }
+  }
+
+  &__model {
+    flex: 0 0 35%;
+    max-width: 35%;
+    position: relative;
+    display: none;
+    @include mq($from: smallMobile-768) {
+      display: block;
+      right: 0;
+    }
+    @include mq($from: tablet) {
+      right: -6rem;
+    }
+
+    picture {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      object-fit: contain;
+      object-position: bottom;
+    }
+  }
+}

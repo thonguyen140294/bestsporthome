@@ -1,0 +1,78 @@
+$news-list : 'news-list';
+
+.#{$news-list} {
+  &.type-1 {
+    display    : flex;
+    overflow-x : auto;
+    overflow-y : hidden;
+    margin     : 0.5rem 0;
+    @include mq($from : mobile) {
+      -moz-column-gap       : 2rem;
+      column-gap            : 2rem;;
+    }
+    @include mq($from : smallMobile-768) {
+      display               : grid;
+      grid-template-columns : repeat(3, 1fr);
+      -moz-column-gap       : 1rem;
+      column-gap            : 1rem;
+      overflow              : unset;
+    }
+    &::-webkit-scrollbar {
+      display : none;
+    }
+  }
+  &.type-2 {
+    &::v-deep {
+      .news-item {
+        &__content {
+          padding: 49% 1.5rem 1.5rem;
+        }
+      }
+    }
+    @include mq($from : mobile) {
+      -moz-column-gap       : 2rem;
+      column-gap            : 2rem;
+      margin-bottom         : 2rem;
+    }
+    @include mq($from : tablet) {
+      display               : grid;
+      grid-template-columns : repeat(2, 1fr);
+      -moz-column-gap       : 1rem;
+      column-gap            : 1rem;
+      margin-bottom         : 1rem;
+    }
+  }
+  &.type-3 {
+    display    : flex;
+    overflow-x : auto;
+    overflow-y : hidden;
+    margin     : 0.5rem 0;
+    @include mq($from : smallMobile-768) {
+      display               : grid;
+      grid-template-columns : repeat(3, 1fr);
+      -moz-column-gap       : 1rem;
+      column-gap            : 1rem;
+      row-gap               : 1rem;
+      margin                : 0;
+      overflow              : unset;
+    }
+    &::-webkit-scrollbar {
+      display : none;
+    }
+  }
+  &.type-4 {
+    margin                : 0.5rem 0;
+    display               : grid;
+    grid-template-columns : repeat(2, 1fr);
+    -moz-column-gap       : 0.5rem;
+    column-gap            : 0.5rem;
+    row-gap               : 0.5rem;
+    overflow              : unset;
+    @include mq($from : smallMobile-768) {
+      grid-template-columns : repeat(3, 1fr);
+      -moz-column-gap       : 1rem;
+      column-gap            : 1rem;
+      row-gap               : 1rem;
+    }
+  }
+}

@@ -1,0 +1,137 @@
+$modal : 'modal';
+
+/deep/ .#{$modal} {
+	&-content{
+		background: #202023;
+	}
+	@include mq($until : 425px) {
+		&-dialog{
+			margin: 0;
+			min-height: calc(100vh - 20.425vw);
+		}
+		&-content{
+			min-height: calc(100vh - 20.425vw);
+		}
+		&-body{
+			padding: 0 1rem;
+		}
+	}
+	@include mq($from : 768px) {
+		height : 100%;
+		&-open {
+			height : 100%;
+			.modal {
+				&__model {
+					transform : translateX(0);
+				}
+			}
+		}
+		.close {
+			top             : 0.5rem;
+			right           : 0.5rem;
+			position        : absolute;
+			color           : #838a92;
+			width           : 24px;
+			height          : 24px;
+			opacity         : 1;
+			cursor          : pointer;
+			background      : url("#{$image-path}/icons/close.svg") no-repeat top;
+			top: 2rem;
+      right: 2rem;
+			span {
+				display     : inline-block;
+				cursor      : pointer;
+				font-size   : 24px;
+				text-shadow : none;
+			}
+		}
+		&.show {
+			.modal-content {
+				transform  : translateX(0);
+				transition : all 0.3s linear;
+			}
+		}
+		&-backdrop {
+			opacity : .9;
+		}
+		&__model {
+			position         : absolute;
+			width            : calc(100% - 500px);
+			height           : 95%;
+			bottom           : 0;
+			transform        : translateX(-100%);
+			transition       : all .3s linear;
+			transition-delay : 1s;
+			img {
+				object-fit      : contain;
+				object-position : bottom;
+				position        : absolute;
+				width           : 100%;
+				height          : 100%;
+			}
+		}
+		&__logo {
+			margin-top    : .75rem;
+			margin-bottom : 2rem;
+			text-align    : center;
+			span {
+				display     : block;
+				font-size   : 14px;
+				line-height : 20px;
+				color       : $fifth-color;
+				margin-top  : .5rem;
+			}
+			img {
+				width : 74px;
+			}
+		}
+		&__title {
+			font-size     : 16px;
+			line-height   : 23px;
+			color         : $second-color;
+			margin-bottom : 1rem;
+			text-align    : center;
+		}
+		&--type1 {
+			.modal-dialog {
+				margin : 0 0 0 auto;
+				height : 100%;
+			}
+			.modal-content {
+				height          : calc(100% - 20.425vw);
+				max-width       : 500px;
+				padding         : 1.25rem 1rem;
+				position        : absolute;
+				width           : 100%;
+				overflow-x      : hidden;
+				overflow-y      : auto;
+				background      : #161618 url("#{$image-path}/components/user/popup.png") no-repeat top;
+				background-size : 100% 50%;
+				transform       : translateX(100%);
+				border          : none;
+			}
+			.modal-body {
+				padding : 0;
+			}
+		}
+		&--type2 {
+			.modal-content {
+				background : #0C0A0A;
+				border     : 1px solid #2d333a;
+				h4 {
+					font-size      : 20px;
+					line-height    : 32px;
+					text-align     : center;
+					margin-bottom  : 2.5rem;
+					text-transform : uppercase;
+				}
+			}
+			.form-account__wrap {
+				padding : 2rem 4rem;
+			}
+			.modal-dialog {
+				max-width : 703px;
+			}
+		}
+	}
+}

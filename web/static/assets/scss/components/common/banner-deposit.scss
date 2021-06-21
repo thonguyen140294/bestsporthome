@@ -1,0 +1,47 @@
+$banner-deposit: 'banner-deposit';
+
+.#{$banner-deposit} {
+  z-index: 5;
+  position: absolute;
+  padding: 0 1rem;
+  width: 100%;
+  text-align: center;
+  bottom: 3rem;
+  left: 50%;
+  color: #fff;
+  transform: translateX(-50%);
+  h2 {
+    font-size: 4.8vw;
+    line-height: 8.125vw;
+    @include mq($from: mobile) {
+      font-size: 46px;
+      line-height: 67px;
+    }
+    span {
+      color: #FEBC1F;
+    }
+  }
+  p {
+    font-weight: bold;
+    font-size: 4.375vw;
+    line-height: 6.25vw;
+    color: #FFF0F0;
+    @include mq($from: mobile) {
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+
+  /deep/ .base-button--banner {
+    width: 110px;
+    height: 28px;
+    font-size: 11px;
+    padding: 0;
+    @include mq($from: 768px) {
+      width: 220px;
+      height: 60px;
+      font-size: 18px;
+      padding: .5rem 1rem;
+    }
+  }
+}

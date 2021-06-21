@@ -1,0 +1,50 @@
+$base-ranger-slider: 'base-ranger-slider';
+
+.#{$base-ranger-slider} {
+  &::v-deep {
+    &.range-slider {
+      width: 100%;
+      padding: 0;
+      display: block;
+      border: 2px solid #838a92;
+      border-radius: 10px;
+      height: 10px;
+      margin-bottom: 8px;
+      &.disabled {
+        opacity: 1;
+      }
+      .range-slider-inner {
+        display: block;
+      }
+      .range-slider-rail {
+        height: 6px;
+        border-radius: 10px;
+        background-color: #F7F8FA;
+      }
+      .range-slider-fill {
+        height: 6px;
+        border-radius: 10px;
+        background-color: #FEBC1F;
+      }
+      .range-slider-knob {
+        height: 0;
+        width: 0;
+        display: block;
+        background: #fff;
+        position: relative;
+        &::after {
+          content: "";
+          background: url("#{$image-path}icons/btn-transfer.svg") no-repeat center;
+          background-size: contain;
+          height: 40px;
+          width: 40px;
+          position: absolute;
+          bottom: unset;
+          right: unset;
+          transform: translate(-50%, -50%);
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}

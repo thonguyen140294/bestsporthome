@@ -1,0 +1,51 @@
+$history-table : 'history-table';
+
+.#{$history-table} {
+  @include mq($from : smallMobile-768) {
+    overflow : auto;
+    .table {
+      font-size      : 12px;
+      line-height    : 18px;
+      background     : #0d0304;
+      letter-spacing : 0.01em;
+      margin-bottom  : 2.5rem;
+      thead {
+        background : linear-gradient(180deg, #5d6067 0%, #2d2f33 100%);
+        th {
+          border-bottom  : 0;
+          text-transform : uppercase;
+        }
+      }
+      th, td {
+        border-top : 0;
+        padding    : .88rem .5rem .88rem 1.5rem;
+      }
+      td {
+        &:last-child {
+          text-transform : uppercase;
+          white-space    : nowrap;
+        }
+      }
+      .success {
+        color : #16dc89;
+      }
+      .fail {
+        color : #ec1111;
+      }
+      .pending, .draw {
+        color : $second-color;
+      }
+      .processing {
+        color : $second-color;
+      }
+      tbody tr {
+        &:nth-of-type(even) {
+          background : #36383d;
+        }
+      }
+    }
+    .daterangepicker {
+      color : #000000;
+    }
+  }
+}

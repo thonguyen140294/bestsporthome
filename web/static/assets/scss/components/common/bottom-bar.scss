@@ -1,0 +1,36 @@
+$bottom-bar : 'bottom-bar';
+
+.#{$bottom-bar} {
+  display          : flex;
+  height           : 20.425vw;
+  justify-content  : space-between;
+  color            : #bdbdbd;
+  position         : fixed;
+  width            : 100%;
+  bottom           : 0;
+  left             : 0;
+  z-index          : 10000;
+  background-color : #202023;
+  transition       : all .3s linear;
+  @include mq($from : smallMobile-480) {
+    height : 69px;
+  }
+  &.hide {
+    max-height : 0;
+  }
+  &.active {
+    /deep/ .nuxt-link-active {
+      color      : #f7f8fa;
+      background : transparent;
+    }
+    .bottom-bar-item.active {
+      /deep/ .nuxt-link-active {
+        background-color : $primary-color;
+        color            : $body-color;
+      }
+    }
+  }
+  @include mq($from : mobile) {
+    display : none;
+  }
+}

@@ -1,0 +1,19 @@
+$game-center-section: 'sport-center-section';
+
+.#{$game-center-section} {
+  padding: 2rem 0;
+  background: #f0f0f0;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: .5rem;
+    row-gap: 1.5rem;
+    padding: 0;
+    @include mq($from: smallMobile-768) {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 1rem;
+      row-gap: 4rem;
+      padding: 6rem 15px;
+    }
+  }
+}

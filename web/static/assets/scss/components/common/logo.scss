@@ -1,0 +1,32 @@
+$logo : 'logo';
+
+.#{$logo} {
+  display    : flex;
+  width      : 129px;
+  height     : 120px;
+  position   : relative;
+  margin-top : .25rem;
+  transition : all .5s linear;
+  @include mq($from : mobile) {
+    margin-top : .75rem;
+  }
+  @include mq($until : tablet) {
+    width  : 102px;
+    height : 104px;
+  }
+  @include mq($until : mobile) {
+    width  : 51px;
+    height : 52px;
+  }
+  a {
+    @extend %typo-link;
+  }
+  img {
+    object-fit : contain;
+    width: 130px;
+    height: 100%;
+  }
+  &--panel {
+    margin-top : 0;
+  }
+}

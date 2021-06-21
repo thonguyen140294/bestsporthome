@@ -1,0 +1,10 @@
+$footer: 'footer';
+
+.#{$footer} {
+  background-color: #252525;
+  .copyright{
+    text-align: center;
+    padding-bottom: 30px;
+    color: #8c8c8c;
+  }
+}

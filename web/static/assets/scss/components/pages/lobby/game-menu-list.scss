@@ -1,0 +1,116 @@
+$game-menu-list: 'game-menu-list';
+
+.#{$game-menu-list} {
+  background-color: $third-color;
+  position: relative;
+  order: 3;
+
+  .game-list__arrow {
+    background: $third-color;
+  
+    i {
+      transform: none;
+      background-size: 70%;
+    }
+  }
+  
+  .game-list__arrow.prev {
+    left: unset;
+  }
+
+  .nav {
+    display: flex;
+    list-style-type: none;
+    flex-wrap: nowrap;
+    @extend %hide-scroll;
+  }
+
+  @include mq($from: mobile) {
+    order: 3;
+    width: calc(100% - 32rem);
+    margin-left: 4rem;
+    padding-right: 4rem;
+    transform: translateX(0);
+    transition: all .3s linear;
+    &:before {
+      content: "";
+      background: linear-gradient(90deg,rgba(14,10,10,.1),rgba(14,10,10,.6) 20%,#0e0a0a);
+      transform: matrix(-1,0,0,1,0,0);
+      width: 6rem;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+    }
+
+    .nav {
+      margin-right: -2rem;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .nav {
+      overflow-x: visible;
+      overflow-y: visible;
+    }
+
+    .arrow-right {
+      display: none;
+    }
+
+    .arrow-left {
+      display: none;
+    }
+  }
+}
+
+.#{$game-menu-list}.game-list__container {
+  .swiper-wrapper {
+    margin: 0;
+  }
+
+  .swiper-slide {
+    width: auto;
+    &:first-child {
+      width: auto;
+    }
+  }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.prev-arrow,
+.next-arrow {
+  display: none;
+  @include mq($from: mobile) {
+    display: block;
+  }
+
+}
+
+.swiper-slide {
+  text-align: center;
+  width: auto;
+  // font-size: 18px;
+  // background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-button-disabled {
+  display: none;
+}

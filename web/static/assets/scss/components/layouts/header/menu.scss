@@ -1,0 +1,64 @@
+$menu : 'menu';
+
+.#{$menu} {
+  background: linear-gradient(89.93deg, #b50000, #f04735);
+  position: relative;
+  .flex-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mq($from : 1200px) {
+      margin: 0 100px;
+    }
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .header--menu{
+    &__item{
+      padding: 0 5px;
+      a{
+        padding: 10px 15px;
+        font-size: 14px;
+        text-transform: uppercase;
+        position: relative;
+        letter-spacing: 1px;
+        display: block;
+        color: #fff;
+      }
+      &:hover{
+        .header--menu__sub{
+          opacity: 1;
+          visibility: visible;
+          transform: scale(1);
+        }
+      }
+    }
+    &__sub{
+      position: absolute;
+      left: 0;
+      top: 100%;
+      z-index: 10;
+      width: 100%;
+      background-color: #2f2f2f;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      .content-submenu{
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+  .show-sub>a{
+    &::before{
+      position: absolute;
+      right: 4px;
+      top: 11px;
+      content: ">";
+      transform: rotate(90deg);
+    }
+  }
+}

@@ -1,0 +1,111 @@
+$game-feature: 'game-feature';
+
+.#{$game-feature} {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 30px;
+  padding: 1.5rem;
+  background-size: cover;
+  text-align: center;
+
+  &__bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: .2;
+    filter: blur(2px);
+    -webkit-filter: blur(2x);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__wrap,
+  &__content {
+    z-index: 2;
+  }
+
+  .game-feature__jack-pot {
+    position: relative;
+  }
+  .game-feature__text {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 1rem;
+  }
+  .game-feature__name {
+    font-size: 32px;
+    line-height: 47px;
+    text-transform: uppercase;
+    padding: 0;
+  }
+  .game-feature__jack-pot {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23px;
+    padding: 0;
+    color: #FEBC1F;
+  }
+  .btn--choingay {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 3px;
+  }
+
+  @media screen and (min-width: 981px) {
+    flex-direction: row;
+    justify-content: center;
+    background-size: cover;
+    padding: 0;
+
+    .game-feature__wrap {
+      padding: 1.5rem;
+      order: 2;
+      max-width: 575px;
+      cursor: pointer;
+    }
+
+    .game-feature__content {
+      padding: 1.5rem;
+      order: 1;
+      text-align: right;
+      padding-right: 4rem;
+    }
+
+    .game-feature__text {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 800;
+    }
+
+    .game-feature__name {
+      font-size: 64px;
+      line-height: 94px;
+      text-transform: none;
+    }
+
+    .game-feature__jack-pot {
+      font-size: 32px;
+      line-height: 47px;
+      font-weight: 500;
+      color: $second-color;
+      span {
+        margin-left: .25rem;
+        display: inline-block;
+      }
+    }
+
+    .btn--choingay {
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 26px;
+      min-width: 220px;
+      height: 60px;
+    }
+  }
+}

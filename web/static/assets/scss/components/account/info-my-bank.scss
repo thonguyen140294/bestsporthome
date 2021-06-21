@@ -1,0 +1,169 @@
+$info-my-bank: 'info-my-bank';
+$bank-account: 'bank-account';
+$support-banks: 'support-banks';
+.#{$info-my-bank} {
+  @media screen and (min-width: 981px) {
+    padding: 2rem;
+  }
+
+  h4 {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.5rem;
+  }
+
+  .#{$bank-account} {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+
+    &__item {
+      background: linear-gradient(245.08deg, rgba(0, 0, 0, 0.19) -25.63%, rgba(50, 50, 50, 0.65) 39.5%, #0C0A0A 40.67%, #0C0A0A 43.73%), #0C0A0A;
+      border: 1px solid #3B3E43;
+      overflow: hidden;
+      border-radius: 10px;
+      padding: 1.5rem;
+      position: relative;
+
+      &:last-child {
+        background: #323439;
+        border: 1px dashed #484C52;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        p {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    &__wrap {
+      display: flex;
+      justify-content: space-between;
+      letter-spacing: 0.01em;
+      margin-bottom: 1.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      span {
+        display: block;
+        font-size: 12px;
+        line-height: 18px;
+        color: $fifth-color;
+      }
+
+      b {
+        display: block;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+      }
+
+      .action {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .edit {
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.01em;
+        padding: 4px 10px;
+        color: $body-color;
+        border: 1px solid $body-color;
+        border-radius: 4px;
+        margin-right: .5rem;
+      }
+
+      .delete {
+        background: $primary-color;
+        border: 1px solid $third-color;
+        border-radius: 4px;
+        height: 28px;
+        width: 28px;
+        align-items: center;
+        vertical-align: middle;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &__link {
+      @extend %typo-link;
+    }
+
+    @include mq($from: smallMobile-768) {
+      grid-template-columns: repeat(2, 1fr);
+
+      &__wrap {
+        b {
+          font-size: 16px;
+          line-height: 23px;
+        }
+      }
+    }
+    @include mq($until: smallMobile-768) {
+      &__item {
+        min-height: 150px;
+      }
+    }
+  }
+}
+
+.#{$support-banks} {
+  text-align: center;
+  padding: 2rem 0;
+  &__icn {
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+  }
+  &__content {
+    margin-bottom: 2rem;
+    color: #C7C7C7;
+  }
+  &__close {
+    max-width: 300px;
+  }
+  h4 {
+    margin-bottom: 1rem !important;
+    font-size: 20px;
+    line-height: 29px;
+  }
+  &::v-deep {
+    .support-chanel__list {
+      display: none;
+    }
+  }
+  @include mq($from: smallMobile-768) {
+    padding: 4rem;
+    &__close {
+      margin-top: 3em;
+    }
+    &::v-deep {
+      .support-chanel__list {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        row-gap: 1rem;
+        padding-bottom: 2rem;
+        position: relative;
+        &:after {
+          content: "";
+          height: 3rem;
+          width: 100%;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background: radial-gradient(46.87% 71% at 50% 0%, #37393E 0%, rgba(27, 22, 23, 0) 100%);
+          border-top: 1px solid;
+          border-image-source: linear-gradient(90deg, rgba(27, 22, 23, 0) -1.46%, #868C96 49.58%, rgba(27, 22, 23, 0) 96.67%);
+        }
+      }
+    }
+  }
+}

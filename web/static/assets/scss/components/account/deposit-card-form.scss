@@ -1,0 +1,7 @@
+$deposit-card-form: 'deposit-card-form';
+
+.#{$deposit-card-form} {
+  &__note {
+    color: #838A92;
+  }
+}

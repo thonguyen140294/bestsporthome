@@ -1,0 +1,8 @@
+$news-promotion : 'news-promotion';
+
+.#{$news-promotion} {
+  margin-bottom : 1rem;
+  img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,8 @@
+$user-not-login-section : 'user-not-login-section';
+
+.#{$user-not-login-section} {
+  display               : grid;
+  grid-template-columns : repeat(2, 1fr);
+  -moz-column-gap       : 1rem;
+  column-gap            : 1rem;
+}

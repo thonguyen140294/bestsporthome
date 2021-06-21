@@ -1,0 +1,316 @@
+$login-user : 'login-user';
+
+.#{$login-user} {
+  display     : flex;
+  align-items : center;
+  @include mq($until : mobile) {
+    height : 62px;
+  }
+  &__btn {
+    font-size: 14px;
+    line-height: 18px;
+    padding: .5rem 1rem;
+    border: 1px solid #fff;
+    color: #fff;
+    font-weight: 700;
+    vertical-align: middle;
+    margin-left: .5rem;
+    cursor: pointer;
+    white-space: nowrap;
+    &:hover {
+      filter: brightness(1.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, .55);
+    }
+  }
+  &__deposit {
+    display          : flex;
+    align-items      : center;
+    background-color : $primary-color;
+    border-radius    : 2px;
+    position         : relative;
+    overflow         : hidden;
+    img {
+      height : 14px;
+    }
+    p {
+      padding     : .75rem 1rem;
+      font-weight : bold;
+      line-height : 18px;
+      &:last-child {
+        background-color : rgba(0, 0, 0, .2);
+        padding-left     : .5rem;
+        padding-right    : .5rem;
+      }
+    }
+  }
+  &__account {
+    position : relative;
+    &--link {
+      @extend %typo-link;
+    }
+    @include mq($from : mobile) {
+      display      : flex;
+      align-items  : center;
+      margin-right : .5rem;
+      &--avatar {
+        height : 25px;
+        filter : invert(1);
+      }
+    }
+  }
+  &__money {
+    color : $second-color;
+  }
+  &__balance {
+    @include mq($from : mobile) {
+      margin-left : .5rem;
+    }
+  }
+  &__ava {
+    width: 28px;
+    height: 28px;
+    background-color: #34383d;
+    border-radius: 50%;
+
+    @include mq($from : mobile) {
+      width: 46px;
+      height: 46px;
+    }
+  }
+  &__name {
+    @include mq($from : mobile) {
+      font-weight   : bold;
+      margin-bottom : .25rem;
+    }
+  }
+  &__info {
+    display        : flex;
+    align-items    : center;
+    flex-direction : row-reverse;
+    font-size      : 9px;
+    line-height    : 12px;
+    text-align     : right;
+    letter-spacing : 0.01em;
+    color          : #fff3f2;
+    margin-left    : 1.5rem;
+    img {
+      width  : 28px;
+      height : 28px;
+    }
+    span {
+      display: block;
+      -webkit-line-clamp : 1;
+      -webkit-box-orient : vertical;
+      overflow           : hidden;
+      max-width          : 60px;
+      white-space        : nowrap;
+      text-overflow      : ellipsis;
+      @include mq($from: mobile, $until: wide) {
+        max-width: 50px;
+      }
+      @include mq($from : wide) {
+        max-width : 120px;
+      }
+    }
+    b {
+      display     : block;
+      font-size   : 11px;
+      line-height : 15px;
+    }
+    p {
+      text-align  : left;
+      margin-left : .25rem;
+    }
+    @include mq($from : mobile) {
+      font-size      : 12px;
+      line-height    : 16px;
+      order          : 3;
+
+      img {
+        height : 46px;
+        width  : 46px;
+      }
+
+      b {
+        font-size   : 14px;
+        line-height : 19px;
+      }
+
+      p {
+        margin-left  : 0;
+        margin-right : .75rem;
+        text-align   : right;
+      }
+    }
+		>div {
+			position: relative;
+      margin-right: 10px;
+		}
+  }
+	&__info-warning {
+		position: absolute;
+		width: 10px !important;
+		height: 10px !important;
+		bottom: 0;
+		right: 0;
+		background: #161618;
+		border-radius: 50%;
+		padding: 2px;
+		@include mq($from : 1024px) {
+			width: 15px !important;
+			height: 15px !important;
+		}
+	}
+  &__transfer {
+    height          : 28px;
+    width           : 28px;
+    margin-left     : .5rem;
+    background      : $primary-color url("#{$image-path}components/layouts/header/login-user/wallet-transfer-mb.svg") no-repeat center;
+    background-size : 75%;
+    @include mq($from : mobile) {
+      height : 34px;
+      width  : 34px;
+      order  : 2;
+    }
+  }
+  &::v-deep {
+    .#{$login-user}__menu {
+      display: none;
+      @include mq($from : mobile) {
+        display: block;
+      }
+      .dropdown-toggle {
+        padding: 0;
+        background: none;
+        border: none;
+        &:focus {
+          box-shadow: none;
+        }
+        &::after {
+          content: none;
+        }
+      }
+      .dropdown-menu {
+        left: auto !important;
+        right: 0;
+        background: rgb(12, 10, 10);
+        transform: translate3d(0px, 55px, 0px) !important;
+        padding: 1rem 0;
+        min-width: 305px;
+        border-radius: 4px;
+        display: none;
+        border: 1px solid #2D333A;
+        &::after {
+          position: absolute;
+          bottom: calc(100% - 2px);
+          right: 60px;
+          content: '';
+          width: 0;
+          height: 0;
+          border-left: 13px solid transparent;
+          border-right: 13px solid transparent;
+          border-bottom: 15px solid rgb(12, 10, 10);
+        }
+        &::before {
+          position: absolute;
+          bottom: 100%;
+          right: 60px;
+          content: '';
+          width: 0;
+          height: 0;
+          border-left: 13px solid transparent;
+          border-right: 13px solid transparent;
+          border-bottom: 15px solid #2D333A;
+        }
+        li {
+          position: relative;
+          &:last-child {
+            &:before {
+              content: "";
+              height: 1px;
+              width: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              background: linear-gradient(90deg, rgba(27, 22, 23, 0) 3.04%, #666B76 52.25%, rgba(27, 22, 23, 0) 97.64%);
+            }
+          }
+        }
+        .menu-item {
+          display: flex;
+          align-items: center;
+          &__text {
+            font-size: 16px;
+            line-height: 32px;
+            color: #F7F8FA;
+            margin-left: 1rem;
+          }
+        }
+        .dropdown-item {
+          padding: 1.2rem 2rem;
+          &:hover {
+            background: #323439;
+          }
+        }
+      }
+      &.show {
+        .dropdown-menu {
+          @include mq($from : mobile) {
+            display: block;
+          }
+        }
+      }
+      &--transfer {
+        position: relative;
+        .dropdown-menu {
+          position: absolute;
+          top: 0;
+          right: -8.5rem;
+          min-width: 537px;
+          padding: 2.5rem;
+          z-index: 1;
+          will-change: transform;
+          &::after {
+            position: absolute;
+            bottom: calc(100% - 2px);
+            right: 11rem;
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 13px solid transparent;
+            border-right: 13px solid transparent;
+            border-bottom: 15px solid rgb(12, 10, 10);
+          }
+          &::before {
+            position: absolute;
+            bottom: 100%;
+            right: 11rem;
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 13px solid transparent;
+            border-right: 13px solid transparent;
+            border-bottom: 15px solid #2D333A;
+          }
+        }
+        .wallet-transfer {
+          &__sport {
+            margin-top: 1.75rem;
+          }
+          &__lucky {
+            margin-top: 0.75rem;
+          }
+          &__btn {
+            margin-top: 1.75rem;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .login-user__info--sp {
+    @include mq($from : mobile) {
+      display: none;
+    }
+  }
+}

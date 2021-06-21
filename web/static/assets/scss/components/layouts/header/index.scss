@@ -1,0 +1,35 @@
+$header : 'header';
+
+.#{$header} {
+  background-color: $body-color;
+  .container{
+    padding: 18px 0 14px;
+  }
+  .header-search-form {
+    width: 100%;
+    position: relative;
+    padding: 0 10px;
+    input{
+      width: 100%;
+      height: 44px;
+      font-size: 14px;
+      border: none;
+      padding: 0 19px;
+      background: #f0f0f0;
+    }
+    button{
+      position: absolute;
+      height: 100%;
+      right: 18px;
+      top: 0;
+      font-size: 26px;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+    }
+  }
+  &__user{
+    height: 100%;
+  }
+}

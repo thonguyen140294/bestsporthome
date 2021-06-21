@@ -1,0 +1,60 @@
+$hotmatch: 'hotmatch';
+
+.#{$hotmatch} {
+  &__arrow {
+    height: 32px;
+    width: 32px;
+    background: url("#{$image-path}/icons/icon-arrow.svg") no-repeat center;
+    background-size: 45%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    &--next {
+      right: -10px;
+    }
+    &--prev {
+      right: 16px;
+      transform: rotate(180deg);
+    }
+    &.swiper-button-disabled {
+      opacity: .5;
+    }
+  }
+  .swiper-wrapper {
+    .swiper-slide {
+      width: 780px;
+    }
+  }
+  @include mq($from: tablet) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-top: 2rem;
+    margin-bottom: 1.8rem;
+    &__arrow {
+      height: 58px;
+      width: 58px;
+      border-radius: 3px;
+      border: 1px solid $body-color;
+
+      &--prev {
+        right: calc(50% + 156px);
+        bottom: 0;
+        top: unset;
+        transform: rotate(180deg) translateX(-50%);
+      }
+
+      &--next {
+        left: calc(50% + 156px);
+        right: unset;
+        bottom: 0;
+        top: unset;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  @include mq($from: tablet) {
+    flex: 0 0 70%;
+    max-width: 70%;
+    margin-bottom: 4rem;
+  }
+}

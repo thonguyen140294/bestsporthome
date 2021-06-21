@@ -1,0 +1,27 @@
+$not-login-user : 'not-login-user';
+
+.#{$not-login-user} {
+  display     : flex;
+  align-items : center;
+  justify-content: space-between;
+  height: 100%;
+  button{
+    height: 100%;
+  }
+  &__link {
+    margin-left : .5rem;
+    font-size   : 11px;
+    line-height : 12px;
+    height      : auto;
+    padding     : .5rem;
+    @include mq($from : mobile) {
+      font-size   : 14px;
+      line-height : 18px;
+      padding     : 0.5rem 1rem;
+      order       : 1;
+    }
+  }
+  @include mq($until : mobile) {
+    height : 62px;
+  }
+}

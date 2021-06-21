@@ -1,0 +1,49 @@
+$history-betting-section: 'history-betting-section';
+
+.#{$history-betting-section} {
+  @media screen and (min-width: 768px) {
+    &::v-deep {
+      .tabs {
+        background: rgba(32, 32, 35, 0.5);
+        border-radius: 0.5rem;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s linear;
+        .nav {
+          border-bottom: 1px solid #0C0A0A;
+          background: #202023;
+          padding: 0 2rem;
+        }
+        .nav-link {
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 30px;
+          letter-spacing: 0.01em;
+          color: #838A92;
+          padding: 2rem 1.5rem;
+          margin-right: 2rem;
+          position: relative;
+          border: none;
+          &.active {
+            color: #FEBC1F;
+            background-color: transparent;
+            &::after {
+              content: "";
+              display: inline-block;
+              position: absolute;
+              background-color: #FEBC1F;
+              height: 3px;
+              width: 100%;
+              bottom: 0;
+              left: 0;
+            }
+          }
+        }
+        .tab-content {
+          padding: 2rem 2rem 5rem;
+          min-height: 300px;
+        }
+      }
+    }
+  }
+}

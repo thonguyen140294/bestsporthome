@@ -1,0 +1,43 @@
+$wallet: 'wallet';
+
+.#{$wallet} {
+  @include mq($from: mobile) {
+    &__transfer {
+      position: relative;
+    }
+    &__icon {
+      cursor: pointer;
+      height: 40px;
+      width: 40px;
+      background: url("#{$image-path}icons/wallet-transfer.svg") no-repeat center;
+      background-size: contain;
+      transition: all .3s linear;
+
+      &.active {
+        background: url("#{$image-path}icons/wallet-transfer-close.svg") no-repeat center;
+        background-size: contain;
+        & + .wallet__content {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__content {
+      position: absolute;
+      right: 0;
+      width: 492px;
+      opacity: 0;
+      transition: all .3s linear;
+      overflow: hidden;
+      left: calc(100% + 1.5rem);
+      top: 0;
+      padding-top: 15px;
+    }
+    &::v-deep {
+      .wallet-transfer {
+        padding-left: 21px;
+        padding-right: 21px;
+      }
+    }
+  }
+}

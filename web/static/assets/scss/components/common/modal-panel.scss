@@ -1,0 +1,48 @@
+$modal : 'modal';
+
+/deep/ .#{$modal} {
+  height : 100%;
+  &-open {
+    height : 100%;
+  }
+  &.show {
+    &.modal {
+      transform  : translateX(0);
+      transition : all 0.3s linear;
+    }
+  }
+  &-backdrop {
+    opacity : .9;
+  }
+  &--menu-navigation {
+    &.modal {
+      transform : translateX(100%);
+    }
+    .modal-dialog {
+      margin : 0;
+      height : 100%;
+      @include mq($from : smallMobile-480) {
+        max-width: 980px;
+      }
+    }
+    .modal-body {
+      padding : 0;
+    }
+    .modal-content {
+      height          : calc(100% - 20.425vw);
+      max-width       : 500px;
+      padding         : 1rem .5rem 0;
+      overflow-y      : auto;
+      overflow-x      : hidden;
+      border          : 0;
+      border-radius   : 0;
+      background      : $third-color url("#{$image-path}/components/user/popup.png") no-repeat top;
+      background-size : 100% 50%;
+      border          : none;
+      @include mq($from : smallMobile-480) {
+        height : calc(100% - 69px);
+        max-width: 980px;
+      }
+    }
+  }
+}

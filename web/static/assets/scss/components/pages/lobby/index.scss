@@ -1,0 +1,8 @@
+$lobby: 'lobby';
+
+.#{$lobby} {
+  padding: 0 0 4rem;
+  .quick-register {
+    margin-top: 50px;
+  }
+}

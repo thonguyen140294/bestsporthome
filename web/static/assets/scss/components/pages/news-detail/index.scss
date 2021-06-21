@@ -1,0 +1,176 @@
+$news-detail : 'news-detail';
+
+.#{$news-detail} {
+  background-color : #ffffff;
+  position         : relative;
+  &--image {
+    .#{$news-detail}__top {
+      padding-bottom : 50px;
+    }
+  }
+  &__container {
+    margin    : 0 auto;
+    max-width : 1144px;
+    padding   : 0 0.5rem;
+    @include mq($from : smallMobile-768) {
+      padding : 0 15px;
+    }
+    @include mq($from : desktop) {
+      max-width : 1376px;
+    }
+  }
+  &__top {
+    background : linear-gradient(265.09deg, #930114 -18.16%, #1e0004 112.3%);
+    position   : relative;
+    &:after {
+      content         : '';
+      height          : 100%;
+      width           : 100%;
+      background      : url("#{$image-path}components/pages/news-detail/bg-news-detail.png") no-repeat top right;
+      background-size : auto 100%;
+      display         : block;
+      position        : absolute;
+      top             : 0;
+      pointer-events  : none;
+    }
+  }
+  &__title {
+    padding-bottom : 15px;
+    h1 {
+      font-size   : 14px;
+      line-height : 20px;
+      @include mq($from : smallMobile-768) {
+        font-size   : 32px;
+        line-height : 47px;
+      }
+    }
+  }
+  &__date {
+    padding-bottom  : 25px;
+    justify-content : flex-start;
+    span {
+      font-size    : 12px;
+      line-height  : 18px;
+      color        : $fifth-color;
+    }
+  }
+  &__image {
+    img {
+      display : block;
+      width   : 100%;
+    }
+  }
+  &__content {
+    position : relative;
+    color    : #323439;
+		@include mq($from : mobile) {
+      display : flex;
+    }
+  }
+  &__content-write {
+    padding : 2rem 0;
+    &::v-deep {
+      a {
+        &:hover, &:focus {
+          color : $second-color;
+        }
+      }
+      ul {
+        list-style   : initial;
+        padding-left : 1rem;
+      }
+      p {
+        margin-bottom : 1rem;
+      }
+      img {
+        display : block;
+        margin  : 1rem auto;
+        height  : auto;
+      }
+      h2 {
+        font-size     : 16px;
+        margin-bottom : .5rem;
+        @include mq($from : smallMobile-768) {
+          font-size : 20px;
+        }
+      }
+      h3 {
+        font-size     : 14px;
+        margin-bottom : .5rem;
+        @include mq($from : smallMobile-768) {
+          font-size : 18px;
+        }
+      }
+      h4 {
+        font-size     : 13px;
+        margin-bottom : .5rem;
+        @include mq($from : smallMobile-768) {
+          font-size : 16px;
+        }
+      }
+      h5 {
+        font-size     : 14px;
+        margin-bottom : .5rem;
+      }
+      .ez-toc-section {
+        padding-top: 60px;
+      }
+    }
+  }
+	&__left {
+    @include mq($from : mobile) {
+      flex          : 0 0 75%;
+      max-width     : 75%;
+      padding-right : 1rem;
+    }
+  }
+  &__right {
+    @include mq($from : mobile) {
+      flex      : 0 0 25%;
+      max-width : 25%;
+      padding-top: 3rem;
+    }
+  }
+	&__left {
+    @include mq($from : mobile) {
+      flex          : 0 0 75%;
+      max-width     : 75%;
+      padding-right : 1rem;
+    }
+  }
+  &__right {
+    @include mq($from : mobile) {
+      flex      : 0 0 25%;
+      max-width : 25%;
+    }
+  }
+
+  @keyframes showBtn {
+    0%   {bottom: 0px}
+    100% {bottom: 120px}
+  }
+
+  .scroll-top {
+    opacity: 0;
+    position: fixed;
+    width: 36px;
+    right: 20px;
+    z-index: 3;
+    cursor: pointer;
+
+    @include mq($from : mobile) {
+      width: 60px;
+      height: 60px;
+      bottom: 120px;
+      right: 8px;
+    }
+  }
+
+  .show {
+    opacity: 1;
+    visibility: visible;
+    animation-name: showBtn;
+    animation-duration: 1s;
+    bottom: 120px;
+  }
+}

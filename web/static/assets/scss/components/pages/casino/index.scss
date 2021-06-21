@@ -1,0 +1,8 @@
+$casino: 'casino';
+
+.#{$casino} {
+  padding: 0 0 4rem;
+  .quick-register {
+    margin-top: 50px;
+  }
+}

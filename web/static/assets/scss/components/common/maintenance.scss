@@ -1,0 +1,318 @@
+$maintenance : 'maintenance';
+
+#maintenance-modal,
+#wallet-maintenance-modal {
+  padding-left: 0;
+}
+
+/deep/ .#{$maintenance} {
+  min-height       : calc(100vh - 62px - 20.625vw);
+  background-size  : cover;
+  display          : flex !important;
+  align-items      : center;
+  flex-wrap        : wrap;
+  justify-content  : center;
+  padding          : 4rem 0;
+  position         : fixed;
+  z-index          : 99999999;
+  left             : 0;
+  top              : 0;
+  bottom           : 0;
+  right            : 0;
+  overflow         : auto;
+
+  .modal-dialog {
+    max-width: 700px;
+    margin: auto 8px;
+    border: 1px solid #2d333a;
+    border-radius: 5px;
+    background: $third-color;
+  }
+
+  .close {
+    top             : 0.5rem;
+    right           : 0.5rem;
+    position        : absolute;
+    color           : #838a92;
+    width           : 24px;
+    height          : 24px;
+    opacity         : 1;
+    cursor          : pointer;
+    background      : url("#{$image-path}/icons/close.svg") no-repeat top;
+    @include mq($from : mobile) {
+      top: 2rem;
+      right: 2rem;
+    }
+    span {
+      display     : inline-block;
+      cursor      : pointer;
+      font-size   : 24px;
+      text-shadow : none;
+    }
+  }
+
+  .modal-content {
+    background-color: transparent;
+
+    .modal-body {
+      padding: 0;
+    }
+
+    .img-wallet {
+      text-align: center;
+      margin: 50px;
+
+      @media screen and (max-width: 768px){
+        margin: 0;
+      }
+    }
+  }
+
+  .modal-maintenance-content {
+    border: none;
+    padding: 50px;
+    background-color: $third-color;
+    margin: 0;
+    text-align: center;
+
+    @media screen and (max-width: 768px){
+      padding: 30px;
+    }
+
+    &-body-login {
+      padding: 0 1rem 1rem;
+    }
+    &-deposit-guide{
+      &__header{
+        color: map_get($gray-colors,17);
+      }
+      &__content{
+        background-color: map_get($red-colors,5);
+        color: map_get($gray-colors,17);
+        padding: 1rem 2rem;
+        ol{
+          list-style-type: decimal;
+        }
+        ul{
+          list-style-type: circle;
+          padding-left: 10px;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 35px;
+      text-transform: uppercase;
+
+      @media screen and (max-width: 768px){
+        font-size: 16px;
+        margin-top: 20px;
+      }
+    }
+
+    .pc-title {
+      display: block;
+
+      @media screen and (max-width: 768px){
+        display: none;
+      }
+    }
+
+    .mb-title {
+      display: none;
+
+      @media screen and (max-width: 768px){
+        display: block;
+      }
+    }
+
+    &__shadow-line {
+      height: 3rem;
+      width: 100%;
+      margin-top: 15px;
+      background: radial-gradient(46.87% 71% at 50% 0%, #37393E 0%, rgba(27, 22, 23, 0) 100%);
+      border-top: 1px solid $third-color;
+      @media screen and (max-width: 768px){
+        height: 1.5rem;
+      }
+    }
+
+    &__des {
+      position: relative;
+      padding-bottom: 10px;
+      color: #C7C7C7;
+
+      .maintenance-inform {
+        padding: 0 50px;
+
+        @media screen and (max-width: 768px){
+          padding: 0 10px;
+        }
+      }
+    }
+
+    .main-wallet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 12px;
+      margin-bottom: 20px;
+
+      .sub-info {
+        display: flex;
+      }
+
+      @media screen and (max-width: 768px){
+        flex-direction: column;
+        margin-bottom: 0;
+
+        &__info {
+          padding-left: 20px;
+          margin-bottom: 10px;
+          text-align: left;
+        }
+
+        &__info,
+        .sub-count {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .sub-count {
+          padding-left: 22px;
+          margin-bottom: 10px;
+          text-align: left;
+        }
+      }
+
+      &__icon {
+        margin-right: 5px;
+      }
+
+      &__icon-size {
+        width: 13px;
+        height: 13px;
+        max-width: none;
+      }
+
+      &__title {
+        text-align: left;
+        @media screen and (max-width: 768px){
+          font-size: 12px;
+        }
+      }
+
+      .wallet-info {
+        display: flex;
+        flex-basis: 58%;
+
+        @media screen and (max-width: 768px){
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .wallet-common {
+      margin-left: 18px;
+
+      @media screen and (max-width: 768px){
+        padding: 0;
+      }
+    }
+
+    .maintenance-status {
+      display: inline-block;
+      width: 9rem;
+      height: 2rem;
+      padding-top: 4px;
+      text-transform: uppercase;
+      background-color: #323439;
+      text-align: center;
+      border: solid 1px $fifth-color;
+      border-radius: 3px;
+      margin-left: 10px;
+    }
+
+    .maintenance-highlight {
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: $second-color;
+      letter-spacing: 0.01em;
+      font-weight: 700;
+    }
+
+    .sub-wallet {
+      color: $body-color;
+      font-weight: 700;
+    }
+
+    &__wrap-btn {
+      height: 60px;
+      text-transform: uppercase;
+      line-height: 26px;
+      background-color: $primary-color;
+      border-radius: 3px;
+      display: flex;
+      font-weight: 700;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 300px;
+
+      .btn-history {
+        font-size: 18px;
+
+        @media screen and (max-width: 768px){
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .container {
+    text-align : center;
+  }
+  &__img {
+    margin : 1.5rem auto;
+    width  : 90%;
+  }
+  
+  h3 {
+    font-size      : 18px;
+    line-height    : 28px;
+    letter-spacing : 1px;
+    color          : $second-color;
+    margin-bottom  : .5rem;
+  }
+  &__text {
+    font-size     : 14px;
+    line-height   : 24px;
+    margin-bottom : 1rem;
+    span {
+      color : $second-color;
+    }
+  }
+  @include mq($from : mobile) {
+    min-height : calc(100vh - 90px);
+    &__img {
+      width : 42vw;
+    }
+    h3 {
+      font-size     : 28px;
+      line-height   : 28px;
+      margin-bottom : 1.5rem;
+    }
+    &__text {
+      font-weight : 800;
+      font-size   : 16px;
+      line-height : 28px;
+      br {
+        display : none;
+      }
+    }
+  }
+}

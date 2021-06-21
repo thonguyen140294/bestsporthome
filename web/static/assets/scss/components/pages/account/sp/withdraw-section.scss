@@ -1,0 +1,65 @@
+$withdraw-section: 'withdraw-section';
+$withdraw-method: 'withdraw-method';
+
+.#{$withdraw-section} {
+    &__wallet {
+        position: relative;
+        margin-bottom: 1.5rem;
+
+        .money-main {
+            font-size: 18px;
+            line-height: 26px;
+            color: #FEBC1F;
+        }
+
+        p {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .#{$withdraw-method} {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 1rem;
+        row-gap: 1rem;
+        &__item {
+            background: #323439;
+            box-shadow: inset 0px 0px 10px rgba(56, 63, 70, 0.3);
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+        &__link {
+            @extend %typo-link;
+        }
+        &__icon {
+            display: inline-block;
+            background: linear-gradient(180deg, #D72A1F 0%, #AE0909 100%);
+            border-radius: 10px;
+            padding: 2vw;
+            margin: 5vw 0;
+            img {
+                height: 8vw;
+            }
+        }
+        &__text {
+            font-size: 12px;
+            line-height: 18px;
+            color: #fff;
+            letter-spacing: 0.0928571px;
+            padding: 3vw 0;
+            background: #393C42;
+            position: relative;
+            &:before {
+                content: "";
+                height: 1px;
+                width: 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+                background: linear-gradient(90deg, #393C42 0%, #757580 49.69%, #393C42 100%);
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+$register-form : 'register-form';
+
+.#{$register-form} {
+  &__login-action {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    span {
+      color: #838A92;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      padding-bottom: 14px;
+    }
+  }
+
+  /deep/ input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #f7f8fa;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+.signup-bg {
+  background          : url("#{$image-path}/components/user/signin-bg.png") no-repeat;
+  background-size     : cover;
+  background-position : center bottom;
+  width               : 100%;
+  height              : 100%;
+  position: relative;
+
+  .signup-man {
+    background          : url("#{$image-path}/components/user/signin.png") no-repeat;
+    background-size     : contain;
+    background-position : center bottom;
+    width               : 100%;
+    height              : 95%;
+    position            : absolute;
+    bottom              : 0;
+  }
+}

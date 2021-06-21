@@ -1,0 +1,130 @@
+$live-casino: 'live-casino';
+
+.#{$live-casino} {
+  background: #f0f0f0;;
+  padding: 2rem 0;
+  position: relative;
+  &__hdg {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    h3 {
+      font-size: 14px;
+      line-height: 16px;
+      margin-right: .5rem;
+      color: #0c0a0a;
+      &:first-child {
+        color: #fff;
+        background: #b50000;
+        border-radius: 3px;
+        padding: .25rem .5rem;
+      }
+    }
+  }
+  .swiper-container {
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+
+    .swiper-wrapper {
+      display: flex;
+
+      .swiper-slide {
+        margin-right: 8px;
+        flex-shrink: 0;
+
+        @media screen and (min-width: 768px) {
+          width: 220px;
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+  &__container {
+    margin-right: -.5rem;
+    margin-left: -.5rem;
+    margin-bottom: 2rem;
+  }
+  &__slide {
+    position: relative;
+    padding-top: 65%;
+    width: 40.625%;
+    &:first-child {
+      margin-left: .5rem;
+    }
+    &:after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(180deg, rgba(43, 5, 8, 0) 46.27%, #220407 100%);
+    }
+  }
+  &__arrow {
+    height: 32px;
+    width: 32px;
+    background: url("#{$image-path}/icons/icon-arrow.svg") no-repeat center;
+    background-size: 45%;
+    position: absolute;
+    top: 2rem;
+    z-index: 10;
+    &--next {
+      right: 0;
+    }
+    &--prev {
+      right: 28px;
+      transform: rotate(180deg);
+    }
+    &.swiper-button-disabled {
+      opacity: .5;
+    }
+  }
+  @include mq($from: smallMobile-768) {
+    background: none;
+    flex: 0 0 65%;
+    max-width: 65%;
+    padding-right: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+
+    &__container {
+      margin: 0;
+    }
+
+    &__slide {
+      padding-top: 51%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &__hdg {
+      margin-bottom: 2rem;
+
+      h3 {
+        font-size: 29px;
+        line-height: 32px;
+
+        &:first-child {
+          padding: .25rem 1rem;
+        }
+      }
+    }
+
+    &__arrow {
+      width: 44px;
+      height: 44px;
+      right: -3rem;
+      top: 30%;
+
+      &--prev {
+        top: 40%;
+      }
+    }
+  }
+}

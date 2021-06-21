@@ -1,0 +1,73 @@
+$game-center-item : 'game-center-item';
+
+.#{$game-center-item} {
+  a {
+    display       : flex;
+    align-items   : center;
+    border        : 1px solid #323439;
+    border-radius : 1px;
+    background    : #202023;
+    color         : $fifth-color;
+    font-size     : 13px;
+    line-height   : 18px;
+    padding       : .65rem 0.5rem;
+    overflow      : hidden;
+    position      : relative;
+    height        : 100%;
+    &.active {
+      background   : $primary-color;
+      border-color : $primary-color;
+      color        : $body-color;
+      .hot {
+        &:before {
+          border-bottom : 17px solid $primary-color;
+          border-right  : 12px solid transparent;
+        }
+      }
+      .new {
+        &:before {
+          border-bottom : 17px solid $primary-color;
+          border-right  : 12px solid transparent;
+        }
+      }
+    }
+  }
+  span {
+    margin-left : 0.5rem;
+    @include mq($from : smallMobile-320) {
+      margin-left : 1rem;
+    }
+  }
+  &__label {
+    display     : inline-block;
+    font-size   : 8px;
+    line-height : 8px;
+    color       : $body-color;
+    padding     : .25rem .5rem .25rem 1rem;
+    position    : absolute;
+    top         : 0;
+    right       : 0;
+    &:before {
+      content  : "";
+      width    : 0;
+      height   : 0;
+      position : absolute;
+      left     : -1px;
+      top      : 0;
+    }
+    &.hot {
+      background : linear-gradient(180deg, #e6912e 0%, #ec9007 100%);
+      &:before {
+        border-bottom : 17px solid #202023;
+        border-right  : 12px solid transparent;
+      }
+    }
+    &.new {
+      background : #27ae60;
+      &:before {
+        border-bottom : 17px solid #202023;
+        border-right  : 12px solid transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+$method: 'method-section';
+
+.#{$method} {
+  &__info {
+    margin-bottom: 3rem;
+  }
+
+  &__content {
+    margin: 0 20px;
+  }
+
+  /deep/ &__target {
+    padding-bottom: 0;
+  }
+}

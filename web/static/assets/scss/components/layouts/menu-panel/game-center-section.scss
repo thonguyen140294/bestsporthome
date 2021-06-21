@@ -1,0 +1,16 @@
+$game-center-section : 'game-center-section';
+
+.#{$game-center-section} {
+  &__title {
+    font-weight   : 600;
+    font-size     : 14px;
+    line-height   : 20px;
+    margin-bottom : 1rem;
+  }
+  &__item {
+    display               : grid;
+    grid-template-columns : repeat(2, 1fr);
+    column-gap            : .75rem;
+    row-gap               : .75rem;
+  }
+}

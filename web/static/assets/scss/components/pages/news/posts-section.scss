@@ -1,0 +1,53 @@
+$posts-section : 'posts-section';
+
+.#{$posts-section} {
+  &__box {
+    margin-bottom : 1.5rem;
+    @include mq($from : smallMobile-768) {
+      margin-bottom : 2rem;
+    }
+  }
+  &__top {
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+    margin-bottom   : 1rem;
+    padding         : 0 0.5rem;
+  }
+  &__title {
+    @extend %box-title-h3;
+    text-transform: uppercase;
+    color : #323439;
+    font-weight: bold;
+    @include mq($from : smallMobile-768) {
+      font-size   : 18px;
+      line-height : 26px;
+    }
+  }
+  &__link-all {
+    font-size     : 12px;
+    line-height   : 18px;
+    padding       : 0.25rem 1rem;
+    border-radius : 100px;
+    background    : #e5e6e9;
+    color         : #b50000;
+    transition    : all 0.5s ease;
+    @include mq($from : smallMobile-768) {
+      background      : transparent;
+      font-weight     : 800;
+      text-decoration : underline;
+      font-size       : 16px;
+      line-height     : 23px;
+      padding         : 0;
+    }
+    &:hover, &:focus {
+      text-decoration : none;
+      transition      : all 0.5s ease;
+    }
+  }
+  &__bot {
+    @include mq($until : smallMobile-768) {
+      margin-left: 0.5rem;
+    }
+  }
+}

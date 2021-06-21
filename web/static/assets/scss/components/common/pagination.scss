@@ -1,0 +1,40 @@
+$pagination : 'pagination';
+
+.#{$pagination} {
+  justify-content : center;
+  .page-item {
+    margin : 0 .5rem;
+    &.active {
+      span {
+        position      : relative;
+        display       : block;
+        padding       : .5rem .75rem;
+        margin-left   : -1px;
+        border-radius : 100px;
+        border        : 0;
+        font-size     : 12px;
+        line-height   : 16px;
+        font-weight   : 800;
+        color         : #fff3f2;
+        background    : #616368;
+      }
+    }
+    &--arrow {
+      .page-link {
+        background-color : transparent;
+      }
+    }
+    &--next {
+      transform : rotate(-180deg);
+    }
+  }
+  .page-link {
+    background    : #34353a;
+    border-radius : 100px;
+    color         : #fff3f2;
+    border        : 0;
+    font-size     : 12px;
+    line-height   : 16px;
+    font-weight   : 800;
+  }
+}

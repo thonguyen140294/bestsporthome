@@ -1,0 +1,9 @@
+$game-center-filter: 'sport-center-filter';
+
+.#{$game-center-filter} {
+  padding: 2rem 0;
+  background: #0C0A0A;
+  @include mq($from: smallMobile-768) {
+    padding: 0;
+  }
+}

@@ -1,0 +1,40 @@
+$game-center-load-more: 'sport-center-load-more';
+
+.#{$game-center-load-more} {
+  &__wrap-more {
+    position: relative;
+    padding-top: 54%;
+    background: #220407;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      text-decoration: underline;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 800;
+      font-size: 12px;
+      line-height: 18px;
+      color: $second-color;
+    }
+    img {
+      width: 22px;
+      height: 22px;
+      transform: rotate(270deg);
+    }
+    @include mq($from: smallMobile-768) {
+      span {
+        font-size: 18px;
+        line-height: 26px;
+      }
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+  &__link {
+    @extend %typo-link;
+  }
+}

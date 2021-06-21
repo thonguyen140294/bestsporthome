@@ -1,0 +1,47 @@
+$about-section: 'about-section';
+
+.#{about-section} {
+  &__left {
+    display: none;
+  }
+  @include mq($from : smallMobile-768) {
+    &__brand {
+      display: flex;
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+
+    &__head {
+      text-align: left;
+      padding-left: 4rem;
+    }
+
+    &__img {
+      flex: 1 0 auto;
+      padding-bottom: 2.4rem;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &__product {
+      padding: 3.5rem 0 0;
+    }
+  }
+  @include mq($from : desktop) {
+    background: url("#{$image-path}components/pages/about/bg_casino.png") right no-repeat;
+    background-size: auto;
+    &__left {
+      position: absolute;
+      top: -60%;
+      display: block;
+    }
+  }
+}

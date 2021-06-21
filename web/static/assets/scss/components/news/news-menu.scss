@@ -1,0 +1,104 @@
+$news-menu : 'news-menu';
+
+.#{$news-menu} {
+  display         : flex;
+  justify-content : space-between;
+  align-items     : center;
+  margin-bottom   : 2rem;
+  position        : relative;
+  padding-top     : 2rem;
+  @include mq($from : mobile) {
+    padding-top : 1.5rem;
+  }
+  &__title {
+    display: none;
+    @include mq($from: tablet) {
+      display: block;
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      font-size: 46px;
+      line-height: 67px;
+      color: #323439;
+    }
+  }
+  &::v-deep {
+    .tabs {
+      width: 100%;
+      .nav {
+        flex-wrap: nowrap;
+        height: 67px;
+        align-items: center;
+        justify-content: flex-end;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-bottom: none;
+        margin-bottom: 1.25rem;
+        background: #E5E6E9;
+        max-height: 47px;
+        @include mq($from : mobile) {
+          max-height: 67px;
+        }
+        @include mq($from : tablet) {
+          margin-bottom: 2rem;
+          background: #fff;
+        }
+        @include mq($until : tablet) {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          overflow-y: hidden;
+          display: flex;
+          justify-content: normal;
+        }
+      }
+      .nav-item {
+        height: 100%;
+      }
+      .nav-link {
+        background: transparent;
+        border: none;
+        white-space: nowrap;
+        color: #323439;
+        padding: 0.5rem;
+        font-weight: 500;
+        line-height: 32px;
+        position: relative;
+        text-transform: uppercase;
+        height: inherit;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        @include mq($from : tablet) {
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 26px;
+          padding: 1rem 0.5rem;
+          color: #838A92;
+        }
+        @include mq($from : mobile) {
+          padding: 1rem 1rem 0 1rem;
+        }
+        &.active {
+          &::after {
+            content: "";
+            height: 2px;
+            width: calc(100% - 1rem);
+            position: absolute;
+            left: 0.5rem;
+            bottom: 0;
+            background-color: #B50000;
+            @media screen and (min-width: 768px) {
+              width: calc(100% - 2rem);
+              height: 4px;
+              left: 1rem;
+            }
+          }
+          &.nav-link {
+            color: #B50000;
+            font-weight: 800;
+          }
+        }
+      }
+    }
+  }
+}

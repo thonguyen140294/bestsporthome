@@ -1,0 +1,10 @@
+$error: 'error';
+
+.#{$error} {
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  margin-top: 0.5rem;
+  color: #B50000;
+  font-style: italic;
+}

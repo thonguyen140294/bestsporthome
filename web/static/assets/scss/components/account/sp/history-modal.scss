@@ -1,0 +1,125 @@
+$history-modal : 'history-modal';
+$modal : 'modal';
+
+/deep/ .#{$modal} {
+  display : none;
+  height  : 100%;
+  &-open {
+    height : 100%;
+  }
+  .close {
+    top             : 0.5rem;
+    right           : 0.5rem;
+    position        : absolute;
+    color           : #838a92;
+    width           : 32px;
+    height          : 32px;
+    background      : #323439;
+    border-radius   : 50%;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    opacity         : 1;
+    @include mq($from : mobile) {
+      top   : 1.25rem;
+      right : 1rem;
+    }
+    span {
+      display     : inline-block;
+      cursor      : pointer;
+      font-size   : 24px;
+      text-shadow : none;
+    }
+  }
+  &-backdrop {
+    opacity : .9;
+  }
+  &__model {
+    position         : absolute;
+    width            : 100%;
+    height           : 95%;
+    bottom           : 0;
+    transition       : all .3s linear;
+    transition-delay : 1s;
+    img {
+      object-fit      : contain;
+      object-position : bottom;
+      position        : absolute;
+      width           : 100%;
+      height          : 100%;
+    }
+  }
+  &__title {
+    font-size     : 16px;
+    line-height   : 23px;
+    color         : $second-color;
+    margin-bottom : 1rem;
+    text-align    : center;
+  }
+  &--type1 {
+    .modal-dialog {
+      margin    : 0 0 0 auto;
+      height    : 100%;
+      max-width : 100%;
+    }
+    .modal-content {
+      position      : absolute;
+      width         : 100%;
+      overflow-x    : hidden;
+      overflow-y    : auto;
+      border        : none;
+      border-radius : 0;
+      padding       : 0 1rem;
+      background    : #202023;
+      height        : calc(100% - 20.425vw);
+      @include mq($from : smallMobile-480) {
+        height : calc(100% - 69px);
+      }
+      @include mq($from : mobile) {
+        height : 100%;
+      }
+    }
+    .modal-body {
+      padding : 0;
+      @include mq($from : mobile) {
+        padding : 0.5rem;
+      }
+    }
+  }
+}
+
+.#{$history-modal} {
+  &__title {
+    padding         : 1.25rem 0;
+    display         : flex;
+    position        : relative;
+    justify-content : center;
+    &:after {
+      content    : "";
+      height     : 1px;
+      width      : 100%;
+      bottom     : 0;
+      left       : 0;
+      position   : absolute;
+      background : linear-gradient(90deg, #161618 0%, #757580 49.69%, #161618 100%);
+    }
+  }
+  &__hdg {
+    font-size      : 14px;
+    line-height    : 20px;
+    text-transform : uppercase;
+  }
+  &__cta-close {
+    display   : block;
+    position  : absolute;
+    right     : 0;
+    top       : 50%;
+    transform : translateY(-50%);
+    height    : 32px;
+    width     : 32px;
+  }
+  &__content {
+    padding-top    : 1.5rem;
+    padding-bottom : 2rem;
+  }
+}

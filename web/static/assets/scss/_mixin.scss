@@ -1,0 +1,38 @@
+//MQ SASS
+@import '~sass-mq';
+
+@mixin mix-clear-list-style {
+  margin     : 0;
+  padding    : 0;
+  list-style : none;
+}
+
+@mixin mix-maximum-line($line) {
+  overflow           : hidden;
+  text-overflow      : ellipsis;
+  display            : -webkit-box;
+  -webkit-box-orient : vertical;
+  -webkit-line-clamp : $line;
+}
+
+@mixin mix-remove-appearance {
+  -webkit-appearance : none;
+  appearance         : none;
+  background         : transparent;
+  border             : 0;
+  padding            : 0;
+  box-shadow         : none;
+  &:hover,
+  &:focus {
+    outline : 0;
+  }
+}
+
+@mixin mix-overflow-x-hidden-scrollbar {
+  overflow-x         : auto;
+  overflow-y         : hidden;
+  -ms-overflow-style : none;
+  &::-webkit-scrollbar {
+    display : none;
+  }
+}

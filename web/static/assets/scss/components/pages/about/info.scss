@@ -1,0 +1,46 @@
+$about-info: 'about-info';
+
+.#{$about-info} {
+  position: relative;
+  z-index: 2;
+  &__heading {
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: $second-color;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    padding: 0 2.5rem;
+    @include mq($from : smallMobile-768) {
+      font-size: 24px;
+      line-height: 35px;
+      padding: 0 1.5rem;
+      &.sm-left {
+        text-align: left;
+        padding: 0;
+      }
+    }
+  }
+  &__content {
+    font-size: 14px;
+    line-height: 20px;
+    color: #E0E0E0;
+    text-align: left;
+    @include mq($from : mobile) {
+      font-size: 16px;
+      line-height: 23px;
+      &.sm-center {
+        text-align: center;
+      }
+    }
+    p {
+      padding-bottom: 1rem;
+    }
+    .hl-red {
+      color: #ec1111;
+    }
+  }
+  &--hl {
+    color: #FEBC1F;
+  }
+}

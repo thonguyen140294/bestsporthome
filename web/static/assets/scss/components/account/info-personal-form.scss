@@ -1,0 +1,124 @@
+$info-personal-form: 'info-personal-form';
+
+.#{info-personal-form} {
+  &__content {
+    display: flex;
+    border-bottom: 1px solid #0C0A0A;
+  }
+  &__item {
+    width: 50%;
+    border-right: 1px solid #0C0A0A;
+  }
+  &__wrap {
+    padding: 2rem;
+    border-bottom: 1px solid #0C0A0A;
+    width: 100%;
+    &:last-child {
+      border-bottom: 0;
+    }
+    .info-link {
+      margin-top: 1.3rem;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.01em;
+      a {
+        color: #EC1111;
+        text-decoration-line: underline;
+      }
+    }
+    .address-wrap {
+      display: flex;
+      justify-content: space-between;
+      & > * {
+        width: calc(100%/2 - 0.5rem);
+      }
+    }
+  }
+  h4 {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.8rem;
+  }
+  &__action {
+    padding: 2rem;
+  }
+	&__user {
+		display: flex;
+    align-items: center;
+    color: #838a92;
+    padding: 1.5rem 0;
+		b {
+			display: block;
+			font-size: 18px;
+			line-height: 26px;
+			max-width: 100%;
+			color: #f7f8fa;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		a {
+			color: #EC1111;
+    	text-decoration: underline;
+			font-weight: 600;
+		}
+	}
+	&__avatar {
+		flex-shrink: 0;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+    position: relative;
+	}
+}
+
+.modal--account {
+  .change-password {
+    max-width: 450px;
+    padding: 2rem 0 3rem;
+    margin: auto;
+
+    /deep/ input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus {
+      -webkit-text-fill-color: #f7f8fa;
+      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+	.change-avatar {
+		max-width: 450px;
+    padding: 2rem 0 3rem;
+    margin: auto;
+		&__list{
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 2rem;
+		}
+		&__item {
+			flex-basis: 25%;
+    	padding: 10px;
+		}
+		.avatar-selected {
+			position: relative;
+			img:first-child {
+				position: absolute;
+				opacity: 0.4;
+				width: 83%;
+			}
+			img:last-child {
+				position: absolute;
+				width: 83%;
+				object-fit: scale-down;
+				border: 2px solid #FEBC1F;
+				border-radius: 50%;
+			}
+		}
+	}
+}

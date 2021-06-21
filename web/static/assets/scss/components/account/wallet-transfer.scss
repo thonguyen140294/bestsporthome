@@ -1,0 +1,27 @@
+$wallet-transfer: 'wallet-transfer';
+
+.#{$wallet-transfer} {
+  &__group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__main {
+    display: flex;
+    font-weight: 800;
+    .#{$wallet-transfer}__amount {
+      color: #febc1f;
+    }
+  }
+  &__sub {
+    display: flex;
+    font-weight: 800;
+    .#{$wallet-transfer}__amount {
+      color: #F7F8FA;
+    }
+  }
+  &__title {
+    margin-right: 5px;
+    color: #838A92;
+  }
+}

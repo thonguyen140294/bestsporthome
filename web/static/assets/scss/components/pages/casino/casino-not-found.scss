@@ -1,0 +1,27 @@
+$casino-not-found: 'casino-not-found';
+
+.#{$casino-not-found} {
+  text-align: center;
+  align-items: center;
+  padding: 10% 0;
+  &::before {
+    content: '';
+    height: 132px;
+    width: 343px;
+    background: url('#{$image-path}icons/icon-no-results.png') no-repeat center;
+    background-size: cover;
+    display: block;
+    margin: 0 auto 24px;
+  }
+  b {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 29px;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+  }
+}

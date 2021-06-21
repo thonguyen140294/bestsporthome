@@ -1,0 +1,119 @@
+$news-section: 'news-section';
+$news: 'news';
+
+.#{$news-section} {
+  background-color: #F7F8FA;
+  padding-bottom: 2rem;
+  @media screen and (min-width: 768px) {
+    padding: 3.5rem 0;
+  }
+  .#{$news} {
+    max-width: 1144px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    @include mq($from : smallMobile-768) {
+      padding: 0 15px;
+    }
+    &__title {
+      display: none;
+      @include mq($from : mobile) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 15px;
+        font-size: 46px;
+        line-height: 67px;
+        color: #B50000;
+      }
+    }
+    &::v-deep {
+      .news-list.type-1 {
+        @include mq($until : smallMobile-768) {
+          margin-left: .5rem;
+        }
+      }
+      .tabs {
+        .nav {
+          flex-wrap: nowrap;
+          height: 67px;
+          align-items: center;
+          justify-content: flex-end;
+          overflow-x: auto;
+          overflow-y: hidden;
+          border-bottom: none;
+          margin-bottom: 1.25rem;
+          @media screen and (min-width: 768px) {
+            margin-bottom: 2rem;
+          }
+          @include mq($until : smallMobile-768) {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            display: flex;
+            justify-content: normal;
+            margin-bottom: 0;
+          }
+        }
+        .nav-link {
+          background-color: #F7F8FA;
+          border: none;
+          white-space: nowrap;
+          color: #0C0A0A;
+          padding: 0.5rem;
+          font-weight: bold;
+          line-height: 19px;
+          position: relative;
+          text-transform: uppercase;
+          @include mq($from : mobile) {
+            font-size: 18px;
+            padding: 1rem;
+          }
+          @include mq($from : smallMobile-768) {
+            font-size: 16px;
+            line-height: 26px;
+            padding: 1rem 0.5rem;
+          }
+          &.active {
+            &::after {
+              content: "";
+              height: 2px;
+              width: calc(100% - 1rem);
+              position: absolute;
+              left: 0.5rem;
+              bottom: 6px;
+              background-color: #B50000;
+              @media screen and (min-width: 768px) {
+                width: calc(100% - 2rem);
+                height: 4px;
+                left: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__more {
+      text-align: center;
+      margin-top: 0.75rem;
+      @media screen and (min-width: 768px) {
+        margin-top: 3rem;
+        font-weight: 800;
+      }
+      a {
+        display: inline-block;
+        letter-spacing: 0.03em;
+        text-decoration: underline;
+        color: #220407;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        @media screen and (min-width: 768px) {
+          font-size: 18px;
+          line-height: 26px;
+          color: #B50000;
+        }
+      }
+    }
+  }
+}

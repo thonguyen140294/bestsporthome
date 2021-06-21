@@ -1,0 +1,40 @@
+$history-transaction : 'history-transaction';
+
+.#{$history-transaction} {
+  background : transparent;
+  &.loading {
+    position : relative;
+    opacity  : 0.6;
+    &:before {
+      content  : '';
+      position : absolute;
+      left     : 0;
+      top      : 0;
+      right    : 0;
+      bottom   : 0;
+      z-index  : 2;
+    }
+  }
+  &__bot {
+
+  }
+  &__content {
+    .lose, .failed, .fail {
+      color : #ec1111;
+    }
+    .win, .processing, .finishing, .success {
+      color : #16dc89;
+    }
+    .balance, .waiting, .pending, .draw {
+      color : #febc1f;
+    }
+  }
+  &__no-content {
+    text-align : center;
+    font-size  : 14px;
+  }
+  &__note {
+    padding    : 0.5rem 1rem;
+    border-top : .5px dashed hsla(0, 0%, 100%, .4);
+  }
+}

@@ -1,0 +1,124 @@
+$about-banner: 'about-banner';
+
+.#{$about-banner} {
+  &__hdg {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 32px;
+    text-transform: uppercase;
+    text-align: center;
+    span {
+      color: $second-color;
+    }
+  }
+
+  &__container {
+    background: linear-gradient(265.09deg, #930114 -18.16%, #1E0004 112.3%);
+    position: relative;
+    margin-bottom: 2.25rem;
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 75%;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      background: linear-gradient(180deg, rgba(35, 1, 4, 0) 0%, #161618 100%);
+    }
+
+    .container {
+      position: relative;
+			padding-top: 2rem;
+    }
+  }
+
+  &__img {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    bottom: -1rem;
+		@include mq($from : tablet) {
+			right: -11rem;
+		}
+  }
+
+  &__stadium {
+    position: absolute;
+    height: 100%;
+		width: 100%;
+  }
+
+  &__model {
+    position: absolute;
+    width: 40%;
+    padding-top: 54%;
+    bottom: -10.5rem;
+    right: -3rem;
+    z-index: 1;
+    img {
+      @extend %typo-img;
+      height: auto;
+    }
+  }
+  &__model {
+    display: none;
+    position: absolute;
+    width: 40%;
+    padding-top: 54%;
+    bottom: -10.5rem;
+    right: -3rem;
+    z-index: 1;
+
+    img {
+      @extend %typo-img;
+      width: 100%;
+			height: 100%;
+			object-fit: contain;
+    }
+  }
+	&__alex {
+		display: none;
+    position: absolute;
+    width: 36%;
+    padding-top: 54%;
+    bottom: -14rem;
+    left: -3rem;
+    z-index: 1;
+
+    img {
+      @extend %typo-img;
+      width: 100%;
+			height: 90%;
+			object-fit: contain;
+    }
+  }
+  @include mq($from : mobile) {
+    &__content {
+      max-width: 912px !important;
+      font-size: 16px;
+      line-height: 23px;
+      text-align: center;
+    }
+
+    &__hdg {
+      font-size: 42px;
+      line-height: 61px;
+    }
+  }
+  @include mq($from : tablet) {
+    &__container {
+      margin-bottom: 0;
+    }
+    &__model {
+      display: block;
+    }
+		&__alex {
+      display: block;
+    }
+    &__img {
+      bottom: -8rem;
+			width: 60%;
+    }
+  }
+}

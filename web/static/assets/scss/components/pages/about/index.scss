@@ -1,0 +1,128 @@
+$about: 'about';
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+
+  &__order {
+    order: 2;
+  }
+}
+
+.about-wrapper {
+  background: #161618;
+  @include mq($from : smallMobile-768) {
+    background: #0c0a0a linear-gradient(180deg, #0C0A0A 22.08%, rgba(32, 32, 35, 0) 111.47%);
+  }
+}
+
+.#{$about} {
+  .tab-content-about {
+    background: url("#{$image-path}components/pages/about/sp_bg_about.png") no-repeat bottom right;
+    background-size: contain;
+		position: relative;
+  }
+  &__menu {
+    background: url("#{$image-path}components/pages/about/bg_top_about.png") top no-repeat;
+    position: sticky;
+    z-index: 100;
+    top: 62px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-left: .5rem;
+    padding-bottom: 5px;
+    margin-right: .5rem;
+    a {
+      display: inline-block;
+      white-space: nowrap;
+      font-size: 12px;
+      line-height: 32px;
+      border-radius: 5px;
+      border: 1px solid #323439;
+      margin-right: .5rem;
+      padding: .25rem .5rem;
+      text-transform: uppercase;
+      color: $fifth-color;
+      text-align: center;
+      cursor: pointer;
+    }
+    .active {
+      background-color: $second-color;
+      color: $body-bg;
+      font-weight: bold;
+    }
+  }
+  &__content {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &__tab {
+    padding: 1rem 0 3rem;
+
+    @include mq($from : tablet) {
+      padding-top: 0;
+    }
+  }
+
+  @include mq($from : smallMobile-768) {
+    .tab-content-about {
+      background: url("#{$image-path}components/pages/about/bg_about.png") no-repeat bottom right;
+      background-size: auto 20%;
+    }
+    &__menu {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: .5rem;
+      margin: 0 auto 3rem;
+      padding: 0 0 5px;
+      max-width: 1144px;
+      a {
+        margin-right: 0;
+        font-size: 14px;
+        line-height: 32px;
+        padding: 0.65rem 0.5rem;
+        background: $third-color;
+      }
+    }
+    &__content {
+      max-width: 912px !important;
+      font-size: 16px;
+      line-height: 23px;
+      text-align: center;
+    }
+  }
+  @include mq($from : tablet) {
+    &__menu {
+      top: 90px;
+    }
+    .tab-content {
+      padding-top: 10rem;
+      background: url("#{$image-path}components/pages/about/bg_top_about.png") top no-repeat;
+      background-size: 100%;
+    }
+    .tab-content-about {
+      background:
+        url("#{$image-path}components/pages/about/bg_top_about.png") top no-repeat,
+        url("#{$image-path}components/pages/about/bg_about.png") bottom right  no-repeat;
+      background-size: 100%, auto;
+      transition: background 0.5s linear;
+    }
+  }
+}
+// transition
+fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.tab-about-bg-gradient {
+	position: absolute;
+	height: 65px;
+	bottom: 0;
+	background: linear-gradient(360deg, #161618 22.08%, rgba(32, 32, 35, 0) 111.47%);
+	width: 100%;
+}

@@ -1,0 +1,29 @@
+$bottom-bar-item : 'bottom-bar-item';
+
+.#{$bottom-bar-item} {
+  width    : 20%;
+  position : relative;
+  &.active {
+    .#{$bottom-bar-item}__link {
+      background-color : $primary-color;
+      color            : $body-color;
+    }
+  }
+  &__link {
+    padding-top    : 4.4375vw;
+    padding-bottom : 2.5vw;
+    color          : $body-color;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    height         : 100%;
+    @include mq($from : smallMobile-480) {
+      padding-top    : 14px;
+      padding-bottom : 8px;
+    }
+    &.active {
+      background-color : $primary-color;
+      color            : $body-color;
+    }
+  }
+}

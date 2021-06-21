@@ -1,0 +1,121 @@
+$iframe: 'iframe';
+
+.#{$iframe} {
+  height: calc(100vh - 90px);
+  position: relative;
+
+  @media screen and (min-width: 768px){
+    &--live-sport {
+      background:  url("#{$image-path}components/pages/iframe/sport.jpg") no-repeat center;
+      background-size: cover;
+    }
+    &--e-sport {
+      background:  url("#{$image-path}components/pages/iframe/e-sport.jpg") no-repeat center;
+      background-size: cover;
+    }
+
+    &--numbergame {
+      background:  url("#{$image-path}components/pages/iframe/numbergame.jpg") no-repeat center;
+      background-size: cover;
+    }
+    &--lottery {
+      background:  url("#{$image-path}components/pages/iframe/lottery.jpg") no-repeat center;
+      background-size: cover;
+    }
+    &--lode, &--lode-sieutoc {
+      background:  url("#{$image-path}components/pages/iframe/lode.jpg") no-repeat center;
+      background-size: cover;
+    }
+    &--casino {
+      background:  url("#{$image-path}components/pages/iframe/casino.jpg") no-repeat center;
+      background-size: cover;
+    }
+    &--keno, &--tp-keno {
+      background:  url("#{$image-path}components/pages/iframe/keno.jpg") no-repeat center;
+      background-size: cover;
+    }
+    &--virtual-game {
+      background:  url("#{$image-path}components/pages/iframe/virtual-game.jpg") no-repeat center;
+      background-size: cover;
+    }
+    &--table-game {
+      background:  url("#{$image-path}components/pages/iframe/table-game.jpg") no-repeat center;
+      background-size: cover;
+    }
+    &--saba {
+      background:  url("#{$image-path}components/pages/iframe/saba.jpg") no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  .loading {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__content {
+      height: 96px;
+      width: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    &__content:after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      height: calc(100% - 6px);
+      width: calc(100% - 6px);
+      background: radial-gradient(50% 50% at 50% 50%, #323439 0%, rgba(50, 52, 57, 0) 100%);
+      border-radius: 100%;
+    }
+    &__circle {
+      background: url("#{$image-path}components/pages/iframe/loading/circle.png") no-repeat center;
+      background-size: cover;
+      -webkit-animation: loadingCircle 0.5s infinite linear;
+      animation: loadingCircle 0.5s infinite linear;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+    &__icn {
+      position: absolute;
+      width: 44px;
+      z-index: 1;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      position: relative;
+      z-index: 2;
+    }
+    &--tp-keno {
+      background: #fff;
+    }
+  }
+
+  @keyframes loadingCircle {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

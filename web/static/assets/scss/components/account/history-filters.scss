@@ -1,0 +1,100 @@
+$history-filters : 'history-filters';
+
+.#{$history-filters} {
+  @include mq($from : smallMobile-768) {
+    display         : block;
+    align-items     : center;
+    justify-content : flex-end;
+    margin-bottom   : 2rem;
+    @include mq($from : tablet) {
+      display : flex;
+    }
+    &__stt {
+      display         : flex;
+      align-items     : center;
+      justify-content : flex-end;
+      margin-bottom   : 1rem;
+      color           : $fifth-color;
+      @include mq($from : tablet) {
+        margin-bottom : 0;
+      }
+      a {
+        display        : inline-block;
+        background     : #44464a;
+        border-radius  : 17px;
+        font-weight    : bold;
+        font-size      : 12px;
+        line-height    : 18px;
+        padding        : 5px 10px;
+        text-transform : uppercase;
+        color          : $body-color;
+        margin-left    : 1rem;
+        text-align     : center;
+        &.active {
+          background-color : $second-color;
+          color            : #220407;
+          &:hover {
+            color          : #f7f8fa;
+          }
+        }
+        &:hover {
+          color            : #febc1f;
+        }
+      }
+    }
+    &__form {
+      margin-left     : 1rem;
+      display         : flex;
+      justify-content : flex-end;
+      &::v-deep {
+        .btn {
+          margin-left   : 1rem;
+          border-radius : 3px;
+          height        : 30px;
+          padding       : 0 1.5rem;
+        }
+        .daterangepicker {
+          .calendar-table {
+            td, th {
+              color : #202023;
+              &.active {
+                color : #ffffff;
+              }
+              &.off.active.in-range {
+                background-color: #357ebd;
+              }
+              &.off.in-range {
+                background-color: #ebf4f8;
+              }
+            }
+          }
+        }
+      }
+    }
+    &::v-deep {
+      .#{$history-filters}__date-range {
+        font-size        : 12px;
+        line-height      : 18px;
+        border           : 1px solid $body-color;
+        padding          : 5px 1rem;
+        border-radius    : 3px;
+        width            : 100%;
+        min-width        : 218px;
+        background-color : $third-color;
+        color            : $body-color;
+        position         : relative;
+        &:after {
+          content         : "";
+          position        : absolute;
+          right           : 0;
+          top             : 0;
+          pointer-events  : none;
+          background      : url("#{$image-path}/icons/arrow/down.svg") no-repeat center;
+          width           : 40px;
+          height          : 30px;
+          background-size : 35%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+$error : 'error';
+
+.#{$error} {
+  min-height      : calc(100vh - 62px - 20.625vw);
+  background      : #0c0a0a;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  padding         : 2rem 0;
+  .container {
+    text-align : center;
+  }
+  &__img {
+    margin : 0 auto;
+    width  : 90%;
+  }
+  
+  h3 {
+    font-size      : 18px;
+    line-height    : 28px;
+    letter-spacing : 1px;
+    color          : $second-color;
+    margin-bottom  : .5rem;
+  }
+  &__text {
+    font-weight   : 800;
+    font-size     : 14px;
+    line-height   : 24px;
+    margin-bottom : 4vw;
+    span {
+      color : $second-color;
+    }
+  }
+  &--maintenance {
+    .error__img {
+      margin-bottom : 1.5rem;
+    }
+    .error__text {
+      margin-bottom : 1rem;
+    }
+  }
+  @include mq($from : mobile) {
+    min-height : calc(100vh - 90px);
+    &__img {
+      width : 42vw;
+    }
+    h3 {
+      font-size     : 28px;
+      line-height   : 28px;
+      margin-bottom : 1.5rem;
+    }
+    &__text {
+      font-size   : 16px;
+      line-height : 28px;
+      br {
+        display : none;
+      }
+    }
+  }
+}

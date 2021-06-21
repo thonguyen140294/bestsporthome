@@ -1,0 +1,58 @@
+$banner-section: 'banner-section';
+
+.#{$banner-section} {
+  #banner {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+  }
+  &::v-deep {
+    @import '../../common/swiper-container.scss';
+
+    .swiper-wrapper {
+      display: flex;
+    }
+    .swiper-slide {
+      height: auto;
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .swiper-pagination {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      bottom: 1.5rem;
+
+      .swiper-pagination-bullet {
+        border-radius: 4px;
+        display: inline-block;
+        height: 3px;
+        background: #777;
+        margin: 0 .25rem;
+        width: 10px;
+
+        @media screen and (min-width: 768px) {
+          height: 4px;
+          margin: 0 .5rem;
+          width: 32px;
+        }
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #b50000;
+        width: 20px;
+
+        @media screen and (min-width: 768px) {
+          width: 64px;
+        }
+      }
+    }
+  }
+}

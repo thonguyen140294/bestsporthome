@@ -1,0 +1,8 @@
+apps:
+- script: "npm run build && npm run start"
+  name: 'WebMU'
+  max_memory_restart: '300M'
+  instances: 1
+  exec_mode: fork
+  env:
+      NODE_ENV: production

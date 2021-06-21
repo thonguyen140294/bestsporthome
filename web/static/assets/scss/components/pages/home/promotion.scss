@@ -1,0 +1,153 @@
+$promotion: 'promotion';
+
+.#{$promotion} {
+  #promotion {
+    overflow: hidden;
+  }
+
+  position: relative;
+  h3 {
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    @include mq($from: mobile) {
+      text-align: left;
+      font-size: 24px;
+      line-height: 35px;
+      margin-bottom: 1rem;
+    }
+  }
+  &__link {
+    display: block;
+    position: relative;
+    color: #f7f8fa;
+    max-height: 100%;
+    height: 100%;
+    background-color: #150204;
+    picture {
+      /deep/ img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: left;
+      }
+    }
+  }
+  &__content {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    h4 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      @include mq($from: mobile) {
+        font-size: 28px;
+        line-height: 36px;
+      }
+      span {
+        color: #FEBC1F;
+        @include mq($from: mobile) {
+          font-size: 32px;
+        }
+      }
+    }
+    p {
+      margin-top: 0.5rem;
+      font-size: 11px;
+      @include mq($from: mobile) {
+        font-size: 18px;
+      }
+    }
+    img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      -o-object-fit: cover;
+      object-fit: cover;
+      @include mq($from: mobile) {
+        object-position: top;
+      }
+    }
+  }
+  &__right {
+    @include mq($from: mobile) {
+      padding: 0 2rem;
+    }
+    &::v-deep {
+      .btn {
+        height: 44px;
+      }
+    }
+  }
+
+  .swiper-wrapper {
+    display: flex;
+  }
+
+  .swiper-slide {
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+    height: 104px;
+    @include mq($from: mobile) {
+      padding-top: 0;
+      height: 138px;
+    }
+  }
+  .swiper-button-next {
+    display: none;
+    @include mq($from: mobile) {
+      display: flex;
+      height: 58px;
+      width: 58px;
+      background: url('/assets/images/components/pages/home/promotion/arrow-promotion.svg') no-repeat center;
+      background-size: 45%;
+      position: absolute;
+      top: calc(50% + 17px);
+      left: 100%;
+      z-index: 10;
+    }
+    &::after {
+      content: none;
+    }
+    i {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &::v-deep {
+    .swiper-pagination-promotion {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      bottom: -1rem;
+      @include mq($from: mobile) {
+        display: none;
+      }
+      .swiper-pagination-bullet {
+        background: #1B1617;
+        border-radius: 4px;
+        display: inline-block;
+        width: 8px;
+        height: 3px;
+        margin: 0 0.25rem;
+        opacity: 1;
+      }
+      .swiper-pagination-bullet-active {
+        background: #F7F8FA;
+        width: 20px;
+      }
+    }
+  }
+}

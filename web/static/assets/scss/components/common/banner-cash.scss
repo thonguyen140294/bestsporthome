@@ -1,0 +1,222 @@
+$banner-cash: 'banner-cash';
+
+.#{$banner-cash} {
+  z-index: 5;
+  position: absolute;
+  padding: 0 1rem;
+  color: #fff;
+  text-align: center;
+  @include mq($until: mobile) {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 3rem;
+    width: 100%;
+  }
+  @include mq($from: mobile) {
+    left: 10vw;
+    bottom: 5vw;
+  }
+  &__wrapper {
+    display: inline-block;
+    text-align: center;
+    p {
+      font-weight: bold;
+      font-size: 4.375vw;
+      line-height: 6.25vw;
+      color: #FFF0F0;
+      @include mq($from: mobile) {
+        font-size: 22px;
+        line-height: 32px;
+        margin-bottom: 10px;
+      }
+    }
+    p.banner-cash__desc {
+      font-size: 14px;
+      @include mq($from: 768px) {
+        text-transform: capitalize;
+        font-size: 22px;
+      }
+    }
+
+    .display-mb {
+      display: block;
+      @include mq($from: 768px) {
+        display: none;
+      }
+    }
+
+    .display-pc {
+      display: none;
+      @include mq($from: 768px) {
+        display: block;
+      }
+    }
+  }
+  &__hdg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      max-width: 41.25vw;
+      width: 30vw;
+      height: 30vw;
+    }
+    @include mq($from: mobile) {
+      margin-bottom: -1rem;
+      img {
+        max-width: 270px;
+        width: 270px;
+        height: 270px;
+      }
+    }
+  }
+  &__logo {
+    .banner-live-casino img {
+      width: 220px;
+      height: 34px;
+      @include mq($from: 768px) {
+        width: 545px;
+        height: 83px;
+      }
+    }
+    .banner-evolution img {
+      width: 85px;
+      height: 32px;
+      @include mq($from: 768px) {
+        width: 198px;
+        height: 76px;
+      }
+    }
+  }
+  &__bank {
+    max-width: 240px;
+    @include mq($from: 768px) {
+      max-width: 410px;
+    }
+    .bank-bonus {
+      display: flex;
+      height: 18px;
+      @include mq($from: 768px) {
+        height: 36px;
+      }
+      .bonus-info {
+        width: 108px;
+        color: $third-color;
+        background: $second-color;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-top-right-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include mq($from: 768px) {
+          font-size: 14px;
+          font-weight: 800;
+          width: 180px;
+        }
+      }
+      .display-mb {
+        display: flex;
+        @include mq($from: 768px) {
+          display: none;
+        }
+      }
+      .display-pc {
+        display: none;
+        @include mq($from: 768px) {
+          display: flex;
+        }
+      }
+      .bank-rec {
+        width: 18px;
+        height: 18px;
+        margin-left: -1px;
+        border-top: 18px solid transparent;
+        border-left: 7px solid $second-color;
+        @include mq($from: 768px) {
+          border-top-left-radius: 5px;
+          border-top: 36px solid transparent;
+          border-left: 15px solid $second-color;
+        }
+      }
+    }
+  }
+  &__title {
+    b {
+      display: none;
+      @include mq($from: mobile) {
+        display: block;
+        font-size: 46px;
+        line-height: 50px;
+      }
+    }
+    h2 {
+      font-size: 16.5625vw;
+      line-height: 22.8125vw;
+      color: $second-color;
+      font-weight: 800;
+      @include mq($from: mobile) {
+        font-size: 100px;
+        line-height: 110px;
+      }
+    }
+  }
+
+  /deep/ .base-button--banner {
+    width: 110px;
+    height: 28px;
+    font-size: 11px;
+    padding: 0;
+    @include mq($from: 768px) {
+      width: 220px;
+      height: 60px;
+      font-size: 18px;
+      padding: .5rem 1rem;
+    }
+  }
+}
+
+.#{$banner-cash}.banner-case-casino {
+  @include mq($from: mobile) {
+    bottom: 9vw;
+  }
+  @include mq($from: tablet) {
+    bottom: 11vw;
+  }
+}
+
+.#{$banner-cash}.banner-bank {
+  @include mq($from: mobile) {
+    bottom: 6vw;
+  }
+  @include mq($from: tablet) {
+    bottom: 11vw;
+  }
+
+  .bank-highlight {
+    color: $second-color;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 22px;
+    letter-spacing: 0.03em;
+    margin-top: 10px;
+    @include mq($from: 768px) {
+      font-size: 34px;
+      line-height: 48px;
+      margin-top: 20px;
+    }
+  }
+
+  .banner-cash__desc {
+    margin-top: 5px;
+    @include mq($from: 768px) {
+      margin-top: 20px;
+    }
+  }
+
+  .banner-bank-btn {
+    margin: 1rem auto;
+  }
+}

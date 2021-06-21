@@ -1,0 +1,105 @@
+$bank-info: 'bank-info';
+
+.#{$bank-info} {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $body-color;
+    border-radius: 4px;
+    margin-top: 1rem;
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        flex: 1 1 100%;
+        letter-spacing: 0.01em;
+        position: relative;
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+        &:after {
+            content: "";
+            height: 1px;
+            border-bottom: 1px dashed $fifth-color;
+            width: calc(100% - 2rem);
+            position: absolute;
+            top: 100%;
+            right: 1rem;
+        }
+    }
+    &__copy {
+        width: 21px;
+        height: 24px;
+        background: url("#{$image-path}components/account/bank-info/copy.svg") no-repeat center;
+        background-size: contain;
+        margin-left: .5rem;
+        cursor: pointer;
+        &.active {
+            background: url("#{$image-path}components/account/bank-info/copied.svg") no-repeat center;
+            background-size: contain;
+        }
+    }
+    p {
+        color: #323439;
+        font-size: 10px;
+        line-height: 15px;
+    }
+    b {
+        display: block;
+        color: #202023;
+        font-size: 11px;
+        line-height: 16px;
+        text-transform: uppercase;
+    }
+    @media screen and (min-width: 768px) {
+        flex-wrap: nowrap;
+        &__item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            flex: 1;
+            letter-spacing: 0.01em;
+            position: relative;
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+            &:after {
+                content: "";
+                width: 1px;
+                border-right: 1px dashed $fifth-color;
+                height: calc(100% - 2rem);
+                top: 1rem;
+                right: 0;
+            }
+        }
+        &__copy {
+            width: 21px;
+            height: 24px;
+            background: url("#{$image-path}components/account/bank-info/copy.svg") no-repeat center;
+            background-size: contain;
+            margin-left: .5rem;
+            cursor: pointer;
+            &.active {
+                background: url("#{$image-path}components/account/bank-info/copied.svg") no-repeat center;
+                background-size: contain;
+            }
+        }
+        p {
+            color: #323439;
+            font-size: 10px;
+            line-height: 15px;
+        }
+        b {
+            display: block;
+            color: #202023;
+            font-size: 11px;
+            line-height: 16px;
+            text-transform: uppercase;
+        }
+    }
+}

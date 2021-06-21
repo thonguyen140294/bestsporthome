@@ -1,0 +1,46 @@
+@keyframes anim-moema {
+  60% {
+    transform: scale3d(0.98, 0.98, 1);
+  }
+  85% {
+    transform: scale3d(1.05, 1.05, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes loading-iframe {
+  0% {
+    margin-left: -3000px;
+  }
+  30%,70% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 3000px;
+  }
+}
+
+@keyframes loading-btn {
+  10% {
+    height: 10px;
+    background-color: #bac5db;
+  }
+  20% {
+    height: 14px;
+    background-color: #bac5db;
+  }
+  30% {
+    height: 12px;
+    background-color: #bac5db;
+  }
+  40% {
+    height: 11px;
+  }
+  50% {
+    height: 10px;
+  }
+  60% {
+    height: 8px;
+  }
+}

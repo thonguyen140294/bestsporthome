@@ -1,0 +1,26 @@
+$banner-jackpot: 'banner-jackpot';
+
+.#{$banner-jackpot} {
+  z-index: 5;
+  position: absolute;
+  padding: 0 1rem;
+  width: 100%;
+  text-align: center;
+  bottom: 3rem;
+  left: 50%;
+  color: #fff;
+  transform: translateX(-50%);
+
+  /deep/ .base-button--banner {
+    width: 110px;
+    height: 28px;
+    font-size: 11px;
+    padding: 0;
+    @include mq($from: 768px) {
+      width: 220px;
+      height: 60px;
+      font-size: 18px;
+      padding: .5rem 1rem;
+    }
+  }
+}

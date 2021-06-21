@@ -1,0 +1,65 @@
+$base-checkbox : 'base-checkbox';
+
+.#{$base-checkbox} {
+  position      : relative;
+  margin-bottom : 1rem;
+  &__wrap {
+    display     : flex;
+    align-items : center;
+    position    : relative;
+  }
+  input {
+    opacity    : 0;
+    visibility : hidden;
+    position   : absolute;
+    z-index    : -1;
+    &:checked + .#{$base-checkbox}__box {
+      &:before {
+        content         : '';
+        position        : absolute;
+        width           : 14px;
+        height          : 11px;
+        display         : block;
+        left            : 50%;
+        top             : 50%;
+        background      : url("#{$image-path}/components/common/base-checkbox/check-box.svg") no-repeat top right;
+        background-size : auto 100%;
+        transform       : translateX(-50%) translateY(-50%);
+      }
+    }
+  }
+
+  @import "base-error";
+
+  &__box {
+    border           : 1px solid #838a92;
+    background-color : transparent;
+    border-radius    : 3px;
+    height           : 24px;
+    width            : 24px;
+    display          : block;
+    position         : relative;
+    margin-right     : 10px;
+    cursor           : pointer;
+    &:focus {
+      outline      : 0;
+      border-color : #f7f8fa;
+    }
+    &::placeholder {
+      color : transparent;
+    }
+  }
+  &__label {
+    margin      : 0;
+    padding     : 0 0.25rem;
+    font-size   : 12px;
+    line-height : 18px;
+    font-weight : 400;
+    opacity     : 1;
+    cursor      : pointer;
+  }
+  input, label {
+    transition : all 0.2s;
+    color      : $body-color;
+  }
+}

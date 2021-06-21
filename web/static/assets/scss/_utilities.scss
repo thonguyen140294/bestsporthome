@@ -1,0 +1,48 @@
+.w-60per {
+  width: 60%;
+}
+
+.mb-1point5rem {
+  margin-bottom: 1.5rem;
+}
+
+.mb-0point5rem {
+  margin-bottom: .5rem !important;
+}
+
+.mb-2rem {
+  margin-bottom: 2rem !important;
+}
+
+.mt-1point5rem {
+  margin-top: 1.5rem !important;
+}
+
+.mt-2point5rem {
+  margin-top: 2.5rem !important;
+}
+
+.text-color-838A92 {
+  color: #838A92;
+}
+
+.pc-hide {
+  @media screen and (min-width: 981px) {
+    display: none !important;
+  }
+}
+
+.pc-show {
+  display: none !important;
+  @media screen and (min-width: 981px) {
+    display: flex !important;
+  }
+}
+
+.absolute-right {
+  position: absolute;
+  width: 21px;
+  right: 12px;
+  top: 42px;
+  z-index: 1;
+}

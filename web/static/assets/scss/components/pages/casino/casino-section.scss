@@ -1,0 +1,40 @@
+$casino-section: 'casino-section';
+
+.#{$casino-section} {
+  margin: 2rem 0;
+  &::v-deep {
+    .casino-center-item {
+      &__title {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: .5rem;
+        font-weight: 500;
+      }
+    }
+  }
+  &__top {
+    margin-top: 2.5rem;
+    @extend %box-title;
+    &__link-all {
+      @extend %box-title-link-all;
+      color: $second-color;
+      background: #323439;
+    }
+    &__title {
+      @extend %box-title-h3;
+      text-transform: uppercase;
+    }
+  }
+
+  @include mq($from: mobile) {
+    &__top {
+      justify-content: flex-start;
+      padding: 0 2rem;
+      &__title {
+        margin-right: 3rem;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}

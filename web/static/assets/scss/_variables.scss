@@ -1,0 +1,148 @@
+$primary-color: #B50000;
+$second-color: #FEBC1F;
+$third-color: #0C0A0A;
+$fourth-color: #1B1617;
+$fifth-color: #838A92;
+$body-color: #F7F8FA;
+$body-bg: #161618;
+$border-color: #2d333a;
+
+$gray-colors: (
+        1: #1A1A1A,
+        2: #333333,
+        3: #4D4D4D,
+        4: #666666,
+        5: #808080,
+        6: #999999,
+        7: #B3B3B3,
+        8: #CCCCCC,
+        9: #E5E5E5,
+        10: #F2F2F2,
+        11: #F9F9F9,
+        12: #FBFBFB,
+        13: #DDDDDD,
+        14: #646464,
+        15: #161616,
+        16: #BDBDBD,
+        17: #272727,
+        18: #757575,
+);
+
+$red-colors: (
+        1: #7D0000,
+        2: #B10000,
+        3: #C13333,
+        4: #DA8585,
+        5: #ECC2C2,
+        6: #F9EDED
+);
+
+$image-path: '/assets/images/';
+$font-path: '/assets/fonts/';
+$fa-font-path: '/assets/fonts/fa/';
+
+//=====================================
+//Override line-height of Bootstrap
+$line-height-base: 1.5;
+//=====================================
+//Override <p> margin bottom
+$paragraph-margin-bottom: 0;
+
+$bottom-bar-height-mobile: 65px;
+//=====================================
+//Override h1, h2, h3, h4, h5, h6 margin bottom
+$headings-margin-bottom: 0;
+//=====================================
+
+$main-font-size: 14px;
+$main-font: 'Be Vietnam', -apple-system,system-ui,BlinkMacSystemFont, Arial, sans-serif;
+
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+$font-weight-light: 300;
+$container-width: 1144px;
+//MQ SASS
+$mq-responsive: true;
+$mq-breakpoints: (
+  smallMobile-320: 321px,
+  smallMobile-480: 481px,
+  smallMobile-768: 768px,
+  mobile:  981px,
+  tablet:  1201px,
+  desktop: 1426px,
+  wide:    1301px,
+);
+
+$mq-static-breakpoint: desktop;
+
+//=====================================
+//Override color of Bootstrap
+$body-color: #F7F8FA;
+$body-bg: #161618;
+//=====================================
+//Override spacer of Bootstrap
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  0-half: ($spacer * 0 + 0.5),
+  1: ($spacer * 1),
+  1-half: ($spacer * 1 + 0.5),
+  2: ($spacer * 2),
+  2-half: ($spacer * 2 + 0.5),
+  3: ($spacer * 3),
+  3-half: ($spacer * 3 + 0.5),
+  4: ($spacer * 4),
+  4-half: ($spacer * 4 + 0.5),
+  5: ($spacer * 5),
+  5-half: ($spacer * 5 + 0.5),
+  6: ($spacer * 6),
+  6-half: ($spacer * 6 + 0.5),
+  7: ($spacer * 7),
+  7-half: ($spacer * 7 + 0.5),
+  8: ($spacer * 8),
+  8-half: ($spacer * 8 + 0.5),
+  9: ($spacer * 9),
+  9-half: ($spacer * 9 + 0.5),
+  10: ($spacer * 10),
+  10-half: ($spacer * 10 + 0.5)
+);
+//=====================================
+//Container width của trang
+$container-width: 1144px;
+$page-width-mobile: 640px;
+//=====================================
+//Override breakpoint of Bootstrap
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+//=====================================
+//Override font weight of Boostrap
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$headings-font-weight: 800;
+//Font-weight-base
+$font-weight-base: $font-weight-normal;
+//=====================================
+//Font
+$font-size-base: 1rem;
+$second-font: Arial, sans-serif;
+$third-font: Arial, sans-serif;
+//Font-family-base
+$font-family-base: $main-font;
+//=====================================
+//Override line-height of Bootstrap
+$line-height-base: 1.5;
+//=====================================
+//Override <p> margin bottom
+$paragraph-margin-bottom: 0;
+//=====================================
+//Override h1, h2, h3, h4, h5, h6 margin bottom
+$headings-margin-bottom: 0;
+//=====================================
+//Override <label> margin bottom
+$label-margin-bottom: 0;

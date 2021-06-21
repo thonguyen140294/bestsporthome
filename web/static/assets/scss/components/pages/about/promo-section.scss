@@ -1,0 +1,289 @@
+$promo: 'promo';
+
+.#{$promo} {
+  margin-bottom: 1.5rem;
+  padding-left: .5rem;
+  margin-right: .5rem;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &__item {
+		position: relative;
+    width: 310px;
+    margin-right: 25px !important;
+    background: #202023;
+    border-radius: 6px;
+    max-width: 82%;
+    flex: 0 0 85%;
+    overflow: hidden;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include mq($from: mobile) {
+      margin-bottom: 10px;
+    }
+  }
+  &__banner {
+    background: url("#{$image-path}components/pages/about/promos/radio/bg.png") no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: stretch;
+    border-radius: 5px;
+    border: 1px solid #323439;
+  }
+  &__wrap-img {
+    position: relative;
+    width: 45%;
+    padding-top: 40%;
+    img {
+      @extend %typo-img;
+      object-fit: contain;
+      object-position: bottom left;
+    }
+  }
+  &__banner-content {
+    text-align: center;
+    flex: 1;
+    padding: 1rem .5rem;
+    width: 65%;
+  }
+  &__title {
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 16px;
+    color: $second-color;
+    text-transform: uppercase;
+  }
+  &__number {
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 32px;
+    background: -webkit-linear-gradient(#FEBC1F, #FFFFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.25rem;
+  }
+  &__text {
+    font-size: 11px;
+    line-height: 16px;
+    color: #fff;
+  }
+  &__content {
+    padding: .75rem;
+    font-size: 12px;
+    line-height: 18px;
+    color: #E0E0E0;
+		padding-bottom: 100px;
+    i {
+      display: inline-block;
+      height: 8px;
+      width: 8px;
+      background-color: $second-color;
+      transform: rotate(45deg);
+      margin-top: .5rem;
+    }
+    p {
+      display: flex;
+      margin-bottom: .75rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    span {
+      display: block;
+      width: calc(100% - 8px);
+      margin-left: 1rem;
+    }
+  }
+  &__desc {
+    padding: 2rem 0 2rem;
+  }
+  &__cta {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: .75rem 0;
+    width: 100%;
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      padding: 0;
+      flex-basis: 45%;
+    }
+    .btn--type1 {
+      height: 36px;
+      border-radius: 4px;
+      background-color: $primary-color;
+      font-weight: 800;
+    }
+    .btn--type2 {
+      height: 36px;
+      border-radius: 4px;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+  }
+
+  .cta-mb {
+    display: flex;
+
+    @include mq($from : mobile) {
+      display: none;
+    }
+  }
+
+  .cta-pc {
+    display: none;
+    .btn {
+      width: 94px;
+      flex-basis: auto;
+    }
+
+    .btn--type1 {
+      margin-right: 3px;
+    }
+
+    @include mq($from : mobile) {
+      display: flex;
+    }
+  }
+
+  @include mq($from : smallMobile-768) {
+    &__item {
+      max-width: 40%;
+    }
+  }
+  @include mq($from : mobile) {
+    display: flex;
+    flex-wrap: wrap;
+    transform: none !important;
+    margin: 0 auto 3rem;
+    max-width: 912px;
+    
+    &__item {
+      margin-right: 0;
+      flex: 0 0 30%;
+      max-width: 100%;
+    }
+    &__title {
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: .5rem;
+    }
+    &__number {
+      font-size: 36px;
+      line-height: 32px;
+      margin-bottom: 1rem;
+    }
+    &__banner-content {
+      padding: 1rem 0.5rem;
+    }
+    &__content {
+      font-size: 14px;
+      line-height: 24px;
+    }
+    &__desc {
+      padding: 1.125rem 0 6.625rem;
+    }
+  }
+}
+
+.promotion-section {
+  &__wrapper {
+    max-width: 100%;
+  }
+}
+
+.promo-about-us {
+  overflow: visible;
+  padding: 0px 30px;
+}
+
+.promotion-list {
+  display: grid;
+  grid-gap: .5rem;
+  row-gap: 1rem;
+  @include mq($from: mobile) {
+    row-gap: 2rem;
+  }
+
+  &__container {
+    max-width: 1144px;
+    .promotion-list__arrow {
+      transition: all .3s linear;
+      opacity: 1;
+    }
+
+    .swiper-pagination {
+      bottom: 0;
+      &::v-deep {
+        .swiper-pagination-bullet {
+          background: #fff
+        }
+      }
+
+      @include mq($from: mobile) {
+        display: none
+      }
+    }
+
+    .swiper-pagination .swiper-pagination-bullet {
+      background: #fff
+    }
+  }
+
+  @include mq($from: mobile) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2rem 0.5rem;
+    padding: 0 2rem;
+
+    &__arrow {
+      position: absolute;
+      display: flex;
+      top: 0;
+      z-index: 5;
+      opacity: 0;
+      height: 416px;
+      align-items: center;
+      background: linear-gradient(90deg, rgba(27, 22, 23, 0) 0%, rgba(27, 22, 23, 0.85) 59.38%, #1B1617 100%);
+
+      &.swiper-button-disabled {
+        opacity: 0;
+      }
+
+      i {
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+        transform: translateY(-16px);
+        z-index: 1;
+        background: url("#{$image-path}icons/right-slide.svg") no-repeat center;
+        background-size: 80%;
+      }
+
+      &.prev {
+        left: 0;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+      }
+
+      &.next {
+        right: 0;
+      }
+    }
+
+  }
+
+  @include mq($until: mobile) {
+    padding: 0 .5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

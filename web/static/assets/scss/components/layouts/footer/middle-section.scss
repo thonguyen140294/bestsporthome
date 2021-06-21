@@ -1,0 +1,17 @@
+$middle-section: 'middle-section';
+
+.#{$middle-section} {
+  display: flex;
+  justify-content: space-around;
+  background: #202023;
+  border-top: 1px solid #464647;
+  border-bottom: 1px solid #464647;
+  padding: 1.25rem 0;
+  @media screen and (min-width: 981px) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

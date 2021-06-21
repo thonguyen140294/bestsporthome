@@ -1,0 +1,77 @@
+$list-game: 'list-game';
+
+.#{$list-game} {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 10px;
+  padding-bottom: 1.5rem;
+  @extend %flex-scroll;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 16px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  &__span {
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    white-space: nowrap;
+    color: $fifth-color;
+    padding-top: 6px;
+  }
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #323439;
+    box-shadow: 0 16px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 22px;
+    padding: 1rem;
+    width: 4rem;
+    height: 4rem;
+    i {
+      font-size: 2rem;
+      color: #838A92;
+    }
+    &:hover {
+      transition: all ease 0.3s;
+      background-color: $primary-color;
+      i {
+        color: #fff;
+      }
+      ~ .#{$list-game}__span {
+        color: #F7F8FA;
+      }
+    }
+  }
+  @include mq($from: smallMobile-768) {
+    column-gap: 1rem;
+    padding-top: 2rem;
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+  @include mq($from : mobile) {
+    &__item {
+      span {
+        font-size: 16px;
+        line-height: 23px;
+        padding-top: 8px;
+      }
+    }
+    &__icon {
+      display: flex;
+      align-items: center;
+      width: 7.875rem;
+      height: 7.875rem;
+      padding: 1.8rem;
+      i {
+        font-size: 3rem;
+      }
+    }
+  }
+  @include mq($from : tablet) {
+    column-gap: 2rem;
+  }
+}

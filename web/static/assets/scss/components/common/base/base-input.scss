@@ -1,0 +1,235 @@
+$base-input: 'base-input';
+
+.#{$base-input} {
+  position: relative;
+  margin-bottom: 1rem;
+  &__wrap {
+    display: flex;
+    flex-flow: column-reverse;
+    position: relative;
+    &--reverse {
+      flex-flow: column;
+      label {
+        transform: unset;
+      }
+    }
+    &.focused {
+      label {
+        opacity: 1;
+        transform: translate3d(12px, -36px, 0);
+        font-size: 12px;
+        background-color: #202124;
+        color: #F7F8FA;
+      }
+      input {
+        color: #F7F8FA;
+        &::placeholder {
+          color: #838A92;
+          opacity: 1;
+        }
+        &:disabled {
+          background: #323439;
+          + label {
+            transform: translate3d(12px, -35px, 0);
+            background: #323439;
+          }
+        }
+      }
+      textarea {
+        color: #F7F8FA;
+        &::placeholder {
+          color: #838A92;
+          opacity: 1;
+        }
+        + label {
+          transform: translate3d(12px, -10px, 0);
+        }
+      }
+    }
+    &.input-error {
+      input, textarea {
+        border: 1px solid #EC1111;
+      }
+    }
+  }
+  input, textarea {
+    font-size: 12px;
+    line-height: 18px;
+    border: 1px solid #838A92;
+    color: #838A92;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    height: 44px;
+    width: 100%;
+    &:focus {
+      outline: 0;
+      border-color: #F7F8FA;
+    }
+    &::placeholder {
+      color: transparent;
+    }
+  }
+  textarea {
+    height: auto;
+    + label {
+      transform: translate3d(12px, 15px, 0);
+    }
+  }
+  label {
+    margin: 0;
+    padding: 0 0.25rem;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    pointer-events: none;
+    opacity: 1;
+    cursor: auto;
+    position: absolute;
+    transform: translate3d(12px, -13px, 0);
+    transform-origin: left top;
+    transition: 240ms;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+  input, label {
+    transition: all 0.2s;
+    touch-action: manipulation;
+    color: #838A92;
+  }
+  .eye {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: url('/assets/images/components/common/base-input/eye-open.svg') no-repeat center;
+    background-size: 60%;
+    height: 44px;
+    width: 44px;
+    &.show {
+      background: url('/assets/images/components/common/base-input/eye-close.svg') no-repeat center;
+    background-size: 50%;
+    }
+  }
+  .icon-block {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    @media screen and (min-width: 981px) {
+      right: 1.2rem;
+      top: 1.2rem;
+      bottom: auto;
+    }
+  }
+  &__vnd {
+    margin-top: 0.75rem;
+  }
+  @import "base-error";
+  &--password {
+    input {
+      padding-right: 2.2rem !important;
+    }
+  }
+  &--type-2 {
+    input {
+      font-size: 11px;
+      line-height: 14px;
+      color: #000;
+      background-color: #F7F8FA;
+      border: 0;
+      border-radius: 3px;
+      @media screen and (min-width: 768px) {
+        font-size: 14px;
+        line-height: 20px;
+        height: 60px;
+        padding: 1rem;
+      }
+      &::placeholder {
+        color: inherit;
+      }
+    }
+    .#{$base-input}__wrap {
+      &.focused {
+        input {
+          color: #000;
+        }
+      }
+    }
+    label {
+      display: none;
+    }
+    .error {
+      color: #F7F8FA;
+    }
+  }
+  &--search {
+    display: none;
+    @media screen and (min-width: 981px) {
+      display: block;
+      margin: 0 0 1.5rem 0;
+      border-radius: 5px;
+    }
+    .#{$base-input}__wrap {
+      input {
+        color: #f7f8fa;
+        background: #323439;
+        border: 1px solid #323439;
+        font-size: 14px;
+        @media screen and (min-width: 981px) {
+          height: 48px;
+          padding-right: 2.5rem;
+        }
+        line-height: 32px;
+        &::placeholder {
+          color: #838A92;
+          opacity: 1;
+        }
+      }
+      > i {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        right: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: url("#{$image-path}icons/search-yellow.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+  @include mq($from: mobile) {
+    &__wrap {
+      &.focused {
+        label {
+          opacity: 1;
+          transform: translate3d(12px, -53px, 0);
+          font-size: 14px;
+        }
+        input {
+          &:disabled {
+            + label {
+              transform: translate3d(12px, -53px, 0);
+            }
+          }
+        }
+      }
+    }
+    input {
+      height: 60px;
+      font-size: 16px;
+    }
+    textarea {
+      font-size: 16px;
+    }
+    label {
+      font-size: 14px;
+      transform: translate3d(12px, -20px, 0);
+    }
+  }
+}

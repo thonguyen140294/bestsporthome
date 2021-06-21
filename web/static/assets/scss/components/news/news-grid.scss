@@ -1,0 +1,107 @@
+$news-grid : 'news-grid';
+
+.#{$news-grid} {
+  @include mq($from: mobile) {
+    display     : flex;
+  }
+  margin-bottom : 2rem;
+  &__wrapper {
+    width: 100%;
+  }
+  &__left {
+    flex      : 0 0 65%;
+    max-width : 65%;
+    &::v-deep {
+      .news-item {
+        height : 100%;
+        &__wrap {
+          padding-top : 43%;
+        }
+        &__date {
+          position : absolute;
+          right    : 1.5rem;
+          color    : $body-color;
+          @include mq($from : desktop) {
+            top      : unset !important;
+          }
+        }
+        &__content {
+          padding: 49% 1.5rem 1.5rem;
+        }
+      }
+    }
+  }
+  &__right {
+    flex      : 0 0 35%;
+    max-width : 35%;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    &::v-deep {
+      .news-item {
+        &__link {
+          background : transparent;
+        }
+        background : #491016;
+        &:first-child {
+          background : #65050d;
+        }
+        &:last-child {
+          background : #35181c;
+        }
+        &__wrap,
+        &__date {
+          display : none;
+        }
+        &__content {
+          padding: 1.5rem;
+        }
+      }
+    }
+  }
+  &::v-deep {
+    .news__text {
+      display            : -webkit-box;
+      -webkit-line-clamp : 3;
+      -webkit-box-orient : vertical;
+      overflow           : hidden;
+      min-height         : 78px;
+    }
+  }
+  &__top {
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+    margin-bottom   : 1rem;
+    padding         : 0 0.5rem;
+  }
+  &__title {
+    @extend %box-title-h3;
+    color : #323439;
+    @include mq($from : smallMobile-768) {
+      font-size   : 18px;
+      line-height : 26px;
+    }
+  }
+  &__link-all {
+    font-size     : 12px;
+    line-height   : 18px;
+    padding       : 0.25rem 1rem;
+    border-radius : 100px;
+    background    : #e5e6e9;
+    color         : #b50000;
+    transition    : all 0.5s ease;
+    @include mq($from : smallMobile-768) {
+      background      : transparent;
+      font-weight     : 800;
+      text-decoration : underline;
+      font-size       : 16px;
+      line-height     : 23px;
+      padding         : 0;
+    }
+    &:hover, &:focus {
+      text-decoration : none;
+      transition      : all 0.5s ease;
+    }
+  }
+}

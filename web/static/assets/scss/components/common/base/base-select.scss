@@ -1,0 +1,111 @@
+$base-select: 'base-select';
+
+.#{$base-select} {
+  position: relative;
+  margin-bottom: 1rem;
+  &__wrap {
+    display: flex;
+    flex-flow: column-reverse;
+    position: relative;
+    border-radius: 3px;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0.5rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      pointer-events: none;
+      background: url("#{$image-path}components/common/base-select/down.svg") no-repeat center;
+      background-size: 30%;
+      height: 45px;
+      z-index: 10;
+      width: 45px;
+      opacity: 0.5;
+    }
+    select {
+      font-size: 16px;
+      line-height: 23.4px;
+      padding: 0.5rem 2rem 0.5rem 1rem;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      overflow: hidden;
+      color: #F7F8FA;
+      border: 1px solid #F7F8FA;
+      border-radius: 3px;
+      height: 40px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      position: relative;
+      background: transparent;
+      display: block;
+      width: 100%;
+      outline: none;
+      cursor: pointer;
+      z-index: 2;
+    }
+    label {
+      padding: 0 0.25rem;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+      cursor: auto;
+      pointer-events: none;
+      position: absolute;
+      transform: translate3d(12px, -13px, 0);
+      transform-origin: left top;
+      transition: 240ms;
+      opacity: 0;
+    }
+  }
+  option {
+    background: #f7f8fa;
+    color: #0c0a0a;
+    font-weight: 500;
+  }
+  @import "base-error";
+  &__wrap {
+    &.input-error {
+      select {
+        border: 1px solid #EC1111;
+      }
+    }
+    select {
+      &:focus {
+        border-color: #F7F8FA;
+      }
+      &:disabled {
+        cursor: not-allowed;
+        background: #767b80;
+        + label {
+          background: #5c5f64;
+        }
+      }
+    }
+    &.focused {
+      label {
+        color: #F7F8FA;
+        background-color: #202023;
+        z-index: 2;
+        opacity: 1;
+        transform: translate3d(12px, -33px, 0);
+      }
+    }
+  }
+  @include mq($from: mobile) {
+    select {
+      height: 60px;
+    }
+    &__wrap {
+      &.focused {
+        label {
+          transform: translate3d(12px, -53px, 0);
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

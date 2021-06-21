@@ -1,0 +1,15 @@
+$related-section : 'related-section';
+
+.#{$related-section} {
+  padding-bottom : 3rem;
+  @include mq($from : smallMobile-768) {
+    padding-bottom : 6rem;
+  }
+  &__title {
+    font-size     : 18px;
+    line-height   : 26px;
+    color         : #323439;
+    margin-bottom : 15px;
+    font-weight   : 800;
+  }
+}

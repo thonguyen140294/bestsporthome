@@ -1,0 +1,27 @@
+$casino-item : 'casino-item';
+
+.#{$casino-item} {
+  a {
+    display       : block;
+    border        : 1px solid #323439;
+    border-radius : 1px;
+    background    : #202023;
+    color         : $fifth-color;
+    font-size     : 11px;
+    line-height   : 18px;
+    padding       : .65rem 0;
+    text-align    : center;
+    @include mq($from : smallMobile-320) {
+      font-size : 12px;
+    }
+    &.active {
+      background   : $primary-color;
+      border-color : $primary-color;
+      color        : $body-color;
+    }
+  }
+  span {
+    display    : block;
+    margin-top : .5rem;
+  }
+}

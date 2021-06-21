@@ -1,0 +1,48 @@
+$menu-category: 'menu-category';
+
+.#{$menu-category} {
+    @media screen and (min-width: 768px) {
+        margin-top: 1rem;
+        &__wrap {
+            background: #202023;
+            border-radius: .5rem;
+            overflow: hidden;
+            &:not(:first-child) {
+              margin-top: 1rem;
+            }
+            .nav-link {
+                padding: 1rem;
+                color: $body-color;
+                transition: all .3s linear;
+                &.active {
+                    position: relative;
+                    color: $primary-color;
+                    padding-left: 1.5rem;
+                    font-weight: 800;
+                    b {
+                        color: $body-color;
+                    }
+                    &:before {
+                        content: "";
+                        border-left: 4px solid $primary-color;
+                        border-top: 4px solid transparent;
+                        border-bottom: 4px solid transparent;
+                        height: 20px;
+                        width: 0;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+            .nav-item {
+                width: 100%;
+                border-bottom: 1px solid $third-color;
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}

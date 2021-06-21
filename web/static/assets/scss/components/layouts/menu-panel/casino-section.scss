@@ -1,0 +1,25 @@
+$casino-section : 'casino-section';
+
+.#{$casino-section} {
+  margin-top : 1.5rem;
+  &__title {
+    font-weight   : 600;
+    font-size     : 14px;
+    line-height   : 20px;
+    margin-bottom : 1rem;
+    span {
+      background    : $second-color;
+      border-radius : 3px;
+      padding       : 0 5px;
+      display       : inline-block;
+      color         : #000000;
+      margin-right  : .25rem;
+    }
+  }
+  &__item {
+    display               : grid;
+    grid-template-columns : repeat(4, 1fr);
+    column-gap            : .4rem;
+    row-gap               : .5rem;
+  }
+}

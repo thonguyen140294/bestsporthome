@@ -1,0 +1,42 @@
+$betting-sport: 'betting-sport';
+
+.#{$betting-sport} {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(125px, auto));
+  padding: 0 0 27px;
+  &__container {
+    text-align: left;
+  }
+  &__heading {
+    font-weight: bold;
+    line-height: 23px;
+    color: $body-color;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .list {
+    padding: 0.875rem 0 0 1.1rem;
+    &__item {
+      list-style-type: none;
+      font-size: 14px;
+      line-height: 20px;
+      color: #E0E0E0;
+      text-indent: -1.1rem;
+      &:before {
+        content: '-';
+        margin: 0 .5rem 0 0;
+      }
+    }
+  }
+  @include mq($from : mobile) {
+    grid-template-columns: repeat(3, auto);
+    padding-top: 2.75rem;
+    column-gap: 100px;
+    .list {
+      &__item {
+        font-size: 16px;
+        line-height: 23px;
+      }
+    }
+  }
+}

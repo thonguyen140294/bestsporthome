@@ -1,0 +1,42 @@
+$game-center-info: 'game-center-info';
+
+.#{$game-center-info} {
+  display: flex;
+  margin-bottom: 1rem;
+  @include mq($from: smallMobile-768) {
+    margin-bottom: 2.25rem;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+    max-width: 100%;
+    object-fit: contain;
+    @include mq($until: smallMobile-768) {
+      vertical-align: middle;
+      border-style: none;
+    }
+  }
+  &__wrap-title {
+    margin-left: 1.5rem;
+    h3 {
+      font-size: 18px;
+      line-height: 22px;
+      color: #FEBC1F;
+    }
+    p {
+      font-size: 13px;
+      line-height: 19px;
+      color: #0c0a0a;
+    }
+    @include mq($from: smallMobile-768) {
+      h3 {
+        font-size: 32px;
+        line-height: 32px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 32px;
+      }
+    }
+  }
+}

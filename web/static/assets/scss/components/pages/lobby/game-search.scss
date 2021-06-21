@@ -1,0 +1,35 @@
+$game-search: 'game-search';
+
+.#{$game-search} {
+  &__top {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #f7f8fa;
+    margin-bottom: 19px;
+    padding: 0 2rem;
+  }
+  &__content {
+    grid-column-gap: 1rem;
+    -moz-column-gap: 1rem;
+    column-gap: 0.5rem;
+    grid-row-gap: 1rem;
+    row-gap: 2.5rem;
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0 2rem;
+  }
+
+  @include mq($until: mobile) {
+    &__top {
+      padding: 0 0.5rem;
+    }
+    &__content {
+      row-gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 0.5rem;
+    }
+  }
+}

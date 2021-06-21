@@ -1,0 +1,30 @@
+$list-bank: 'list-bank';
+
+.#{$list-bank} {
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	column-gap: 0.5rem;
+	margin: 3rem 1rem;
+	&__item {
+		text-align: center;
+		background: white;
+		border-radius: 5px;
+		margin-bottom: 0.5rem;
+		padding: 5px;
+	}
+	@include mq($from : smallMobile-768) {
+		column-gap: 1rem;
+		&__item {
+			line-height: 62px;
+			margin-bottom: 1rem;
+			padding: 0;
+		}
+	}
+	@include mq($from : tablet) {
+    grid-template-columns: repeat(9,1fr);
+		margin: 3rem auto;
+		:first-child {
+			grid-column-start: 2;
+		}
+  }
+}

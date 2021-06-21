@@ -1,0 +1,8 @@
+$guide-section : 'guide-section';
+
+.#{$guide-section} {
+  margin-left  : -.5rem;
+  margin-right : -.5rem;
+  background   : $body-bg;
+  margin-top   : 1.5rem;
+}

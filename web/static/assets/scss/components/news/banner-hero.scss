@@ -1,0 +1,171 @@
+$banner-hero : 'banner-hero';
+
+.#{$banner-hero} {
+  &__slide {
+    position    : relative;
+    padding-top : 70%;
+    &:after {
+      content    : "";
+      position   : absolute;
+      height     : 100%;
+      width      : 100%;
+      background : linear-gradient(180deg, rgba(27, 22, 23, 0) 0.54%, #1b1617 88.38%);
+      bottom     : 0;
+    }
+  }
+  &__link {
+    @extend %typo-link;
+  }
+  &__img {
+    @extend %typo-img;
+  }
+  &__content {
+    padding  : 0.75rem;
+    position : relative;
+    cursor: pointer;
+    @include mq($from : smallMobile-768) {
+      padding : 1.5rem;
+    }
+  }
+  &__category {
+    display       : inline-block;
+    margin-bottom : 0.5rem;
+    font-size     : 10px;
+    line-height   : 15px;
+    color         : #febc1f;
+    border-bottom : 1px solid #febc1f;
+    @include mq($from : smallMobile-768) {
+      font-size     : 16px;
+      line-height   : 23px;
+      margin-bottom : 1rem;
+    }
+  }
+  &__text {
+    color       : #f7f8fa;
+    font-size   : 14px;
+    line-height : 20px;
+    font-weight : bold;
+    @include mq($from : smallMobile-768) {
+      font-size     : 2.22vw;
+      line-height   : 3.26vw;
+      margin-bottom : 1rem;
+    }
+  }
+  &__date {
+    justify-content : flex-start;
+    font-size       : 12px;
+    line-height     : 18px;
+    color           : #838a92;
+    @include mq($from : smallMobile-768) {
+      font-size   : 1.11vw;
+      line-height : 1.6vw;
+    }
+  }
+  &__arrow {
+    position  : absolute;
+    display   : flex;
+    top       : 50%;
+    transform : translateY(-50%);
+    z-index   : 5;
+    &.swiper-button-disabled {
+      opacity : .5;
+      cursor  : no-drop;
+    }
+    i {
+      display : inline-block;
+      height  : 50px;
+      width   : 50px;
+    }
+  }
+  &__pagination {
+    bottom : 1.5rem;
+    @extend %slide-pagination;
+    &::v-deep {
+      .swiper-pagination-bullet {
+        width         : 20px;
+        height        : 2px;
+        margin        : 0 .3rem;
+        background    : #777777;
+        border-radius : 4px;
+        @include mq($from : smallMobile-768) {
+          width  : 34px;
+          margin : 0 .5rem;
+        }
+      }
+
+      .swiper-pagination-bullet-active {
+        background : $primary-color;
+        width      : 40px;
+        @include mq($from : smallMobile-768) {
+          width : 64px;
+        }
+      }
+    }
+  }
+  &__news {
+    position : absolute;
+    z-index  : 3;
+    bottom   : 1.5rem;
+    left     : 0;
+    .news__text {
+      color       : $body-color;
+      font-size   : 14px;
+      line-height : 20px;
+      font-weight : bold;
+    }
+    .news__date {
+      justify-content : flex-start;
+      font-size       : 12px;
+      line-height     : 18px;
+      color           : $fifth-color;
+      span {
+        margin-right : .5rem;
+      }
+    }
+  }
+  @include mq($from : smallMobile-768) {
+    &__slide {
+      padding-top : 70%;
+    }
+    &__news {
+      right  : 0;
+      margin : 0 auto;
+      .news__category {
+        font-size     : 16px;
+        line-height   : 23px;
+        margin-bottom : 1rem;
+      }
+      .news__text {
+        font-size     : 2.22vw;
+        line-height   : 3.26vw;
+        margin-bottom : 1rem;
+      }
+      .news__date {
+        font-size   : 1.11vw;
+        line-height : 1.6vw;
+      }
+    }
+    &__content {
+      h2 {
+        font-size   : 46px;
+        line-height : 67px;
+      }
+
+      .slot {
+        width : 24%;
+      }
+    }
+
+    &__pagination {
+      bottom : 2rem;
+    }
+  }
+  @include mq($from : mobile) {
+    &__slide {
+      padding-top : 38%;
+    }
+    &__news {
+      max-width : 1144px;
+    }
+  }
+}

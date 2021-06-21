@@ -1,0 +1,15 @@
+$display: 'display';
+.#{$display} {
+  &__sp {
+    display: block;
+    @include mq($from: mobile) {
+      display: none;
+    }
+  }
+  &__pc {
+    display: none;
+    @include mq($from: mobile) {
+      display: block;
+    }
+  }
+}

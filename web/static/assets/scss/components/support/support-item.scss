@@ -1,0 +1,48 @@
+$support-item: 'support-item';
+
+.#{$support-item} {
+  text-align: center;
+  display: block;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: -0.01em;
+  position: relative;
+  color: #f7f8fa;
+  transition  : all 0.5s ease;
+  &:hover, &:focus {
+    color      : $second-color;
+    transition : all 0.5s ease;
+  }
+  @media screen and (min-width: 981px) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 42px;
+    letter-spacing: normal;
+  }
+  img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0.5rem;
+    @media screen and (min-width: 981px) {
+      margin-bottom: 0;
+      margin-right: 0.5rem;
+    }
+  }
+  p {
+    @media screen and (min-width: 981px) {
+      margin-right: 0.25rem;
+      white-space: nowrap;
+    }
+  }
+  &__text {
+    color: #808285;
+    &--uk {
+      color: #939AFF;
+    }
+    &--vn {
+      color: #FF4B55;
+    }
+  }
+}

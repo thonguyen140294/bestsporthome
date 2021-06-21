@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'BeVietnam';
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src: url('#{$font-path}BeVietnam/BeVietnam-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'BeVietnam';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('#{$font-path}BeVietnam/BeVietnam-Regular.ttf') format('truetype');
+}
