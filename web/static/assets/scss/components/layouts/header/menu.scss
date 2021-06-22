@@ -1,7 +1,7 @@
 $menu : 'menu';
 
 .#{$menu} {
-  background: linear-gradient(89.93deg, #b50000, #f04735);
+  background: #ed1b24;
   position: relative;
   .flex-box{
     display: flex;
@@ -49,6 +49,13 @@ $menu : 'menu';
       .content-submenu{
         display: flex;
         justify-content: center;
+				li{
+					&:hover{
+						span{
+							color: #febc1f;
+						}
+					}
+				}
       }
     }
   }

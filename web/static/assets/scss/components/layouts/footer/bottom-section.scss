@@ -1,9 +1,9 @@
 $bottom-section: 'bottom-section';
 
 .#{$bottom-section} {
-    padding-bottom: 30px;
-    border-bottom: 1px white solid;
-    margin-bottom: 30px;
+		padding: 50px 0;
+		border-bottom: 1px solid #fff;
+		margin-bottom: 50px;
     h4{
         padding: 20px 0 20px;
         font-size: 18px;
@@ -12,20 +12,26 @@ $bottom-section: 'bottom-section';
         list-style: none;
         padding: 0;
         margin: 0;
+				li{
+					line-height: 26px;
+				}
         a{
             color: #8c8c8c;
             &:hover{
-                color: #b50000;
+                color: #ed1b24;
             }
         }
     }
     .contact{
-        svg{
-            color: #b50000;
-        }
-        span{
-            color: #8c8c8c;
-        }
+			&>div{
+				line-height: 26px;
+			}
+			svg{
+					color: #ed1b24;
+			}
+			span{
+					color: #8c8c8c;
+			}
     }
     .newsletter-form {
         position: relative;
@@ -50,8 +56,8 @@ $bottom-section: 'bottom-section';
         button{
             right: 0;
             top: 0;
-            background: #b50000;
-            border: #b50000;
+            background: #ed1b24;
+            border: #ed1b24;
             z-index: 2;
             line-height: 40px;
             height: 41px;

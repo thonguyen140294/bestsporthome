@@ -2,7 +2,7 @@
   <section>
     <SportCenterFilter class="display__sp container" @change="selected = $event" />
     <div class="sport-center container">
-      <SportCenterFilter class="display__pc" @change="selected = $event" />
+      <SportCenterFilter class="display__pc sport-center__filter" @change="selected = $event" />
       <SportCenterItem v-for="(item, index) in items.slice(0, 7)" :key="index" :item="item" />
       <SportCenterLoadMore :selected="selected" />
     </div>

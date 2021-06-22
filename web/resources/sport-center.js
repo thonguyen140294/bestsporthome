@@ -9,7 +9,7 @@ export const sportCenter = {
     items: [
       {
         title: 'Câu lạc bộ',
-        imgSrc: require('~imageAsset/lobby/game-center-item/quickgame.jpg'),
+        imgSrc: require('~imageAsset/lobby/game-center-item/arge-h-21.jpg'),
         loginRequired: false,
         newTab: false,
         promotionPrevent: false,
@@ -17,7 +17,7 @@ export const sportCenter = {
       },
       {
         title: 'Quốc gia',
-        imgSrc: require('~imageAsset/lobby/game-center-item/jackpot.png'),
+        imgSrc: require('~imageAsset/lobby/game-center-item/arge-h-21.jpg'),
         loginRequired: false,
         newTab: false,
         promotionPrevent: false,
@@ -25,7 +25,7 @@ export const sportCenter = {
       },
       {
         title: 'Áo khoác',
-        imgSrc: require('~imageAsset/lobby/game-center-item/nohu.jpg'),
+        imgSrc: require('~imageAsset/lobby/game-center-item/arge-h-21.jpg'),
         loginRequired: false,
         newTab: false,
         promotionPrevent: false,
@@ -33,7 +33,7 @@ export const sportCenter = {
       },
       {
         title: 'Áo pitch',
-        imgSrc: require('~imageAsset/lobby/game-center-item/banca.jpg'),
+        imgSrc: require('~imageAsset/lobby/game-center-item/arge-h-21.jpg'),
         loginRequired: false,
         newTab: false,
         promotionPrevent: false,
@@ -41,7 +41,7 @@ export const sportCenter = {
       },
       {
         title: 'Giày',
-        imgSrc: require('~imageAsset/lobby/game-center-item/quayso.jpg'),
+        imgSrc: require('~imageAsset/lobby/game-center-item/arge-h-21.jpg'),
         loginRequired: false,
         newTab: false,
         promotionPrevent: false,
@@ -49,7 +49,7 @@ export const sportCenter = {
       },
       {
         title: 'Găng tay',
-        imgSrc: require('~imageAsset/lobby/game-center-item/ingame.jpg'),
+        imgSrc: require('~imageAsset/lobby/game-center-item/arge-h-21.jpg'),
         loginRequired: false,
         newTab: false,
         promotionPrevent: false,
@@ -57,7 +57,7 @@ export const sportCenter = {
       },
       {
         title: 'Balo',
-        imgSrc: require('~imageAsset/lobby/game-center-item/instant-games.jpg'),
+        imgSrc: require('~imageAsset/lobby/game-center-item/arge-h-21.jpg'),
         loginRequired: false,
         newTab: false,
         promotionPrevent: false,

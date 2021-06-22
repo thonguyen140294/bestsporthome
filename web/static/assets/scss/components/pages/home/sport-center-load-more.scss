@@ -3,8 +3,8 @@ $game-center-load-more: 'sport-center-load-more';
 .#{$game-center-load-more} {
   &__wrap-more {
     position: relative;
-    padding-top: 54%;
-    background: #220407;
+    padding-top: 100%;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;

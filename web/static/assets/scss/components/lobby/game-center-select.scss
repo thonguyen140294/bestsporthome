@@ -1,9 +1,10 @@
 $game-center-select: 'game-center-select';
 
 .#{$game-center-select} {
-  position: relative;
+  position: absolute;
   margin-bottom: 1rem;
   width: 100%;
+	bottom: 40px;
   @include mq($from: smallMobile-768) {
     margin-bottom: 0;
   }

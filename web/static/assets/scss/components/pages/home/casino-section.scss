@@ -1,11 +1,11 @@
 $casino-section: 'casino-section';
 
 .#{$casino-section} {
-  background: url("#{$image-path}components/pages/home/casino-section/bg-2.jpg") no-repeat center;
+  background: #fff;
   background-size: cover;
   @include mq($from: smallMobile-768) {
     padding-bottom: 0;
-    background: url("#{$image-path}components/pages/home/casino-section/bg-pc.jpg") no-repeat center;
+    background: #fff;
     background-position: bottom;
     background-size: cover;
     &__container {

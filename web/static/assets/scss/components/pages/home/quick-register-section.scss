@@ -1,7 +1,7 @@
 $quick-register-section: 'quick-register-section';
 
 .#{$quick-register-section} {
-  background: #B50000;
+  background: #ed1b24;
   padding: 1.25rem 0 2rem;
   position: relative;
   @include mq($from: mobile) {
@@ -22,7 +22,7 @@ $quick-register-section: 'quick-register-section';
         height: 100%;
         border-style: solid;
         border-width: 175px 0 175px 65px;
-        border-color: transparent transparent transparent #B50000;
+        border-color: transparent transparent transparent #ed1b24;
         z-index: 1;
       }
       &::after {

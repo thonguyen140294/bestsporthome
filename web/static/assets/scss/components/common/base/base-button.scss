@@ -31,10 +31,10 @@ $base-button: 'base-button';
     }
   }
   &--bg-red {
-    background-color: #B50000;
+    background-color: #ed1b24;
     &:hover {
       filter: brightness(1.1);
-      box-shadow: 0 0 20px rgba(247, 0, 24, .55);
+      box-shadow: 0 0 20px rgba(237,27,36,255);
     }
   }
   &--bg-gray {

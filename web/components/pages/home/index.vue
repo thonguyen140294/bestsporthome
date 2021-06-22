@@ -1,8 +1,8 @@
 <template>
   <div>
     <SportCenterSection />
+		<QuickRegisterSection v-show="!isLogged" />
     <CasinoSection />
-    <QuickRegisterSection v-show="!isLogged" />
     <NewsSection />
   </div>
 </template>
