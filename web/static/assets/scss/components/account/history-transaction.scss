@@ -2,7 +2,7 @@ $history-transaction : 'history-transaction';
 
 .#{$history-transaction} {
   min-height : 403px;
-  background : transparent;
+  background : #202023;
   &.loading {
     position : relative;
     opacity  : 0.6;

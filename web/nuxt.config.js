@@ -1,7 +1,5 @@
 import crypto from 'crypto'
 import path from 'path'
-import { sortRoutes } from '@nuxt/utils'
-import { ABOUT_US_URLS } from './config/page-url'
 import { getSiteMapProd } from './config/sitemap'
 
 const BUILDID = crypto.randomBytes(10).toString('hex')
@@ -70,11 +68,7 @@ export default {
       src: '~/plugins/datepicker',
       ssr: false
     },
-    { src: '~/plugins/vuelidate' },
-    {
-      src: '~/plugins/socket.io.js',
-      ssr: false
-    }
+    { src: '~/plugins/vuelidate' }
   ],
   loading: {
     color: '#f2c94c',
@@ -84,33 +78,7 @@ export default {
   components: false,
   env: {
     BUILDID,
-    TIN_BONG_DA_CATEGORY_ID: process.env.TIN_BONG_DA_CATEGORY_ID,
-    SOI_KEO_CATEGORY_ID: process.env.SOI_KEO_CATEGORY_ID,
-    CHUYEN_NHUONG_CATEGORY_ID: process.env.CHUYEN_NHUONG_CATEGORY_ID,
-    TIN_MANUTD_ID: process.env.TIN_MANUTD_ID,
-    LODE_URL: process.env.LODE_URL,
-    LODE_MOBILE_URL: process.env.LODE_MOBILE_URL,
-    LODE_SIEUTOC_URL: process.env.LODE_SIEUTOC_URL,
-    LODE_SIEUTOC_MOBILE_URL: process.env.LODE_SIEUTOC_MOBILE_URL,
-    TP_KENO_URL: process.env.TP_KENO_URL,
-    TP_NUMBERGAME_URL: process.env.TP_NUMBERGAME_URL,
-    GP_URL: process.env.GP_URL,
-    MU_DOMAIN: process.env.MU_DOMAIN,
-    INSTANT_GAME_URL: process.env.INSTANT_GAME_URL,
-    QUAYSO_CYPER_URL: process.env.QUAYSO_CYPER_URL,
-    QUAYSO_LAS_VEGAS_URL: process.env.QUAYSO_LAS_VEGAS_URL,
-    IMGPROXY_URL: process.env.IMGPROXY_URL,
-    IMG_BASE: process.env.IMG_BASE,
-    IMGPROXY_SALT: process.env.IMGPROXY_SALT,
-    IMGPROXY_KEY: process.env.IMGPROXY_KEY,
-    NOINDEX: process.env.NOINDEX,
-    PG_SOFT_URL: process.env.PG_SOFT_URL,
-    PG_SOFT_TOKEN: process.env.PG_SOFT_TOKEN,
-    GAMEBAI_URL: process.env.GAMEBAI_URL
-  },
-  publicRuntimeConfig: {
-    SOCKET_URL: process.env.SOCKET_URL || 'http://206.189.89.148:9990',
-    JACKPOT_INTERVAL: process.env.JACKPOT_INTERVAL
+    API_URL: process.env.API_URL
   },
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: ['@nuxtjs/eslint-module', '@nuxt/image', 'nuxt-font-loader'],
@@ -138,13 +106,13 @@ export default {
       return {
         UserAgent: '*',
         Allow: '*',
-        Sitemap: () => `${process.env.MU_DOMAIN}/sitemap.xml`
+        Sitemap: () => `${process.env.DOMAIN}/sitemap.xml`
       }
     } else {
       return {
         UserAgent: '*',
         Disallow: '/',
-        Sitemap: () => `${process.env.MU_DOMAIN}/sitemap.xml`
+        Sitemap: () => `${process.env.DOMAIN}/sitemap.xml`
       }
     }
   },
@@ -223,7 +191,6 @@ export default {
       config.resolve.alias['~info'] = path.join(__dirname, 'components/info')
       config.resolve.alias['~layouts'] = path.join(__dirname, 'components/layouts')
       config.resolve.alias['~lobby'] = path.join(__dirname, 'components/lobby')
-      config.resolve.alias['~news'] = path.join(__dirname, 'components/news')
       config.resolve.alias['~pages'] = path.join(__dirname, 'components/pages')
       config.resolve.alias['~support'] = path.join(__dirname, 'components/support')
       config.resolve.alias['~user'] = path.join(__dirname, 'components/user')
@@ -234,16 +201,6 @@ export default {
   },
   router: {
     middleware: 'trailingSlashRedirect',
-    extendRoutes (routes, resolve) {
-      for (const url of Object.values(ABOUT_US_URLS)) {
-        routes.push({
-          name: url,
-          path: '/' + url,
-          component: resolve(__dirname, 'pages/ve-chung-toi/index.vue')
-        })
-      }
-      sortRoutes(routes)
-    },
     scrollBehavior (to, from, savedPosition) {
       // savedPosition is only available for popstate navigations.
       if (savedPosition) { return savedPosition }

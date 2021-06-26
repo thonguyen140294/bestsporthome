@@ -8,11 +8,8 @@
 <script>
 import WrapperAccount from './wrapper-account'
 import MenuInfo from './menu-info'
-import DepositSection from './deposit-section'
-import WithDrawSection from './withdraw-section'
 import InfoAccountSection from './info-account-section'
 import HistoryTransactionSection from './history-transaction-section'
-import HistoryBettingSection from './history-betting-section'
 
 export default {
   components: {
@@ -24,32 +21,17 @@ export default {
       activeTab: undefined,
       tabs: [
         {
-          title: 'Chọn phương thức nạp',
-          component: DepositSection
-        },
-        {
-          title: 'Chọn phương thức RÚT',
-          component: WithDrawSection
-        },
-        {
           title: 'Thông tin cá nhân',
           component: InfoAccountSection
         },
         {
           title: 'Lịch sử giao dịch',
           component: HistoryTransactionSection
-        },
-        {
-          title: 'Lịch sử cá cược',
-          component: HistoryBettingSection
         }
       ],
       tabEnum: {
-        deposit: 0,
-        withdraw: 1,
-        'account-info': 2,
-        'history-transaction': 3,
-        'history-betting': 4
+        'account-info': 0,
+        'history-transaction': 1
       }
     }
   },

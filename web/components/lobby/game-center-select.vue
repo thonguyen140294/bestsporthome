@@ -26,41 +26,33 @@ export default {
           value: 'all'
         },
         {
-          text: 'Quick Games',
-          value: 'quickgame'
+          text: 'Câu lạc bộ',
+          value: 'club'
         },
         {
-          text: 'Jackpots',
-          value: 'jackpots'
+          text: 'Quốc gia',
+          value: 'nation'
         },
         {
-          text: 'Slots',
-          value: 'slot'
+          text: 'Áo khoác',
+          value: 'jacket'
         },
         {
-          text: 'Bắn Cá',
-          value: 'fishing'
+          text: 'Áo pitch',
+          value: 'pitch'
         },
         {
-          text: 'Quay Số',
-          value: 'lottery'
+          text: 'Giày',
+          value: 'shoe'
         },
         {
-          text: 'InGame',
-          value: 'ingame'
+          text: 'Găng tay',
+          value: 'gloves'
         },
         {
-          text: 'Instant Games',
-          value: 'instant_games'
+          text: 'Balo',
+          value: 'balo'
         },
-        {
-          text: 'Lô Đề',
-          value: 'lode'
-        },
-        {
-          text: 'Battle Games',
-          value: 'battle_games'
-        }
       ]
     }
   }

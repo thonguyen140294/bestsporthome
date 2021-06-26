@@ -16,7 +16,6 @@ export default ({ $axios, ssrContext, $ua, store, redirect }) => {
   $axios.onError((error) => {
     const code = parseInt(error.response && error.response.status)
     if (code === 401) {
-      store.dispatch('socketUnSubscribeWallet')
       store.commit('resetStore')
       redirect('/')
     }

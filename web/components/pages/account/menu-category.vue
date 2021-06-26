@@ -27,8 +27,7 @@ export default {
     return {
       categories: [
         { title: 'Thông tin tài khoản', link: '/account?tab=account-info', tab: 'account-info' },
-        { title: 'Lịch sử giao dịch', link: '/account?tab=history-transaction', tab: 'history-transaction' },
-        { title: 'Lịch sử chơi game', link: '/account?tab=history-betting', tab: 'history-betting' }
+        { title: 'Lịch sử giao dịch', link: '/account?tab=history-transaction', tab: 'history-transaction' }
       ]
     }
   }

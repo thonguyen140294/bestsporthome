@@ -68,11 +68,6 @@
           />
         </div>
       </div>
-      <div class="info-personal-form__item">
-        <div class="info-personal-form__wrap">
-          <img class="w-100" :src="require('~imageAsset/account/info-personal-form/info-banner.png')" alt="info-banner">
-        </div>
-      </div>
     </div>
     <div class="info-personal-form__action">
       <BaseButton
@@ -117,21 +112,6 @@
         </div>
       </template>
     </ModalAccount>
-    <ModalAvatar :config="configAvatarModel">
-      <template #content>
-        <p class="close" @click="closeAvatarModel()" />
-        <div class="change-avatar">
-          <h4>THAY ĐỔI ẢNH ĐẠI DIỆN</h4>
-          <div class="change-avatar__list">
-            <div v-for="i in avatarLength" :key="i" :class="['change-avatar__item', { 'avatar-selected': i === selected }]" @click="selectAvatar(i)">
-              <img :src="require(`~imageAsset/layouts/header/login-user/avatar${i}.png`)" alt="avatar">
-              <img v-if="i === selected" :src="require('~imageRoot/icons/avatar-selected.svg')" alt="selected">
-            </div>
-          </div>
-          <BaseButton width="100%" class-name="base-button--bg-red" :loading-button="isLoading" @click="doChangeAvatar()">LƯU THAY ĐỔI</BaseButton>
-        </div>
-      </template>
-    </ModalAvatar>
   </div>
 </template>
 

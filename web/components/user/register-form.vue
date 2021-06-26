@@ -1,10 +1,5 @@
 <template>
   <ModalUser :config="config">
-    <template #bg-image>
-      <div class="signup-bg">
-        <div class="signup-man"></div>
-      </div>
-    </template>
     <template #title>
       ĐĂNG KÝ
     </template>

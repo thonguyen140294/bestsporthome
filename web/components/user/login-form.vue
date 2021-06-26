@@ -1,10 +1,5 @@
 <template>
   <ModalUser :config="config">
-    <template #bg-image>
-      <div class="login-bg">
-        <div class="login-man"></div>
-      </div>
-    </template>
     <template #title>
       ĐĂNG NHẬP
     </template>

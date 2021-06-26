@@ -8,7 +8,6 @@
       :class="item.id"
       @eventClick="eventClick"
     />
-    <ModalTransfer />
   </div>
 </template>
 
@@ -19,7 +18,6 @@ import { bottomBar } from '~/resources/bottom-bar'
 export default {
   components: {
     BottomBarItem,
-    ModalTransfer: () => import('~common/modal-transfer')
   },
   mixins: [modalMixin],
   data () {

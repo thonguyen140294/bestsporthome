@@ -1,12 +1,5 @@
 <template>
   <div class="contact">
-    <div class="contact__banner">
-      <div class="container">
-        <h3 class="contact__hdg">
-          <span>THÔNG TIN </span> liên hệ
-        </h3>
-      </div>
-    </div>
     <div class="container">
       <div class="row">
         <div class="contact__left col-md-4 col-12">

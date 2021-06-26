@@ -12,14 +12,13 @@ $game-center-info: 'game-center-info';
     height: 90px;
     max-width: 100%;
     object-fit: contain;
-    margin: 20px;
     @include mq($until: smallMobile-768) {
       vertical-align: middle;
       border-style: none;
     }
   }
   &__wrap-title {
-    margin-left: 1.5rem;
+    padding-top: 2rem;
 		text-align: center;
     h3 {
       font-size: 18px;

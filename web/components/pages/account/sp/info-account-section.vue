@@ -9,7 +9,6 @@
 <script>
 import WrapperAccount from '~pages/account/sp/wrapper-account'
 import InfoPersonalForm from '~account/sp/info-personal-form'
-import InfoMyBank from '~account/info-my-bank'
 
 export default {
   components: {
@@ -23,12 +22,6 @@ export default {
           tab: 0,
           title: 'THÔNG TIN CÁ NHÂN',
           component: InfoPersonalForm
-        },
-        {
-          type: 'info-bank',
-          tab: 1,
-          title: 'THÔNG TIN NGÂN HÀNG',
-          component: InfoMyBank
         }
       ]
     },

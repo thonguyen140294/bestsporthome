@@ -1,9 +1,6 @@
 <template>
   <div class="account container">
     <div class="account__left">
-      <client-only>
-        <MenuInfo />
-      </client-only>
       <MenuCategory />
     </div>
     <div class="account__right">
@@ -25,17 +22,12 @@
 </template>
 
 <script>
-import DepositSection from './deposit-section'
-import WithDrawSection from './withdraw-section'
 import HistoryTransactionSection from './history-transaction-section'
-import HistoryBettingSection from './history-betting-section'
 import InfoAccountSection from './info-account-section'
-import MenuInfo from './menu-info'
 import MenuCategory from './menu-category'
 
 export default {
   components: {
-    MenuInfo,
     MenuCategory
   },
   data () {
@@ -43,32 +35,17 @@ export default {
       activeTab: undefined,
       tabs: [
         {
-          title: 'Nạp tiền',
-          component: DepositSection
-        },
-        {
-          title: 'Rút tiền',
-          component: WithDrawSection
-        },
-        {
           title: 'Thông tin cá nhân',
           component: InfoAccountSection
         },
         {
-          title: 'Lịch sử giao dịch',
+          title: 'Lịch sử mua hàng',
           component: HistoryTransactionSection
         },
-        {
-          title: 'Lịch sử cá cược',
-          component: HistoryBettingSection
-        }
       ],
       tabEnum: {
-        deposit: 0,
-        withdraw: 1,
-        'account-info': 2,
-        'history-transaction': 3,
-        'history-betting': 4
+        'account-info': 0,
+        'history-transaction': 1,
       }
     }
   },

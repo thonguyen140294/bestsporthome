@@ -16,13 +16,6 @@
         @input="$emit('change', $event)"
       >
         <b-tab v-for="item in tabs" :key="item.title" :title-item-class="item.label">
-          <template #title>
-            <b>
-              {{ item.title }}
-              <img v-if="item.warning" class="" :src="item.warning" alt="warning">
-            </b>
-            <p v-if="item.titleSub">{{ item.titleSub }}</p>
-          </template>
           <v-component :is="item.component" />
         </b-tab>
       </b-tabs>

@@ -1,7 +1,7 @@
 <template>
   <div class="info-section">
     <a href="#" class="info-section__info">
-      <img :src="require(`~imageAsset/layouts/header/login-user/avatar${currentUser.avatar || 0}.png`)" alt="">
+      <img :src="require(`~imageAsset/layouts/header/login-user/avatar0.png`)" alt="">
       <p class="">
         <span>{{ currentUserFullName }}</span>
         <b class="info-section__money">{{ globalMainBalance | formatAmountUnit(1) }} Đ</b>

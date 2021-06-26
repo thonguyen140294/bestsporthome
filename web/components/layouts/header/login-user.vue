@@ -1,7 +1,7 @@
 <template>
   <div class="login-user login-user--login">
-    <BaseButton class-name="base-button--bg-red base-button--user-login">CÁ NHÂN</BaseButton>
-    <BaseButton class-name="base-button--outline-white base-button--user-login">GIỎ HÀNG</BaseButton>
+    <BaseButton class-name="base-button--bg-red base-button--user-login" @click="gotoAccount">CÁ NHÂN</BaseButton>
+    <BaseButton class-name="base-button--bg-red base-button--user-login">GIỎ HÀNG</BaseButton>
   </div>
 </template>
 
@@ -12,7 +12,12 @@ import BaseButton from '~common/base-button'
 export default {
   components: {
     BaseButton
-  }
+  },
+	methods:{
+		gotoAccount() {
+			this.$router.push('/account')
+		}
+	}
 }
 </script>
 

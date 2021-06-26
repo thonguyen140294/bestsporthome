@@ -5,7 +5,8 @@
       <div class="swiper-wrapper">
         <div v-for="(item, index) in swiperItems" :key="index" class="swiper-slide">
           <a class="promotion__link" href="javascript:void(0)" @click.prevent="$_navigationMixin_navigate(item.link, item.loginRequired, false, true)">
-            <div class="promotion__content">
+            <img class="promo-home__img" :src="item.src" :alt="item.promotion">
+						<div class="promotion__content">
               <div class="promotion__left">
                 <h4>{{ item.bonus.text }} <span>{{ item.bonus.value }}</span></h4>
                 <h4>{{ item.upTo.text }} <span>{{ item.upTo.value }}</span></h4>

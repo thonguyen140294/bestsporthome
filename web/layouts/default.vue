@@ -33,15 +33,12 @@ import MenuPanel from '~layouts/menu-panel'
 import LoginFrom from '~user/login-form'
 import RegisterFrom from '~user/register-form'
 import ForgotPasswordFrom from '~user/forgot-password-form'
-import socketMixin from '~/mixins/socket'
 import showLoginMixin from '~/mixins/user/show-login'
 import globalMixin from '~/mixins/global-mixin'
 import modalMixin from '~/mixins/user/modal'
 import maintenanceMixin from '~/mixins/maintenance'
-import lpTokenLoginMixin from '~/mixins/user/lptoken-login'
 import scrollToTopMixin from '~/mixins/scroll-to-top'
 import ModalClose from '~common/modal-close'
-import { META_TITLES } from '~/resources/meta-titles'
 
 export default {
   components: {
@@ -58,11 +55,9 @@ export default {
     globalMixin,
     modalMixin,
     panelMenuMixin,
-    socketMixin,
     showLoginMixin,
     scrollToTopMixin,
-    maintenanceMixin,
-    lpTokenLoginMixin
+    maintenanceMixin
   ],
   computed: {
     ...mapState({
@@ -126,46 +121,12 @@ export default {
           }
         }, 300)
       }
-    },
-    showTitleHead (tabActive = '') {
-      const liveChatScript = this.$device.isDesktop ? {
-        script: [
-          {
-            src: '/js/live-chat.js'
-          }
-        ]
-      } : {}
-      const nameRoute = this.$getRoute(this.$route).name
-      if (tabActive) {
-        return {
-          ...liveChatScript,
-          title: META_TITLES[nameRoute?.replace(/^\//, '')][tabActive] ?? META_TITLES.default
-        }
-      }
-      return {
-        ...liveChatScript,
-        title: META_TITLES[nameRoute?.replace(/^\//, '')] ?? META_TITLES.default
-      }
     }
   },
   head () {
-    const nameRoute = this.$getRoute(this.$route).name
-    const tabActive = Object.values(this.$getRoute(this.$route).query).filter(item => item).join('-') || 'default'
-
-    switch (nameRoute) {
-      case 'account': {
-        const tab = this.$getRoute(this.$route).query?.tab || ''
-        if (['deposit', 'withdraw'].includes(tab)) {
-          return this.showTitleHead(tab)
-        }
-        return this.showTitleHead(tabActive)
-      }
-      case 've-chung-toi': {
-        return this.showTitleHead(tabActive)
-      }
-      default:
-        return this.showTitleHead()
-    }
+    return {
+			title: 'Bestsporthome'
+		}
   }
 }
 </script>

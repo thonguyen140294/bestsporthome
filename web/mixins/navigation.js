@@ -1,14 +1,12 @@
-import { mappingIframeGames } from '@/resources/iframe'
 import { mapState } from 'vuex'
 import { isValidURL } from '@/helper'
 import modalMixin from '~/mixins/user/modal'
 import panelMenuMixin from '~/mixins/panel-menu'
 import maintenanceMixin from '~/mixins/maintenance'
-import iframeMixin from '~/mixins/iframe'
 import { MODAL } from '~/config/constant'
 
 export default {
-  mixins: [modalMixin, panelMenuMixin, maintenanceMixin, iframeMixin],
+  mixins: [modalMixin, panelMenuMixin, maintenanceMixin],
   methods: {
     async $_navigationMixin_navigate (url, loginRequired = false, newTab = false, mainWallet = false) {
       if (loginRequired && this.currentUser === null) {
@@ -21,9 +19,6 @@ export default {
       // If click on main wallet game and in maintain time, show popup
       if (mainWallet && this.$_maintainMixin_checkMainWalletGame()) {
         return
-      }
-      if (this.$device.isMobileOrTablet && url in mappingIframeGames) {
-        newTab = true
       }
       if (!url) {
         return

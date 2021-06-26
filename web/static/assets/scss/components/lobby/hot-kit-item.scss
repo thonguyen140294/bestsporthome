@@ -1,0 +1,35 @@
+$casino-item : 'hot-kit-item';
+
+.#{$casino-item} {
+
+  &__link {
+    @extend %typo-link;
+  }
+
+  &__img {
+    @extend %typo-img;
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: .5rem;
+    padding-bottom: 1rem;
+    color: #FFF0F0;
+    z-index: 5;
+
+    span {
+      display: block;
+      font-size: 11px;
+      line-height: 16px;
+    }
+
+    b {
+      display: block;
+      font-weight: 800;
+      font-size: 15px;
+      line-height: 22px;
+    }
+  }
+}

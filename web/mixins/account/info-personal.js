@@ -136,36 +136,6 @@ export default {
       } catch (error) {
         this.$_globalMixin_load()
       }
-    },
-    selectAvatar (id) {
-      this.selected = id
-    },
-    closeAvatarModel () {
-      this.selected = this.$store.state.currentUser.avatar
-      this.$root.$emit('bv::hide::modal', this.configAvatarModel.id)
-    },
-    async doChangeAvatar () {
-      this.$_globalMixin_loading()
-      const response = await this.$axios.$put(USER_API.UPDATE_PROFILE, { avatar: this.selected })
-      if (response && response.status === 'OK') {
-        this.$root.$emit('bv::hide::modal', this.configAvatarModel.id)
-        this.$store.commit('currentUser', { avatar: this.selected })
-        this.$swal({
-          title: 'CẬP NHẬT THÀNH CÔNG',
-          text: 'Thay đổi ảnh đại diện thành công',
-          icon: 'success',
-          timer: 1000,
-          button: false
-        })
-      } else {
-        this.$showError({
-          title: 'LỖI',
-          error: response.message,
-          icon: 'error',
-          button: 'ĐỒNG Ý'
-        })
-      }
-      this.$_globalMixin_load()
     }
-  }
+	}
 }

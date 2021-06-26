@@ -1,8 +1,8 @@
 <template>
-  <div class="casino-item">
-    <a class="casino-item__link" @click.prevent="$_navigationMixin_navigate(item.link, false, false)" />
-		<img class="casino-item__img" :src="item.imgSrc" :alt="item.title">
-    <p class="casino-item__content">
+  <div class="hot-kit-item">
+    <a class="hot-kit-item__link" @click.prevent="$_navigationMixin_navigate(item.link, false, false)" />
+		<img class="hot-kit-item__img" :src="item.imgSrc" :alt="item.title">
+    <p class="hot-kit-item__content">
       <span>Evolution Gaming</span>
       <b>{{ item.title }}</b>
     </p>
@@ -24,5 +24,5 @@ export default {
 }
 </script>
 
-<style scoped lang="scss" src="~scssAsset/lobby/casino-item.scss">
+<style scoped lang="scss" src="~scssAsset/lobby/hot-kit-item.scss">
 </style>

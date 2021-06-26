@@ -4,42 +4,42 @@ export const PROMOTION = [
     loginRequired: false,
     src: '/assets/images/components/pages/home/promotion/welcome.jpg',
     bonus: {
-      text: 'Bonus',
-      value: '110%'
+      text: 'Giảm giá',
+      value: '10%'
     },
     upTo: {
-      text: 'Up to',
-      value: '10.000.000'
+      text: 'Lên đến',
+      value: '20.000'
     },
-    promotion: 'Khuyến mãi cho lần nạp đầu'
+    promotion: 'Khuyến mãi lần mua đầu'
   },
   {
     link: '/ve-chung-toi?tab=khuyen-mai',
     loginRequired: false,
     src: '/assets/images/components/pages/home/promotion/welcome.jpg',
     bonus: {
-      text: 'Bonus',
-      value: '50%'
+      text: 'Giảm giá',
+      value: '15%'
     },
     upTo: {
-      text: 'Up to',
-      value: '15.000.000'
+      text: 'Lên đến',
+      value: '100.000'
     },
-    promotion: 'Khuyến mãi cho lần nạp đầu'
+    promotion: 'Khuyến mãi lần đặt đội đầu'
   },
-  {
+	{
     link: '/ve-chung-toi?tab=khuyen-mai',
     loginRequired: false,
     src: '/assets/images/components/pages/home/promotion/welcome.jpg',
     bonus: {
-      text: 'Return',
-      value: '1.25%'
+      text: '',
+      value: 'Tích điểm'
     },
     upTo: {
       text: '',
       value: ''
     },
-    promotion: 'Hoàn trả lên đến 1.25%'
+    promotion: 'Sau mỗi lần thanh toán'
   }
 ]
 

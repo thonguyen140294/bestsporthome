@@ -25,13 +25,11 @@ $promotion: 'promotion';
     max-height: 100%;
     height: 100%;
     background-color: #150204;
-    picture {
-      /deep/ img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: left;
-      }
+    img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: left;
     }
   }
   &__content {
