@@ -23,7 +23,6 @@ export default {
   methods: {
     clickItemGameCenter (item) {
       this.$_navigationMixin_navigate(item.link, item.loginRequired, item.newTab)
-      this.selectScrollTabGameItem()
     }
   }
 }

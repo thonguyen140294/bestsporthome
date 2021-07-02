@@ -24,19 +24,6 @@
           </div>
           <div v-if="this.$device.isMobile && tab_selected === 'About'" class="tab-about-bg-gradient" />
         </div>
-        <div v-if="this.$device.isMobile && tab_selected === 'About'" class="about-section__provider">
-          <Info class="pb-5">
-            <template #header>Nhà cung cấp uy tín</template>
-            <template #body>
-              <ListProvider />
-            </template>
-          </Info>
-        </div>
-      </div>
-    </div>
-    <div class="about-wrapper">
-      <div class="about">
-        <AboutBanner />
       </div>
     </div>
   </section>
@@ -44,7 +31,6 @@
 <script>
 import $ from 'jquery'
 import About from '~pages/about/about-section'
-import AboutBanner from '~info/about-banner'
 import globalMixin from '~/mixins/global-mixin'
 import scrollTabMixin from '~/mixins/scroll-tab'
 import { ABOUT_US_URLS } from '~/config/page-url'
@@ -53,7 +39,6 @@ import ListProvider from '~pages/about/list-provider'
 
 export default {
   components: {
-    AboutBanner,
     About,
     Promo: () => import('~pages/about/promo-section'),
     Security: () => import('~pages/about/security-section'),

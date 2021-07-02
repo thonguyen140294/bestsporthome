@@ -63,12 +63,12 @@ export const cardItems = [
 ]
 
 export const listGame = [
-  { id: 1, name: 'Live Casino', icon: 'live-casino', link: '/live-casino', mainWallet: false },
-  { id: 2, name: 'Sports', icon: 'football', link: '/live-sports', mainWallet: true },
-  { id: 3, name: 'Quay Số', icon: 'biilard', link: '/lobby?game=lottery', mainWallet: false },
-  { id: 4, name: 'Jackpots', icon: 'jackpot', link: '/lobby?game=jackpots', mainWallet: false },
-  { id: 5, name: 'Bắn Cá', icon: 'shooting-fish', link: 'lobby?game=fishing', mainWallet: false },
-  { id: 6, name: 'E-Sports', icon: 'e-sport', link: '/esports', mainWallet: true }
+  { id: 1, name: 'Áo đấu câu lạc bộ', icon: 'live-casino', link: '/live-casino', mainWallet: false },
+  { id: 2, name: 'Áo đấu quốc gia', icon: 'football', link: '/live-sports', mainWallet: true },
+  { id: 3, name: 'Áo đấu không logo', icon: 'biilard', link: '/lobby?game=lottery', mainWallet: false },
+  { id: 4, name: 'Giày', icon: 'jackpot', link: '/lobby?game=jackpots', mainWallet: false },
+  { id: 5, name: 'Balo', icon: 'shooting-fish', link: 'lobby?game=fishing', mainWallet: false },
+  { id: 6, name: 'Phụ kiện', icon: 'e-sport', link: '/esports', mainWallet: true }
 ]
 
 export const listBanks = [

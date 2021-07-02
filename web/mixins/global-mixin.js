@@ -7,7 +7,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['currentUser', 'promotion', 'globalMainBalance', 'globalSubBalance', 'globalTotalBalance']),
+    ...mapState(['currentUser', 'promotion']),
     currentUserFullName () {
       return this.currentUser?.fullname ?? ''
     },

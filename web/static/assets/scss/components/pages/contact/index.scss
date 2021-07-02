@@ -3,6 +3,7 @@ $contact : 'contact';
 .#{$contact} {
   background        : #161618;
   overflow          : hidden;
+	padding-top				: 5rem;
   @include mq($from : smallMobile-768) {
     background      : #202023;
   }

@@ -26,25 +26,10 @@ export default {
         $(this.tab).animate({ scrollLeft: -scrollLeft }, 200)
       }
     },
-    selectScrollTabGameItem () {
-      setTimeout(() => {
-        this.wrapTab = '.game-menu-list'
-        this.tab = '.nav'
-        this.tabCurrent = '.game-menu-item__link.nuxt-link-exact-active.nuxt-link-active.active'
-        this.selectScrollTab()
-      }, 200)
-    },
     selectTabAbout () {
       setTimeout(() => {
         this.wrapTab = this.tab = '.about__menu'
         this.tabCurrent = '.nav-item.nav-link.active'
-        this.selectScrollTab()
-      }, 200)
-    },
-    selectTabNews () {
-      setTimeout(() => {
-        this.tab = this.wrapTab = '.news-nav'
-        this.tabCurrent = '.nuxt-link-exact-active.nuxt-link-active.news-nav__link'
         this.selectScrollTab()
       }, 200)
     }

@@ -17,11 +17,6 @@ $about: 'about';
 }
 
 .#{$about} {
-  .tab-content-about {
-    background: url("#{$image-path}components/pages/about/sp_bg_about.png") no-repeat bottom right;
-    background-size: contain;
-		position: relative;
-  }
   &__menu {
     background: url("#{$image-path}components/pages/about/bg_top_about.png") top no-repeat;
     position: sticky;
@@ -67,10 +62,6 @@ $about: 'about';
   }
 
   @include mq($from : smallMobile-768) {
-    .tab-content-about {
-      background: url("#{$image-path}components/pages/about/bg_about.png") no-repeat bottom right;
-      background-size: auto 20%;
-    }
     &__menu {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -87,27 +78,20 @@ $about: 'about';
       }
     }
     &__content {
-      max-width: 912px !important;
       font-size: 16px;
       line-height: 23px;
       text-align: center;
+			padding: 0 10rem;
     }
   }
   @include mq($from : tablet) {
     &__menu {
-      top: 90px;
+      top: 0;
     }
     .tab-content {
       padding-top: 10rem;
       background: url("#{$image-path}components/pages/about/bg_top_about.png") top no-repeat;
       background-size: 100%;
-    }
-    .tab-content-about {
-      background:
-        url("#{$image-path}components/pages/about/bg_top_about.png") top no-repeat,
-        url("#{$image-path}components/pages/about/bg_about.png") bottom right  no-repeat;
-      background-size: 100%, auto;
-      transition: background 0.5s linear;
     }
   }
 }
