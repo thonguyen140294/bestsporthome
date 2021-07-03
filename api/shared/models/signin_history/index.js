@@ -1,24 +1,20 @@
-const firebaseCommon = require('../../helpers/firebaseCommon.helper')
-const appConstant = require('../../helpers/constant.helper')
-const TABLE_SIGIN_HISTORY = appConstant.DATA_TABLE.SIGNIN_HISTORY
-/**
- * schema
- * 
- * member (id)
- * ip (string)
- * ua (string)
- * created_at (number)
- * updated_at (number)
- */
-const createHistory = async (data) => {
-    return await firebaseCommon.create(`${TABLE_SIGIN_HISTORY}`, data)
-}
+const schema = require('./schema')
+const appConstant = require('../../helpers/constant.helper');
+const model = require('mongoose').model(appConstant.DATA_TABLE.SIGNIN_HISTORY, schema)
 
-const getHistoryByMember = async (member_id, pagination) => {
-    return
+const create = async (data) => {
+		return new Promise((resolve, reject) => {
+				model
+					.findOneAndUpdate({id: data.ip}, data, { upsert: true, new: true, setDefaultsOnInsert: true })
+					.then(result => {
+							resolve(result)
+					})
+					.catch(error => {
+							reject(error)
+					})
+		})
 }
 
 module.exports = {
-    createHistory,
-    getHistoryByMember,
+	create
 }

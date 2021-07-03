@@ -2,16 +2,12 @@
 const _ = require('lodash')
 const jwt = require('jsonwebtoken');
 const moment = require('moment');
-const localesUtil = require('../helpers/localesUtils.helper');
-const configCommon = require('../helpers/configCommon.helper')
 const appConstant = require('../../shared/helpers/constant.helper');
-const tokenModel = require('../models/token')
 const signinHistoryModel = require('../models/signin_history')
-const client = require('twilio')(configCommon.getKeyPhone().accountSid, configCommon.getKeyPhone().authToken);
+const encodeDecode = require('./encodeDecode.security')
 
 
-
-const generateAccessToken = (user) => {
+const generateToken = (uid, sid) => {
     let now = moment().valueOf();
     if (user.accessToken) {
         user.accessToken = null;
@@ -19,82 +15,24 @@ const generateAccessToken = (user) => {
     let payload = {
         "iat": now,
         "exp": now + appConstant.TIME_EXP_ACCESS_TOKEN,
-        "uid": user.id,
-        "claims": {
-            user
-        }
+        "uid": uid,
+        "sid": sid
     };
-    return jwt.sign(payload, configCommon.getJwt().key);
+    return jwt.sign(payload, process.env.token_key);
 }
 
-const generateRefreshToken = (user, ua) => {
-    let now = moment().valueOf();
-    if (user.accessToken) {
-        user.accessToken = null;
-    }
-    let payload = {
-        "iat": now,
-        "exp": now + appConstant.TIME_EXP_REFRESH_TOKEN,
-        "uid": user.id,
-        "claims": {
-            ua
-        }
-    };
-    return jwt.sign(payload, configCommon.getJwt().key);
-}
-
-const verifyToken = async (reqToken, lang) => {
-    let decodedToken = jwt.verify(reqToken, configCommon.getJwt().key);
-    const token = await tokenModel.findByMember(reqToken)
-    if (!token || token.updated_at < moment().valueOf() - appConstant.TIME_EXP_ACCESS_TOKEN ) {
-        throw Error("Access token invalid")
-    }
-    if(token.member.id !== decodedToken.uid){
-        throw Error('Access token Invalid')
-    }
-    await tokenModel.updateToken(token.id, { updated_at: moment().valueOf() })
-    return token
-}
-
-const verifyRefreshToken = (token, lang, ua) => {
-    let decodedToken = jwt.verify(token, configCommon.getJwt().key);
-    if (decodedToken.exp < moment().valueOf() || decodedToken.claims.ua !== ua) {
-        throw new Error("Refresh token invalid");
+const verifyToken = async (reqToken) => {
+    let decodedToken = jwt.verify(reqToken, process.env.token_key);
+    if (!decodedToken || decodedToken.exp < moment().valueOf()) {
+        throw Error("Invalid token")
     }
     return decodedToken
 }
 
-const sendVerifyPhone = async (phone, code) => {
-    return new Promise(async (resolve, reject) => {
-        const text = `Your verify code is ${code}.This code is valid for 5 minutes`
-        client.messages.create({
-            from: configCommon.getKeyPhone().phoneTwilio,
-            to: `+${phone}`,
-            body: text
-        }).then(async message => {
-            console.log(message)
-            resolve({
-                message: "Message sent successfully."
-            });
-        })
-        .catch((err) => {
-            console.log(err);
-            reject("Send message failed");
-        })
-
-    })
-}
-
-const createToken = async (user, ua, lang) => {
-    await tokenModel.removeExpiredToken(user.id)
-    const token = await generateAccessToken(user);
-    const refreshToken = await generateRefreshToken(user, ua);
-    await tokenModel.createToken({
-        member: _.pick(user, ['id', 'role']),
-        token: token,
-        refresh_token: refreshToken
-    })
-    return { token, refreshToken, role: user.role }
+const createToken = async (uid, ua) => {
+    const sid = await encodeDecode.encode(JSON.stringify(ua))
+    const token = await tokenModel.createToken(uid, sid)
+    return { token }
 }
 
 const createSignInHistory = async (member_id, data) => {
@@ -106,11 +44,8 @@ const createSignInHistory = async (member_id, data) => {
 }
 
 module.exports = {
-    generateAccessToken,
-    generateRefreshToken,
+		generateToken,
     verifyToken,
-    verifyRefreshToken,
-    sendVerifyPhone,
     createSignInHistory,
     createToken
 }

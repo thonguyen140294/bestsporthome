@@ -10,6 +10,7 @@ const appConstant = require('../../shared/helpers/constant.helper')
  */
 router.route('/').post(async (req, res) => {
     try {
+				console.log(req.ip, res.locals.ip);
         let userAgent = res.locals.userAgent;
         let requestIp = res.locals.ip;
         let data = { userAgent, requestIp }

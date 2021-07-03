@@ -1,6 +1,6 @@
 const schema = require('./schema')
 const appConstant = require('../../helpers/constant.helper');
-const model = require('mongoose').model(appConstant.DATA_TABLE.CART, schema)
+const model = require('mongoose').model(appConstant.DATA_TABLE.ITEM, schema)
 
 const create = async (data) => {
 	return new Promise((resolve, reject) => {
@@ -15,10 +15,10 @@ const create = async (data) => {
 	})
 }
 
-const getByUser = async (user) => {
+const get = async (query) => {
 	return new Promise((resolve, reject) => {
 			model
-				.findOne({user})
+				.find(query)
 				.lean()
 				.then(result => {
 						resolve(result)
@@ -29,10 +29,10 @@ const getByUser = async (user) => {
 	})
 }
 
-const updateItem = async (id, items) => {
+const update = async (id, data) => {
 	return new Promise((resolve, reject) => {
 			model
-				.findByIdAndUpdate(id, {items})
+				.findByIdAndUpdate(id, data)
 				.lean()
 				.then(result => {
 						resolve(result)
@@ -45,6 +45,6 @@ const updateItem = async (id, items) => {
 
 module.exports = {
 		create,
-		getByUser,
-		updateItem
+		get,
+		update
 }

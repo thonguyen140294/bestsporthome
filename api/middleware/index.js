@@ -1,22 +1,16 @@
 'use strict';
 const cors = require('cors');
-const bodyParser = require('body-parser');
+const express = require('express')
 const morgan = require('morgan');
-const configCommon = require('../shared/helpers/configCommon.helper')
-const _ = require('lodash');
 
 const configureMiddlewares = (app) => {
     //Middlewares
     app.use(function (req, res, next) {
         //console.log('ip', req.ip, req.headers.host, req.get('host'), req.get('origin'))
-        if (configCommon.getWhiteList() != '*') {
+        if (process.env.whitelist != '*') {
             let org = req.get('origin');
             let ip = req.ip.replace('::ffff:', '');
-            if (!(_.find(configCommon.getWhiteList(), (o) => {
-                return o == org;
-            }) || _.find(configCommon.getWhiteList(), (o) => {
-                return o == ip;
-            }))) {
+            if (!process.env.whitelist.includes(org) && !process.env.whitelist.includes(ip)) {
                 next(100);
             }
         }
@@ -25,10 +19,10 @@ const configureMiddlewares = (app) => {
         .options('*', cors())
     //show console
     app.use(morgan("combined"));
-    app.use(bodyParser.urlencoded({ extended: false }));
-    app.use(bodyParser.json());
+    app.use(express.urlencoded({ extended: false }));
+    app.use(express.json());
     app.use(cors({
-        origin: configCommon.getWhiteList(),
+        origin: process.env.whitelist,
         //origin: /\.muv-x\.com$/,
         methods: ['GET', 'PUT', 'POST', 'DELETE'],
         // allowedHeaders: [],

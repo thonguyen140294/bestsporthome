@@ -1,6 +1,4 @@
 'use strict';
-const md5 = require('js-md5');
-const bytes = require('utf8-bytes')
 const bcrypt = require("bcrypt")
 
 const getNonceString = (length, isNumber) => {

@@ -1,32 +1,15 @@
 const express = require('express')
 const app = express();
-const i18n = require('i18n');
-const bodyParser = require('body-parser');
-const admin = require('firebase-admin');
-const configCommon = require('./shared/helpers/configCommon.helper')
 const error = require('./shared/helpers/errorHandle.helper');
-
-const swaggerTools = require('./doc')
-
-// const http = require('http').Server(app);
-const port = process.env.PORT || 8009;
+const mongoose = require('mongoose');
+require('dotenv').config()
 /**
  * Initialize
  */
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.static("./public"))
-// firebase
-admin.initializeApp({
-    credential: admin.credential.cert(configCommon.getGoogleCloud().keyfile),
-    databaseURL: configCommon.getGoogleCloud().databaseURL,
-    storageBucket: configCommon.getGoogleCloud().storageBucket
-});
-const settings = {timestampsInSnapshots: true};
-admin.firestore().settings(settings);
 
-// SwaggerRouter configuration
-swaggerTools.initSwaggerTools(app)
 // configure middlewares
 const middlewares = require('./middleware');
 middlewares.configureMiddlewares(app);
@@ -35,31 +18,19 @@ const routes = require('./route');
 routes.registerRoutes(app)
 // error
 app.use(error.handleError);
-// multi language
-i18n.configure({
-    locales: ['en', 'ja'],
-    directory: `${__dirname}/config/locales`,
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.db_url, JSON.parse(process.env.db_options));
+mongoose.connection.on('error', function (err) {
+    console.error('MongoDB connection error: ' + err);
+    process.exit(-1);
 });
-/**
- * Run app
- */
-// if (process.env.MODE_BUILD == 'prod') {
-//     var https = require('https');
-//     var options = {
-//         key: fs.readFileSync('/etc/letsencrypt/live/harseq.com/privkey.pem'),
-//         cert: fs.readFileSync('/etc/letsencrypt/live/harseq.com/fullchain.pem'),
-//         //  requestCert: true,
-//         // rejectUnauthorized: false
-//     };
-//     https.createServer(options, app).listen(port, () => {
-//         console.log(`Server running at http://:${port}/`)
-//     });
-// } else {
-//     http.listen(port, () => {
-//         console.log(`Server running at http://:${port}/`)
-//     });
-// }
-app.listen(port)
-console.log('Api doc is available on http://localhost:%d/docs', port);
-
-module.exports = app;
+mongoose.connection.on('connected', async () => {
+	console.log('MongoDB connected');
+	/**
+	 * Run app
+	 */
+	const server = require('http').Server(app)
+	server.listen(process.env.port, () => {
+			console.log(`Server api running at http://localhost:${process.env.port}`)
+	})
+});

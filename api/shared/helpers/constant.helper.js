@@ -55,16 +55,10 @@ module.exports = Object.freeze({
         }
     }, 
     DATA_TABLE: {
-        MEMBER: 'member',
+        USER: 'user',
         SIGNIN_HISTORY: 'signin_history',
-        TOKEN: 'token',
-        CONTACT: 'contact',
-        PRODUCT: 'product',
-        PRODUCT_DETAIL: 'product_detail',
         CART: 'cart',
-        PAYMENT: 'payment',
+				ITEM: 'item',
         COUPON: 'coupon',
-        CATEGORY: 'category',
-        BRAND: 'brand'
     }
 });
